@@ -17,7 +17,7 @@ module.exports = {
             { name: 'Misc Commands', value: miscCommands },
         )
         //.setThumbnail(client.users.cache.get("549418373130223630").avatarURL({ dynamic: true }))
-        .setThumbnail('https://i.imgur.com/HSH1eqG.png')
+        .setThumbnail('https://i.imgur.com/GPtkfXN.png')
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
         .setTimestamp()
 
