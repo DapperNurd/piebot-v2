@@ -12,7 +12,7 @@ module.exports = {
             }
 
             var botID = authorIDs.find(function (element) {
-                return element == "762880889817530368"
+                return element == "549418373130223630"
             });
 
             if (!botID) {
