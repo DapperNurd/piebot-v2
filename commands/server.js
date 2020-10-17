@@ -17,7 +17,7 @@ module.exports = {
                 .setTitle(`${message.guild.name} Server Stats`)
                 .setDescription('Server not in database')
                 .setAuthor('Piebot Stats', 'https://i.imgur.com/HSH1eqG.png')
-                .setThumbnail(statUser.avatarURL({ dynamic: true }))
+                .setThumbnail(message.guild.iconURL())
                 .addFields(
                     { name: 'Pie Count', value: '0', inline: true },
                     { name: 'Muffin Count', value: '0', inline: true },
@@ -38,7 +38,7 @@ module.exports = {
         .setColor('#ffffff')
         .setTitle(`${message.guild.name} Server Stats`)
         .setAuthor('Piebot Stats', 'https://i.imgur.com/HSH1eqG.png')
-        .setThumbnail(statUser.avatarURL({ dynamic: true }))
+        .setThumbnail(message.guild.iconURL())
         .addFields(
             { name: 'Pie Count', value: serverCounts.pieCount, inline: true },
             { name: 'Muffin Count', value: serverCounts.muffinCount, inline: true },
