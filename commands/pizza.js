@@ -6,7 +6,7 @@ const GlobalCount = require('../models/globalCount');
 const commonPizzas = ["cheese", "pepperoni", "sausage", "all-meat", "hawaiian", "margherita", "veggie"
 ];
 
-const uncommonPizzas = ["chicago-style deep dish", "breakfast", "taco quesadilla", "buffalo chicken", "feta cheese and salami"
+const uncommonPizzas = ["chicago-style deep dish", "breakfast", "taco quesadilla", "buffalo chicken", "feta cheese and salami", "pineapple pepperoni"
 ];
 
 const rarePizzas = ["BBQ chicken", "chicken alfredo", "loaded baked-potato", "chocolate chip cookie",  "verde chicken enchilada"
