@@ -6,7 +6,7 @@ const GlobalCount = require('../models/globalCount');
 const commonFish = ["carp", "bass", "trout", "tilapia", "catfish", "anchovy", "cod", "spanish mackeral", "bluefish", "crappie", "redfish", "mullet"
 ];
 
-const uncommonFish = ["cobia", "flounder", "red snapper", "king mackeral", "ladyfish", "largemouth Bass", "tuna", "sunfish", "halibut", "pompano", "salmon"
+const uncommonFish = ["cobia", "flounder", "red snapper", "king mackeral", "ladyfish", "largemouth bass", "tuna", "sunfish", "halibut", "pompano", "salmon"
 ];
 
 const rareFish = ["grouper", "alligator gar", "lionfish", "swordfish", "mahimahi", "wahoo", "clownfish"
