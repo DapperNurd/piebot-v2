@@ -3,13 +3,13 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonFish = ["carp", "bass", "trout", "tilapia", "catfish", "anchovy", "cod", "spanish Mackeral", "bluefish", "crappie", "redfish", "mullet"
+const commonFish = ["carp", "bass", "trout", "tilapia", "catfish", "anchovy", "cod", "spanish mackeral", "bluefish", "crappie", "redfish", "mullet"
 ];
 
 const uncommonFish = ["cobia", "flounder", "red snapper", "king mackeral", "ladyfish", "largemouth Bass", "tuna", "sunfish", "halibut", "pompano", "salmon"
 ];
 
-const rareFish = ["grouper", "alligator Gar", "lionfish", "swordfish", "mahimahi", "wahoo", "clownfish"
+const rareFish = ["grouper", "alligator gar", "lionfish", "swordfish", "mahimahi", "wahoo", "clownfish"
 ];
 
 const legendaryFish = ["Holy Mackerel", "fish sticks and custard"];
