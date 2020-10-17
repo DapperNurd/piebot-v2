@@ -12,15 +12,15 @@ module.exports = {
     name: 'menu',
     description: "this is a menu command!",
     run: async (message, args, client) => {
-        if(args.length < 1) message.channel.send("Please specify which menu to view. \nExample: /menu pie").then(m=> 
-            m.delete({timeout:30000});
-            m.react("🥧");
-            m.react("766932300410912780");
-            m.react("🥔");
-            m.react("🍦");
-            m.react("🍕");
-            m.react("🐟");
-        );
+        if(args.length < 1) message.channel.send("Please specify which menu to view. \nExample: /menu pie").then(function (sentMessage) {
+            sentMessage.react("🥧");
+            sentMessage.react("766932300410912780");
+            sentMessage.react("🥔");
+            sentMessage.react("🍦");
+            sentMessage.react("🍕");
+            sentMessage.react("🐟");
+            sentMessage.delete({timeout:30000});
+        });
 
         const globalVar = await GlobalCount.findOne({
             globalID: "global"
