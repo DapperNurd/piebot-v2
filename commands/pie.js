@@ -139,9 +139,9 @@ module.exports = {
         var the = (message.guild.name.toLowerCase().startsWith("the")) ? " " : " the "
         if(sorryRand > 95) {
             var sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your \`${pieAdj} ${newPie}\`. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
-        } else if(message.content.split(" ")[0].toLowerCase() == "!pie") {
+        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {
             var sendText = `Here, ${piePerson}! Kim wants you to have a slice of her \`${pieAdj} ${newPie}\`! There have been ${pieCountNum} pies given out on ${message.guild.name}.`
-        } else if(message.content.split(" ")[0].toLowerCase() == "!pierate" ) {
+        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pierate" ) {
             var sendText = `Arrrgh, ${piePerson}! Kim wants ye to have a slice of 'er \`${pieAdj} ${newPie}\`! There 'ave been ${pieCountNum} pie given out on${the}${message.guild.name}.`
         }
         message.channel.send(sendText).then(function (botSentMessage) {

@@ -142,7 +142,7 @@ module.exports = {
             var sendText = `Here, ${potatoPerson}! Nurd wants you to have ${plural} \`${potatoAdj} ${potato}\`! There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
         }
 
-        if(message.content.split(" ")[0].toLowerCase() == "!tater") {
+        if(message.content.split(" ")[0].toLowerCase().substring(1) == "tater") {
             var taterRandom = Math.floor(Math.random() * 100) + 1;
             if(taterRandom > 98) {
                 sendText = 'https://tenor.com/view/cute-cars-finding-disney-pixar-gif-7294652'
