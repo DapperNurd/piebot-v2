@@ -3,12 +3,6 @@ const mongoose = require('mongoose');
 const User = require('../models/user');
 const BannedUser = require('../models/bannedUsers')
 
-function getUserFromMention(mention) {
-	if (!mention) return;
-
-	
-}
-
 module.exports = {
     name: 'stats',
     description: "this is a stats command!",
