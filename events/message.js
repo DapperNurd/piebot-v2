@@ -14,7 +14,7 @@ module.exports = async (client, message) => {
     });
 
     const args = message.content.split(/ +/);
-    const cmd = args.shift().toLowerCase();
+    var cmd = args.shift().toLowerCase();
 
     if(cmd.startsWith("!") || cmd.startsWith(".")) {
         cmd = cmd.substring(1);
