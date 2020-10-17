@@ -8,7 +8,8 @@ const guildSchema = mongoose.Schema({
     muffinCount: Number,
     potatoCount: Number,
     iceCreamCount: Number,
-    pizzaCount: Number
+    pizzaCount: Number,
+    fishCount: Number
 });
 
 module.exports = mongoose.model('Guild', guildSchema, 'guilds');
