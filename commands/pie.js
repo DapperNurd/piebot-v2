@@ -137,7 +137,6 @@ module.exports = {
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
         var the = (message.guild.name.toLowerCase().startsWith("the")) ? " " : " the "
-        console.log(message.content.split(" ")[0].toLowerCase().substring(1));
         if(sorryRand > 95) {
             var sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your \`${pieAdj} ${newPie}\`. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
         } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {

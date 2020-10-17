@@ -23,7 +23,7 @@ module.exports = async (client, message) => {
         } else if(cmd === 'ping') {
             client.commands.get('ping').run(message, args, client);
         }
-        else if(cmd === 'pie' || cmd === '!pierate') {
+        else if(cmd === 'pie' || cmd === 'pierate') {
             client.commands.get('pie').run(message, args, client);
         }
         else if(cmd === 'muffin') {
@@ -87,6 +87,7 @@ module.exports = async (client, message) => {
             }
         }
     } else {
+        cmd = tempCmd;
         if(cmd === 'ok' && args.length == 0) {
             if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) {
                 
