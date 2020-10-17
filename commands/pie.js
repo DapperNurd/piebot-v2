@@ -133,7 +133,7 @@ module.exports = {
         var pieAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        var the = (message.guild.name.toLowerCase().startsWith("the")) ? " the " : ""
+        var the = (message.guild.name.toLowerCase().startsWith("the")) ? " " : " the "
         if(sorryRand > 95) {
             var sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your \`${pieAdj} ${newPie}\`. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
         } else if(message.content.split(" ")[0].toLowerCase() == "!pie") {
