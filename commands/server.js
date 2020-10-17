@@ -14,7 +14,7 @@ module.exports = {
             if(!user) {
                 const statsNoDBEmbed = new Discord.MessageEmbed()
                 .setColor('#ffffff')
-                .setTitle(`${statUser.username } Server Stats`)
+                .setTitle(`${message.guild.name} Server Stats`)
                 .setDescription('Server not in database')
                 .setAuthor('Piebot Stats', 'https://i.imgur.com/HSH1eqG.png')
                 .setThumbnail(statUser.avatarURL({ dynamic: true }))
@@ -36,7 +36,7 @@ module.exports = {
         if(serverCounts == null) return;
         const statsEmbed = new Discord.MessageEmbed()
         .setColor('#ffffff')
-        .setTitle(`${statUser.username } Server Stats`)
+        .setTitle(`${message.guild.name} Server Stats`)
         .setAuthor('Piebot Stats', 'https://i.imgur.com/HSH1eqG.png')
         .setThumbnail(statUser.avatarURL({ dynamic: true }))
         .addFields(
