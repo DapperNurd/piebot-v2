@@ -6,6 +6,7 @@ const muffinMenu = require('./muffin');
 const potatoMenu = require('./potato');
 const iceCreamMenu = require('./icecream')
 const pizzaMenu = require('./pizza');
+const fishMenu = require('./fish');
 
 module.exports = {
     name: 'menu',
@@ -132,6 +133,24 @@ module.exports = {
                 .setTimestamp()
 
                 message.author.send(iceCreamEmbed);
+                message.react("📬");
+            } else if(menu == "fish" || menu == "fishes"|| menu == "fishs") {
+                var totalFishCount = fishMenu.commonFish.length + fishMenu.uncommonFish.length + fishMenu.rareFish.length + fishMenu.legendaryFish.length;
+                const fishEmbed = new Discord.MessageEmbed()
+                .setColor('#cad8d7')
+                .setTitle(`Fish Menu`)
+                .setDescription(`Number of Fish: ${totalFishCount}`)
+                .setAuthor(`Global Fish Count: ${globalVar.fishCount}`)
+                .addFields(
+                    { name: 'Common Fish (54%)', value: fishMenu.commonFish },
+                    { name: 'Uncommon Fish (40%)', value: fishMenu.uncommonFish },
+                    { name: 'Rare Fish (5%)', value: fishMenu.rareFish },
+                    { name: 'Legendary Fish (1%)', value: fishMenu.legendaryFish }
+                )   
+                .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
+                .setTimestamp()
+
+                message.author.send(fishEmbed);
                 message.react("📬");
             } else {
                 message.channel.send("Menu not recognized.").then(m=> m.delete({timeout:8000}));

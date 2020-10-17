@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const mongoose = require('mongoose');
 
-const foodCommands = ["!pie, !pierate", "!muffin", "!potato, !tater", "!icecream", "!pizza", "!menu (food)" ];
+const foodCommands = ["!pie, !pierate", "!muffin", "!potato, !tater", "!icecream", "!pizza", "!fish", "!menu (food)" ];
 const miscCommands = ["!help, !commands", "!stats, !info", "!ask (question)", "!scale (max) (question)", "!coinflip, !cf", "!ping" ];
 
 module.exports = {

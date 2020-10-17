@@ -37,6 +37,9 @@ module.exports = async (client, message) => {
         else if(cmd === '!pizza') {
             client.commands.get('pizza').run(message, args, client);
         }
+        else if(cmd === '!fish') {
+            client.commands.get('fish').run(message, args, client);
+        }
         else if(cmd === '!menu') {
             client.commands.get('menu').run(message, args, client);
         }
