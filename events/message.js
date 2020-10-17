@@ -14,10 +14,10 @@ module.exports = async (client, message) => {
     });
 
     const args = message.content.split(/ +/);
-    var cmd = args.shift().toLowerCase();
+    var tempCmd = args.shift().toLowerCase();
 
-    if(cmd.startsWith("!") || cmd.startsWith(".")) {
-        cmd = cmd.substring(1);
+    if(tempCmd.startsWith("!") || tempCmd.startsWith(".")) {
+        const cmd = tempCmd.substring(1);
         if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) {
             message.channel.send(`${message.author}, You are banned from using commands!`).then(m=> m.delete({timeout:10000}))
         } else if(cmd === 'ping') {
