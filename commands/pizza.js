@@ -12,7 +12,7 @@ const uncommonPizzas = ["chicago-style deep dish", "breakfast", "taco quesadilla
 const rarePizzas = ["BBQ chicken", "chicken alfredo", "loaded baked-potato", "chocolate chip cookie",  "verde chicken enchilada"
 ];
 
-const legendaryPizzas = ["boneless pizza", "hotpocket™️"];
+const legendaryPizzas = ["boneless", "hotpocket™️"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
 const negAdjectives = ["day-old", "overcooked", "frozen"];
