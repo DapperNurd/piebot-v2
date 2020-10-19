@@ -3,16 +3,16 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonFish = ["carp", "bass", "trout", "tilapia", "catfish", "anchovy", "cod", "spanish mackeral", "bluefish", "crappie", "redfish", "mullet"
+const commonFish = ["carp", "bass", "trout", "tilapia", "catfish", "anchovy", "cod", "spanish mackeral", "bluefish", "crappie", "redfish", "mullet", "ruby splashtail"
 ];
 
-const uncommonFish = ["cobia", "flounder", "red snapper", "king mackeral", "ladyfish", "largemouth bass", "tuna", "sunfish", "halibut", "pompano", "salmon"
+const uncommonFish = ["cobia", "flounder", "red snapper", "king mackeral", "ladyfish", "largemouth bass", "tuna", "sunfish", "halibut", "pompano", "salmon", "sunny splashtail"
 ];
 
-const rareFish = ["grouper", "alligator gar", "lionfish", "swordfish", "mahimahi", "wahoo", "clownfish"
+const rareFish = ["grouper", "alligator gar", "lionfish", "swordfish", "mahimahi", "wahoo", "clownfish", "indigo splashtail"
 ];
 
-const legendaryFish = ["Holy Mackerel", "fish sticks and custard"];
+const legendaryFish = ["Holy Mackerel", "fish sticks and custard", "umber splashtail"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
 const negAdjectives = ["day-old", "overcooked"];
