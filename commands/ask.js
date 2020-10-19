@@ -1,7 +1,7 @@
 var yesOrNoResponses = ["Yep.", "Yes, definitely.", "Without a doubt.", "I believe so.", "Mhm.",
     "I wouldn't count on it.", "I don't think so.", "No way.", "Nah.", "Doubting it."]
 
-var middleResponses = ["Could you repeat that?", "I'm not sure...", "Idk", "Can't answer right now.", "One more time?", "🤔"]
+var middleResponses = ["Could you repeat that?", "I'm not sure...", "idk", "Can't answer right now.", "One more time?", "🤔"]
 
 var oddResponses = ["I'll let you know later.", /*"Why are you asking me?",*/ "You know the answer to that already.", "Go bother someone else."]
 
