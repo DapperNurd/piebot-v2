@@ -18,7 +18,7 @@ const rareCreams = ["fudge brownie ice cream", "strawberry cheesecake ice cream"
 const legendaryCreams = ["pɹɐzzᴉlq uǝǝnb ʎɹᴉɐp"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
-const negAdjectives = ["day-old", "melted"];
+const negAdjectives = ["freezer burned", "melted"];
 
 module.exports = {
     name: 'icecream',
