@@ -10,7 +10,8 @@ module.exports = async(client, guild) => {
         muffinCount: 0,
         potatoCount: 0,
         iceCreamCount: 0,
-        pizzaCount: 0
+        pizzaCount: 0,
+        fishCount: 0
     });
 
     guild.save()
