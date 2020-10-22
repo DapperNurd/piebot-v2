@@ -23,7 +23,7 @@ module.exports = {
         }, (err, res) => {
             if(err) console.error(err);
             if(res) {
-                message.channel.send(`Unbanned user ${banUser.username }`).then(m=> m.delete({timeout:10000}));
+                message.channel.send(`Unbanned user \`${banUser.username }\``);
             } else {
                 message.channel.send(`${banUser.username } is not currently banned!`).then(m=> m.delete({timeout:10000}));
             }
