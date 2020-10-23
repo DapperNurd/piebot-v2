@@ -35,7 +35,7 @@ module.exports = {
                 return message.channel.send(`Banned user \`${banUser.username }\``);
             } else { // if user is already banned
                 //console.log();
-                return message.channel.send(`${banUser.username } is already banned!`).then(m=> m.delete({timeout:10000}));
+                return message.channel.send(`${banUser.username } is already banned!`);
             }
         });
     }
