@@ -32,10 +32,10 @@ module.exports = {
                 .then(result => console.log(result))
                 .catch(err => console.err(err));
 
-                return message.channel.send(`Banned user \`${banUser.username }\``);
+                return message.channel.send(`Banned user \`${banUser.tag }\``);
             } else { // if user is already banned
                 //console.log();
-                return message.channel.send(`${banUser.username } is already banned!`);
+                return message.channel.send(`${banUser.tag } is already banned!`);
             }
         });
     }

@@ -23,9 +23,9 @@ module.exports = {
         }, (err, res) => {
             if(err) console.error(err);
             if(res) {
-                message.channel.send(`Unbanned user \`${banUser.username }\``);
+                message.channel.send(`Unbanned user \`${banUser.tag }\``);
             } else {
-                message.channel.send(`${banUser.username } is not currently banned!`);
+                message.channel.send(`${banUser.tag } is not currently banned!`);
             }
         });
     }
