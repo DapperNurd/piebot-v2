@@ -12,7 +12,7 @@ const uncommonMuffins = ["chocolate chip muffin", "cornbread muffin", "pumpkin m
 const rareMuffins = ["chocolate chunk muffin", "apple cinnamon muffin", "snickerdoodle muffin"
 ];
 
-const legendaryMuffins = ["Kecatas' 'special' muffin"];
+const legendaryMuffins = ["Kecatas' 'special' muffin", "muffin time"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
 const negAdjectives = ["day-old", "overcooked"];
@@ -137,6 +137,10 @@ module.exports = {
             var sendText = `Sorry, ${muffinPerson}, but I couldn't resist. I ate your \`${muffinAdj} ${newMuffin}\`. There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${muffinPerson}! Kecatas wants you to have a \`${muffinAdj} ${newMuffin}\`! There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
+        }
+
+        if(newMuffin == "muffin time") {
+            sendText = "https://tenor.com/view/muffin-time-the-muffin-song-muffin-clock-gif-15999617";
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
