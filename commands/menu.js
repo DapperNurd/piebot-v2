@@ -8,6 +8,28 @@ const iceCreamMenu = require('./icecream')
 const pizzaMenu = require('./pizza');
 const fishMenu = require('./fish');
 
+const globalVar = await GlobalCount.findOne({
+    globalID: "global"
+}, (err, guild) => {
+    if(err) console.error(err);
+    if(!guild) {
+        const newGlobal = new GlobalCount({
+            _id: mongoose.Types.ObjectId(),
+            globalID: "global",
+            pieCount: 0,
+            muffinCount: 0,
+            potatoCount: 0,
+            iceCreamCount: 0,
+            pizzaCount: 0
+        });
+
+        newGlobal.save()
+        .then(result => console.log(result))
+        .catch(err => console.err(err));
+
+        return message.channel.send('No global database found, creating now.').then(m=> m.delete({timeout:10000}));
+    }
+});
 
 // PIE MENU
 const totalPieCount = pieMenu.commonPies.length + pieMenu.uncommonPies.length + pieMenu.rarePies.length + pieMenu.legendaryPies.length;
@@ -125,29 +147,6 @@ module.exports = {
             sentMessage.react("🍕");
             sentMessage.react("🐟");
             sentMessage.delete({timeout:45000});
-        });
-
-        const globalVar = await GlobalCount.findOne({
-            globalID: "global"
-        }, (err, guild) => {
-            if(err) console.error(err);
-            if(!guild) {
-                const newGlobal = new GlobalCount({
-                    _id: mongoose.Types.ObjectId(),
-                    globalID: "global",
-                    pieCount: 0,
-                    muffinCount: 0,
-                    potatoCount: 0,
-                    iceCreamCount: 0,
-                    pizzaCount: 0
-                });
-
-                newGlobal.save()
-                .then(result => console.log(result))
-                .catch(err => console.err(err));
-
-                return message.channel.send('No global database found, creating now.').then(m=> m.delete({timeout:10000}));
-            }
         });
 
         if(args[0]) {
