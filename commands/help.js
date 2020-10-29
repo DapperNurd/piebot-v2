@@ -1,14 +1,16 @@
 const Discord = require('discord.js');
 const mongoose = require('mongoose');
 
+const commandPrefixes = ["!", "."];
 const foodCommands = ["!pie, !pierate", "!muffin", "!potato, !tater", "!icecream", "!pizza", "!fish", "!menu (food)" ];
-const miscCommands = ["!help, !commands", "!stats, !info", "!server, !guild", "!ask (question)", "!scale (max) (question)", "!coinflip, !cf", "!ping" ];
+const miscCommands = ["!help, !commands", "!stats, !info", "!global", "!server, !guild", "!ask (question)", "!scale (max) (question)", "!coinflip, !cf", "!ping" ];
 
 module.exports = {
     name: 'help',
     description: "this is a help command!",
     run: async (message, args, client) => {
         const helpEmbed = new Discord.MessageEmbed()
+        .setDescription("Command Prefixes: `!, .`")
         .setColor('#FFFFFF')
         .setAuthor(`Piebot Help`)
         .setTitle("Commands")
