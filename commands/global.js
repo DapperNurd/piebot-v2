@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const mongoose = require('mongoose');
-const User = require('../models/user');
-const BannedUser = require('../models/bannedUsers')
+const GlobalCount = require('../models/globalCount');
 
 module.exports = {
     name: 'global',
