@@ -9,6 +9,8 @@ module.exports = {
             message.channel.send("<:Wowee:758396947769196575>");
             if(client.hasPermission("MANAGE_MESSAGES")) {
                 message.delete();
+            } else {
+                console.log("Does not have permission to delete message");
             }
         }
 
