@@ -7,37 +7,16 @@ const potatoMenu = require('./potato');
 const iceCreamMenu = require('./icecream')
 const pizzaMenu = require('./pizza');
 const fishMenu = require('./fish');
+const pie = require('./pie');
+const potato = require('./potato');
 
-const globalVar = await GlobalCount.findOne({
-    globalID: "global"
-}, (err, guild) => {
-    if(err) console.error(err);
-    if(!guild) {
-        const newGlobal = new GlobalCount({
-            _id: mongoose.Types.ObjectId(),
-            globalID: "global",
-            pieCount: 0,
-            muffinCount: 0,
-            potatoCount: 0,
-            iceCreamCount: 0,
-            pizzaCount: 0
-        });
-
-        newGlobal.save()
-        .then(result => console.log(result))
-        .catch(err => console.err(err));
-
-        return message.channel.send('No global database found, creating now.').then(m=> m.delete({timeout:10000}));
-    }
-});
 
 // PIE MENU
 const totalPieCount = pieMenu.commonPies.length + pieMenu.uncommonPies.length + pieMenu.rarePies.length + pieMenu.legendaryPies.length;
-const pieEmbed = new Discord.MessageEmbed()
+var pieEmbed = new Discord.MessageEmbed()
 .setColor('#FF1111')
 .setTitle(`Pie Menu`)
 .setDescription(`Number of Pies: ${totalPieCount}`)
-.setAuthor(`Global Pie Count: ${globalVar.pieCount}`)
 .addFields(
     { name: 'Common Pies (54%)', value: pieMenu.commonPies },
     { name: 'Uncommon Pies (40%)', value: pieMenu.uncommonPies },
@@ -50,11 +29,10 @@ const pieEmbed = new Discord.MessageEmbed()
 
 // MUFFIN MENU
 const totalMuffinCount = muffinMenu.commonMuffins.length + muffinMenu.uncommonMuffins.length + muffinMenu.rareMuffins.length + muffinMenu.legendaryMuffins.length;
-const muffinEmbed = new Discord.MessageEmbed()
+var muffinEmbed = new Discord.MessageEmbed()
 .setColor('#00FF00')
 .setTitle(`Muffin Menu`)
 .setDescription(`Number of Muffins: ${totalMuffinCount}`)
-.setAuthor(`Global Muffin Count: ${globalVar.muffinCount}`)
 .addFields(
     { name: 'Common Muffins (54%)', value: muffinMenu.commonMuffins },
     { name: 'Uncommon Muffins (40%)', value: muffinMenu.uncommonMuffins },
@@ -67,11 +45,10 @@ const muffinEmbed = new Discord.MessageEmbed()
 
 // POTATO MENU
 const totalPotatoCount = potatoMenu.commonPotatoes.length + potatoMenu.uncommonPotatoes.length + potatoMenu.rarePotatoes.length + potatoMenu.legendaryPotatoes.length;
-const potatoEmbed = new Discord.MessageEmbed()
+var potatoEmbed = new Discord.MessageEmbed()
 .setColor('#A0522D')
 .setTitle(`Potato Menu`)
 .setDescription(`Number of Potatoes: ${totalPotatoCount}`)
-.setAuthor(`Global Potato Count: ${globalVar.potatoCount}`)
 .addFields(
     { name: 'Common Potatoes (54%)', value: potatoMenu.commonPotatoes },
     { name: 'Uncommon Potatoes (40%)', value: potatoMenu.uncommonPotatoes },
@@ -84,11 +61,10 @@ const potatoEmbed = new Discord.MessageEmbed()
 
 // ICE CREAM MENU
 const totalIceCreamCount = iceCreamMenu.commonCreams.length + iceCreamMenu.uncommonCreams.length + iceCreamMenu.rareCreams.length + iceCreamMenu.legendaryCreams.length;
-const iceCreamEmbed = new Discord.MessageEmbed()
+var iceCreamEmbed = new Discord.MessageEmbed()
 .setColor('#33bbff')
 .setTitle(`Ice Cream Menu`)
 .setDescription(`Number of Ice Creams: ${totalIceCreamCount}`)
-.setAuthor(`Global Ice Cream Count: ${globalVar.iceCreamCount}`)
 .addFields(
     { name: 'Common Ice Creams (54%)', value: iceCreamMenu.commonCreams },
     { name: 'Uncommon Ice Creams (40%)', value: iceCreamMenu.uncommonCreams },
@@ -101,11 +77,10 @@ const iceCreamEmbed = new Discord.MessageEmbed()
 
 // PIZZA MENU
 const totalPizzaCount = pizzaMenu.commonPizzas.length + pizzaMenu.uncommonPizzas.length + pizzaMenu.rarePizzas.length + pizzaMenu.legendaryPizzas.length;
-const pizzaEmbed = new Discord.MessageEmbed()
+var pizzaEmbed = new Discord.MessageEmbed()
 .setColor('#ffcc2b')
 .setTitle(`Pizza Menu`)
 .setDescription(`Number of Pizzas: ${totalPizzaCount}`)
-.setAuthor(`Global Pizza Count: ${globalVar.pizzaCount}`)
 .addFields(
     { name: 'Common Pizzas (54%)', value: pizzaMenu.commonPizzas },
     { name: 'Uncommon Pizzas (40%)', value: pizzaMenu.uncommonPizzas },
@@ -119,11 +94,10 @@ const pizzaEmbed = new Discord.MessageEmbed()
 
 // FISH MENU
 const totalFishCount = fishMenu.commonFish.length + fishMenu.uncommonFish.length + fishMenu.rareFish.length + fishMenu.legendaryFish.length;
-const fishEmbed = new Discord.MessageEmbed()
+var fishEmbed = new Discord.MessageEmbed()
 .setColor('#cad8d7')
 .setTitle(`Fish Menu`)
 .setDescription(`Number of Fish: ${totalFishCount}`)
-.setAuthor(`Global Fish Count: ${globalVar.fishCount}`)
 .addFields(
     { name: 'Common Fish (54%)', value: fishMenu.commonFish },
     { name: 'Uncommon Fish (40%)', value: fishMenu.uncommonFish },
@@ -148,6 +122,36 @@ module.exports = {
             sentMessage.react("🐟");
             sentMessage.delete({timeout:45000});
         });
+
+        const globalVar = await GlobalCount.findOne({
+            globalID: "global"
+        }, (err, guild) => {
+            if(err) console.error(err);
+            if(!guild) {
+                const newGlobal = new GlobalCount({
+                    _id: mongoose.Types.ObjectId(),
+                    globalID: "global",
+                    pieCount: 0,
+                    muffinCount: 0,
+                    potatoCount: 0,
+                    iceCreamCount: 0,
+                    pizzaCount: 0
+                });
+
+                newGlobal.save()
+                .then(result => console.log(result))
+                .catch(err => console.err(err));
+
+                return message.channel.send('No global database found, creating now.').then(m=> m.delete({timeout:10000}));
+            }
+        });
+
+        pieEmbed = pieEmbed.setAuthor(`Global Pie Count: ${globalVar.pieCount}`);
+        muffinEmbed = muffinEmbed.setAuthor(`Global Muffin Count: ${globalVar.muffinCount}`);
+        potatoEmbed = potatoEmbed.setAuthor(`Global Potato Count: ${globalVar.potatoCount}`);
+        iceCreamEmbed = iceCreamEmbed.setAuthor(`Global Ice Cream Count: ${globalVar.iceCreamCount}`);
+        pizzaEmbed = pizzaEmbed.setAuthor(`Global Pizza Count: ${globalVar.pizzaCount}`);
+        fishEmbed = fishEmbed.setAuthor(`Global Fish Count: ${globalVar.fishCount}`);
 
         if(args[0]) {
             const menu = args[0];
