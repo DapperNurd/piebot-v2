@@ -10,7 +10,7 @@ module.exports = {
     description: "this is a help command!",
     run: async (message, args, client) => {
         const helpEmbed = new Discord.MessageEmbed()
-        .setDescription("Command Prefixes: `!` `.`")
+        .setDescription("**Command Prefixes**\n`!` `.`")
         .setColor('#FFFFFF')
         .setAuthor(`Piebot Help`)
         .setTitle("Commands")
