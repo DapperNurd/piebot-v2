@@ -3,7 +3,7 @@ module.exports = {
     description: 'wowee',
     run: async (message, args, client) => {
         const randomNum = Math.floor(Math.random() * 100) + 1;
-        if(randomNum < 15) {
+        if(randomNum < 12) {
             message.react("😂");
         } else {
             message.channel.send("<:Wowee:758396947769196575>");
