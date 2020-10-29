@@ -7,7 +7,7 @@ module.exports = {
             message.react("😂");
         } else {
             message.channel.send("<:Wowee:758396947769196575>");
-            if(client.guild.me.hasPermission("MANAGE_MESSAGES")) {
+            if(message.guild.me.hasPermission("MANAGE_MESSAGES")) {
                 message.delete();
             } else {
                 console.log("Does not have permission to delete message");
