@@ -3,7 +3,7 @@ module.exports = {
     description: "this is the scale command!",
     run: async (message, args, client) => {
         if(args.length < 2) {
-            message.channel.send('What? Please phrase the command as "!scale (max) (question)"').then(m=> m.delete({timeout:8000}));
+            message.channel.send('What? Please phrase the command as "!scale (max) (question)"').then(m=> m.delete({timeout:12000}));
         } else {
             if (Number.isInteger(parseInt(args[0], 10))) {
                 var scale = args[0];
@@ -18,7 +18,7 @@ module.exports = {
                 message.channel.send(`On a scale of 1 to ${scale}... I'd say ${num}.`);
             }
             else if (!Number.isInteger(args[0])) {
-                message.channel.send("Please follow !scale with a whole number.").then(m=> m.delete({timeout:8000}));
+                message.channel.send("Please follow !scale with a whole number.").then(m=> m.delete({timeout:15000}));
             }
     
         }
