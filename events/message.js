@@ -59,6 +59,9 @@ module.exports = async (client, message) => {
         else if(cmd === 'stats' || cmd === 'info') {
             client.commands.get('stats').run(message, args, client);
         }
+        else if(cmd === 'global' || cmd === 'globalstats' || cmd === 'allstats') {
+            client.commands.get('global').run(message, args, client);
+        }
         else if(cmd === 'server' || cmd === 'guild') {
             client.commands.get('server').run(message, args, client);
         }
