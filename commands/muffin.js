@@ -134,9 +134,9 @@ module.exports = {
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${muffinPerson}, but I couldn't resist. I ate your \`${muffinAdj} ${newMuffin}\`. There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${muffinPerson}, but I couldn't resist. I ate your ${muffinAdj} ${newMuffin}. There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${muffinPerson}! Kecatas wants you to have a \`${muffinAdj} ${newMuffin}\`! There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
+            var sendText = `Here, ${muffinPerson}! Kecatas wants you to have a ${muffinAdj} ${newMuffin}! There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
         }
 
         if(newMuffin == "muffin time") {

@@ -137,14 +137,14 @@ module.exports = {
         
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${iceCreamPerson}, but I couldn't resist. I ate your \`${iceCreamAdj} ${newCream}\`. There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${iceCreamPerson}, but I couldn't resist. I ate your ${iceCreamAdj} ${newCream}. There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${iceCreamPerson}! Meadfetcher wants you to have some \`${iceCreamAdj} ${newCream}\`! There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
+            var sendText = `Here, ${iceCreamPerson}! Meadfetcher wants you to have some ${iceCreamAdj} ${newCream}! There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
         }
         if(newCream == "pɹɐzzᴉlq uǝǝnb ʎɹᴉɐp") {
             var legRandom = Math.floor(Math.random() * 100) + 1;
             if(legRandom > 50) {
-                var sendText = `Oh no ${iceCreamPerson}! I dropped your \`melted dairy queen blizzard\`! There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
+                var sendText = `Oh no ${iceCreamPerson}! I dropped your melted dairy queen blizzard! There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
             }
         }
         message.channel.send(sendText).then(function (botSentMessage) {

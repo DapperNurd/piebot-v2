@@ -150,11 +150,11 @@ module.exports = {
                 default:
                     newFish2 = commonFish[Math.floor(Math.random() * commonFish.length)];
             }
-            var sendText = `You just got catfished, ${fishPerson}! Your \`${fishAdj} ${newFish}\` is actually a \`${newFish2}\`. There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
+            var sendText = `You just got catfished, ${fishPerson}! Your ${fishAdj} ${newFish} is actually a \`${newFish2}\`. There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
         } else if(sorryRand > 94) {
-            var sendText = `Sorry, ${fishPerson}, but I couldn't resist. I ate your \`${fishAdj} ${newFish}\`. There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${fishPerson}, but I couldn't resist. I ate your ${fishAdj} ${newFish}. There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${fishPerson}! Valyx the Florida Man wants you to have some \`${fishAdj} ${newFish}\`! There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
+            var sendText = `Here, ${fishPerson}! Valyx the Florida Man wants you to have some ${fishAdj} ${newFish}! There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {

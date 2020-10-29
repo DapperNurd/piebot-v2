@@ -144,9 +144,9 @@ module.exports = {
         
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${pizzaPerson}, but I couldn't resist. I ate your \`${pizzaAdj} ${crustType}${newPizza} pizza\`. There have been ${pizzaCountNum} pizzas given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${pizzaPerson}, but I couldn't resist. I ate your ${pizzaAdj} ${crustType}${newPizza} pizza. There have been ${pizzaCountNum} pizzas given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${pizzaPerson}! ItalianStallion wants you to have a \`${pizzaAdj} ${crustType}${newPizza} pizza\`! There have been ${pizzaCountNum} pizzas given out on ${message.guild.name}.`
+            var sendText = `Here, ${pizzaPerson}! ItalianStallion wants you to have a ${pizzaAdj} ${crustType}${newPizza} pizza! There have been ${pizzaCountNum} pizzas given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {

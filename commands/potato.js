@@ -137,9 +137,9 @@ module.exports = {
         var plural = (potato == "baked potato") ? "a" : "some"
 
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${potatoPerson}, but I couldn't resist. I ate your \`${potatoAdj} ${potato}\`. There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${potatoPerson}, but I couldn't resist. I ate your ${potatoAdj} ${potato}. There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${potatoPerson}! Nurd wants you to have ${plural} \`${potatoAdj} ${potato}\`! There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
+            var sendText = `Here, ${potatoPerson}! Nurd wants you to have ${plural} ${potatoAdj} ${potato}! There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
         }
 
         if(message.content.split(" ")[0].toLowerCase().substring(1) == "tater") {
