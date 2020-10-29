@@ -65,6 +65,9 @@ module.exports = async (client, message) => {
         else if(cmd === 'pi' || cmd === 'π') {
             client.commands.get('pi').run(message, args, client);
         }
+        else if(cmd === 'wowee' || cmd === 'wow') {
+            client.commands.get('wowee').run(message, args, client);
+        }
         else if(cmd === 'banuser' || cmd === 'userban') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('banuser').run(message, args, client);
