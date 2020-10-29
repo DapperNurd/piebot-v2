@@ -166,7 +166,7 @@ module.exports = {
                 message.react("📬");
             }
             else if(menu == "pizza" || menu == "pizzas") {
-                message.author.send(iceCreamEmbed);
+                message.author.send(pizzaEmbed);
                 message.react("📬");
             } 
             else if(menu == "fish" || menu == "fishes"|| menu == "fishs") {
