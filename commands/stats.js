@@ -44,7 +44,7 @@ module.exports = {
                 .setColor('#FFFFFF')
                 .setTitle(`${statUser.username }'s User Stats`)
                 .setDescription('User not in database')
-                .setAuthor('Piebot Stats', 'https://i.imgur.com/HSH1eqG.png')
+                .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
                 .setThumbnail(statUser.avatarURL({ dynamic: true }))
                 .addFields(
                     { name: 'Pie Count', value: '0', inline: true },
@@ -66,7 +66,7 @@ module.exports = {
         const statsEmbed = new Discord.MessageEmbed()
         .setColor('#FFFFFF')
         .setTitle(`${statUser.username }'s User Stats`)
-        .setAuthor('Piebot Stats', 'https://i.imgur.com/HSH1eqG.png')
+        .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
         .setThumbnail(statUser.avatarURL({ dynamic: true }))
         .addFields(
             { name: 'Pie Count', value: userUniqueCounts.pieCount, inline: true },
