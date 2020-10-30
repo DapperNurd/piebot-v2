@@ -1,6 +1,6 @@
 const googleTTS = require('google-tts-api');
 const axios = require('axios');
-const dispatcherEvents = require('../events/dispatcherEvents');
+const dispatcherEvents = require('../common/dispatcherEvents');
 const { TTS_ENGINES, AEIOU_API_URL } = require('../common/constants');
 
 class TTSPlayer {

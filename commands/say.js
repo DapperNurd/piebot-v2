@@ -29,13 +29,14 @@ module.exports = {
         }
 
         if (connection) {
-            splitToPlayable(args)
+            ttsPlayer.say(args);
+            /*splitToPlayable(args)
             .then((phrases) => {
                 ttsPlayer.say(phrases);
             })
             .catch((error) => {
                 message.reply("erro1r");
-            });
+            });*/
         } else {
             channel.join()
             .then(() => {

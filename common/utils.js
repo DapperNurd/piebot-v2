@@ -66,7 +66,7 @@ const splitToPlayable = (words) => {
 };
 
 module.exports = {
-  //updatePresence,
-  //executeCommand,
-  splitToPlayable
+    //updatePresence,
+    //executeCommand,
+    splitToPlayable
 };
