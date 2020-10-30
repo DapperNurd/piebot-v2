@@ -10,8 +10,9 @@ module.exports = {
 
         const channel = message.member.voice.channel;
 
+        var connection = null;
         if (message.member.voice.channel) {
-            const connection = await vc.join();
+            connection = await channel.join();
         } else {
             message.channel.send("Please join a voice channel first!");
             return;
