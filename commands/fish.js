@@ -133,7 +133,7 @@ module.exports = {
         var fishAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        if(sorryRand > 98) {
+        if(sorryRand > 96) {
             switch (true) {
                 case (randomNum < 55):
                     newFish2 = commonFish[Math.floor(Math.random() * commonFish.length)];
@@ -151,7 +151,7 @@ module.exports = {
                     newFish2 = commonFish[Math.floor(Math.random() * commonFish.length)];
             }
             var sendText = `You just got catfished, ${fishPerson}! Your ${fishAdj} ${newFish} is actually a ${newFish2}. There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
-        } else if(sorryRand > 94) {
+        } else if(sorryRand > 91) {
             var sendText = `Sorry, ${fishPerson}, but I couldn't resist. I ate your ${fishAdj} ${newFish}. There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${fishPerson}! Valyx the Florida Man wants you to have some ${fishAdj} ${newFish}! There have been ${fishCountNum} fish fillets given out on ${message.guild.name}.`
