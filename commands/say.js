@@ -4,23 +4,26 @@ module.exports = {
     name: 'say',
     description: 'This is the say command',
     run: async (message, args, client) => {
-        const { channel } = message.member.voice;
         const { ttsPlayer, name: guildName, voice } = message.guild;
-        const connection = voice ? voice.connection : null;
+        //const connection = voice ? voice.connection : null;
         const [atLeastOneWord] = args;
 
-        if (!channel) {
-            message.reply('you need to be in a voice channel first.');
+        const channel = message.member.voice.channel;
+
+        if (message.member.voice.channel) {
+            const connection = await vc.join();
+        } else {
+            message.channel.send("Please join a voice channel first!");
             return;
         }
 
-        if (!channel.joinable) {
-            message.reply('I cannot join your voice channel.');
+        if (!channel) {
+            message.reply('You need to be in a voice channel first.');
             return;
         }
 
         if (!atLeastOneWord) {
-            message.reply('you need to specify a message.');
+            message.reply('You need to specify a message.');
             return;
         }
 
@@ -36,7 +39,7 @@ module.exports = {
             channel.join()
             .then(() => {
                 console.log(`Joined ${channel.name} in ${guildName}.`);
-                message.channel.send(`Joined ${channel}.`);
+                message.channel.send(`Joined \`${channel.name}\`.`);
                 splitToPlayable(args)
                 .then((phrases) => {
                     ttsPlayer.say(phrases);
