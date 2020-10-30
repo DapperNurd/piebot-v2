@@ -1,3 +1,5 @@
+const { connection } = require("mongoose");
+
 module.exports = {
     name: 'join',
     description: "this is the join command!",
@@ -8,6 +10,9 @@ module.exports = {
             const connection = await vc.join();
         } else {
             message.channel.send("Please join a voice channel first!");
+        }
+        if(connection) {
+            message.channel.send(`Successfully connected to ${vc.name}`)
         }
     }
 }
