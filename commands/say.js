@@ -34,7 +34,7 @@ module.exports = {
                 ttsPlayer.say(phrases);
             })
             .catch((error) => {
-                message.reply("error");
+                message.reply("erro1r");
             });
         } else {
             channel.join()
@@ -46,7 +46,7 @@ module.exports = {
                     ttsPlayer.say(phrases);
                 })
                 .catch((error) => {
-                    message.reply("error");
+                    message.reply("error2");
                 });
             })
             .catch((error) => {
