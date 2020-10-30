@@ -92,6 +92,13 @@ module.exports = async (client, message) => {
                 message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
             }
         }
+        else if(cmd === 'join' || cmd === 'connect') {
+            if(message.author.id == "189510396569190401") {
+                client.commands.get('join').run(message, args, client);
+            } else {
+                message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
+            }
+        }
     } else {
         cmd = tempCmd;
         if(cmd === 'ok' && args.length == 0) {
