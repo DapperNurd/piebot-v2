@@ -12,7 +12,7 @@ module.exports = {
             message.channel.send("Please join a voice channel first!");
         }
         if(connection) {
-            message.channel.send(`Successfully connected to ${vc.name}`)
+            message.channel.send(`Successfully connected to \`${vc.name}\``)
         }
     }
 }
