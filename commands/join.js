@@ -4,16 +4,10 @@ module.exports = {
     run: async (message, args, client) => {
         const channel = message.member.voice;
 
-        if(!channel) {
-            message.channel.send("You need to be in a voice channel first!");
-            return;
+        if (message.member.voice.channel) {
+            const connection = await message.member.voice.channel.join();
+        } else {
+            message.channel.send("Please join a voice channel first!");
         }
-
-        //if(!channel.joinable) {
-        //    message.channel.send("I cannot join your voice channel!");
-        //    return;
-        //}
-
-        channel.join();
     }
 }
