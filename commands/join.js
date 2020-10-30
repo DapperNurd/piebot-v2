@@ -9,10 +9,10 @@ module.exports = {
             return;
         }
 
-        if(!channel.joinable) {
-            message.channel.send("I cannot join your voice channel!");
-            return;
-        }
+        //if(!channel.joinable) {
+        //    message.channel.send("I cannot join your voice channel!");
+        //    return;
+        //}
 
         channel.join();
     }
