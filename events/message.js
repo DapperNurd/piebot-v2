@@ -81,14 +81,14 @@ module.exports = async (client, message) => {
                 message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
             }
         }
-        else if(cmd === 'manualadd' || cmd === 'add' || cmd === 'getunbanned') {
+        else if(cmd === 'manualadd' || cmd === 'add') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('manualadd').run(message, args, client);
             } else {
                 message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
             }
         }
-        else if(cmd === 'unbanuser' || cmd === 'unuserban' || cmd === 'userunban') {
+        else if(cmd === 'unbanuser' || cmd === 'unuserban' || cmd === 'userunban' || cmd === 'getunbanned') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('unbanuser').run(message, args, client);
             } else {
