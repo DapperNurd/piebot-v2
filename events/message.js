@@ -74,14 +74,14 @@ module.exports = async (client, message) => {
         else if(cmd === 'say' || cmd === 'tts') {
             client.commands.get('say').run(message, args, client);
         }
-        else if(cmd === 'banuser' || cmd === 'userban') {
+        else if(cmd === 'banuser' || cmd === 'userban' || cmd === 'getbanned') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('banuser').run(message, args, client);
             } else {
                 message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
             }
         }
-        else if(cmd === 'manualadd' || cmd === 'add') {
+        else if(cmd === 'manualadd' || cmd === 'add' || cmd === 'getunbanned') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('manualadd').run(message, args, client);
             } else {
