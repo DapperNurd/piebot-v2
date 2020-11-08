@@ -6,7 +6,7 @@ module.exports = {
         if(randomNum < 12) {
             message.react("😂");
         } else {
-            message.channel.send("<:Wowee:758396947769196575>");
+            message.channel.send("<:wowtf:774898955544690698>");
             if(message.guild.me.hasPermission("MANAGE_MESSAGES")) {
                 message.delete();
             } else {
