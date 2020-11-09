@@ -68,7 +68,7 @@ module.exports = async (client, message) => {
         else if(cmd === 'pi' || cmd === 'π') {
             client.commands.get('pi').run(message, args, client);
         }
-        else if(cmd === 'wowee' || cmd === 'wow') {
+        else if(cmd === 'wowee' || cmd === 'wowtf') {
             client.commands.get('wowee').run(message, args, client);
         }
         else if(cmd === 'say' || cmd === 'tts') {

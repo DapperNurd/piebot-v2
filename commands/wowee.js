@@ -6,7 +6,8 @@ module.exports = {
         if(randomNum < 12) {
             message.react("😂");
         } else {
-            message.channel.send("<:wowtf:774898955544690698>");
+            const emoji = (message.content.split(" ")[0].toLowerCase().substring(1) == "wowee") ? "<:Wowee:758396947769196575>" : "<:wowtf:775407711709036595>"
+            message.channel.send(emoji);
             if(message.guild.me.hasPermission("MANAGE_MESSAGES")) {
                 message.delete();
             } else {
