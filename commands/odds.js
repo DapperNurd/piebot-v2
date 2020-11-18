@@ -4,7 +4,7 @@ module.exports = {
     name: 'odds',
     description: "this is the odds command!",
     run: async (message, args, client) => {
-        if(args.length < 2) {
+        if(args.length < 1) {
             message.channel.send('What?');
         } else {
             if (Number.isInteger(parseInt(args[0], 10))) {
@@ -20,9 +20,6 @@ module.exports = {
                 }
                 
                 message.channel.send(`${start}${num}%`);
-            }
-            else if (!Number.isInteger(args[0])) {
-                message.channel.send("Please follow !scale with a whole number.");
             }
     
         }
