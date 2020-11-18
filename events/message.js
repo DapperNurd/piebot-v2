@@ -53,7 +53,7 @@ module.exports = async (client, message) => {
         else if(cmd === 'scale' || cmd === 'commands') {
             client.commands.get('scale').run(message, args, client);
         }
-        else if(cmd === 'odds' || cmd === 'odd' || cmd === 'wato' || cmd === 'whataretheodds' || cmd === 'chance' || cmd === 'chances' || cmd === 'whatisthechance' || cmd === 'witc') {
+        else if(cmd === 'odds' || cmd === 'odd' || cmd === 'whataretheodds' || cmd === 'chance' || cmd === 'chances' || cmd === 'whatisthechance' || cmd === 'odss') {
             client.commands.get('odds').run(message, args, client);
         }
         else if(cmd === 'coinflip' || cmd === 'coin' || cmd === 'cf') {
