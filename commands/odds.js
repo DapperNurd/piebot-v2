@@ -7,20 +7,18 @@ module.exports = {
         if(args.length < 1) {
             message.channel.send('What?');
         } else {
-            if (Number.isInteger(parseInt(args[0], 10))) {
-                var scale = args[0];
+            var scale = args[0];
 
-                var num = Math.floor(Math.random() * 100) + 1;
+            var num = Math.floor(Math.random() * 100) + 1;
 
-                var start = starts[Math.floor(Math.random() * starts.length)]
+            var start = starts[Math.floor(Math.random() * starts.length)]
 
-                var randomNum = Math.floor(Math.random() * 100) + 1;
-                if(randomNum == 100) {
-                    num = Number(scale) + 1;
-                }
-                
-                message.channel.send(`${start}${num}%`);
+            var randomNum = Math.floor(Math.random() * 100) + 1;
+            if(randomNum == 100) {
+                num = Number(scale) + 1;
             }
+            
+            message.channel.send(`${start}${num}%`);
     
         }
     }
