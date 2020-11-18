@@ -24,7 +24,7 @@ module.exports = {
         }
 
         if(statUser == null) {
-            return message.channel.send("Could not find user.").then(m=> m.delete({timeout:10000}));
+            return message.channel.send("Could not find user.");
         }
 
         const bannedUsersVar = await BannedUser.findOne({

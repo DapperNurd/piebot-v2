@@ -47,7 +47,7 @@ module.exports = {
                 .then(result => console.log(result))
                 .catch(err => console.err(err));
 
-                return message.channel.send('This server was not in my database. I have added it, please retype the command.').then(m=> m.delete({timeout:10000}));
+                return message.channel.send('This server was not in my database. I have added it, please retype the command.');
             }
         });
 
@@ -72,7 +72,7 @@ module.exports = {
                 .then(result => console.log(result))
                 .catch(err => console.err(err));
 
-                return message.channel.send('You were not in my database. I have added you, commands should work now.').then(m=> m.delete({timeout:60000}));
+                return message.channel.send('You were not in my database. I have added you, commands should work now.');
             }
         });
 
@@ -99,7 +99,7 @@ module.exports = {
                 .then(result => console.log(result))
                 .catch(err => console.err(err));
 
-                return message.channel.send('No global database found, creating now.').then(m=> m.delete({timeout:10000}));
+                return message.channel.send('No global database found, creating now.');
             }
         });
 

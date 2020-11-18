@@ -19,7 +19,7 @@ module.exports = async (client, message) => {
     if(tempCmd.startsWith("!") || tempCmd.startsWith(".")) {
         const cmd = tempCmd.substring(1);
         if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) {
-            message.channel.send(`${message.author}, You are banned from using commands!`).then(m=> m.delete({timeout:10000}))
+            message.channel.send(`${message.author}, You are banned from using commands!`)
         } else if(cmd === 'ping') {
             client.commands.get('ping').run(message, args, client);
         }
@@ -53,6 +53,9 @@ module.exports = async (client, message) => {
         else if(cmd === 'scale' || cmd === 'commands') {
             client.commands.get('scale').run(message, args, client);
         }
+        else if(cmd === 'odds' || cmd === 'odd' || cmd === 'wato' || cmd === 'whataretheodds' || cmd === 'chance' || cmd === 'chances' || cmd === 'whatisthechance' || cmd === 'witc') {
+            client.commands.get('odds').run(message, args, client);
+        }
         else if(cmd === 'coinflip' || cmd === 'coin' || cmd === 'cf') {
             client.commands.get('coinflip').run(message, args, client);
         }
@@ -78,28 +81,28 @@ module.exports = async (client, message) => {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('banuser').run(message, args, client);
             } else {
-                message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
+                message.channel.send("🤔")
             }
         }
         else if(cmd === 'manualadd' || cmd === 'add') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('manualadd').run(message, args, client);
             } else {
-                message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
+                message.channel.send("🤔")
             }
         }
         else if(cmd === 'unbanuser' || cmd === 'unuserban' || cmd === 'userunban' || cmd === 'getunbanned') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('unbanuser').run(message, args, client);
             } else {
-                message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
+                message.channel.send("🤔")
             }
         }
         else if(cmd === 'join' || cmd === 'connect') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('join').run(message, args, client);
             } else {
-                message.channel.send("🤔").then(m=> m.delete({timeout:60000}))
+                message.channel.send("🤔")
             }
         }
     } else {

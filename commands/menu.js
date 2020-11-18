@@ -42,7 +42,7 @@ module.exports = {
                 .then(result => console.log(result))
                 .catch(err => console.err(err));
 
-                return message.channel.send('No global database found, creating now.').then(m=> m.delete({timeout:10000}));
+                return message.channel.send('No global database found, creating now.');
             }
         });
 
