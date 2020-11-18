@@ -16,7 +16,7 @@ module.exports = async (client, message) => {
     const args = message.content.split(/ +/);
     var tempCmd = args.shift().toLowerCase();
 
-    if(tempCmd.startsWith("!") || tempCmd.startsWith(".")) {
+    if(tempCmd.startsWith("!") || tempCmd.startsWith(".")|| tempCmd.startsWith("-")) {
         const cmd = tempCmd.substring(1);
         if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) {
             message.channel.send(`${message.author}, You are banned from using commands!`)
