@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const commandPrefixes = ["!", "."];
 const foodCommands = ["!pie, !pierate", "!muffin", "!potato, !tater", "!icecream", "!pizza", "!fish", "!menu (food)" ];
-const miscCommands = ["!help, !commands", "!stats, !info", "!global", "!server, !guild", "!ask (question)", "!scale (max) (question)", "!coinflip, !cf", "!ping" ];
+const miscCommands = ["!help, !commands", "!stats, !info", "!global", "!server, !guild", "!ask (question)", "!scale (max) (question)", "!odds, !chances", "!coinflip, !cf", "!ping" ];
 
 module.exports = {
     name: 'help',
