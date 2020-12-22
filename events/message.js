@@ -2,14 +2,6 @@ const mongoose = require('mongoose');
 const Guild = require('../models/guild');
 const BannedUser = require('../models/bannedUsers')
 
-function runCommand(command) {
-    if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
-        message.channel.send(`${message.author}, you are banned from using commands!`)
-    } else {
-        client.commands.get(command).run(message, args, client);
-    }
-}
-
 module.exports = async (client, message) => {
     if(message.author.bot) return;
     
@@ -20,6 +12,14 @@ module.exports = async (client, message) => {
             return;
         }
     });
+
+    function runCommand(command) {
+        if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
+            message.channel.send(`${message.author}, you are banned from using commands!`)
+        } else {
+            client.commands.get(command).run(message, args, client);
+        }
+    }
 
     const args = message.content.split(/ +/);
     var tempCmd = args.shift().toLowerCase();
