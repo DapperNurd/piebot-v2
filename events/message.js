@@ -13,11 +13,15 @@ module.exports = async (client, message) => {
         }
     });
 
-    function runCommand(command) {
-        if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
-            message.channel.send(`${message.author}, you are banned from using commands!`)
-        } else {
+    function runCommand(command, bypassBan) {
+        if(bypassBan) {
             client.commands.get(command).run(message, args, client);
+        } else {
+            if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
+                message.channel.send(`${message.author}, you are banned from using commands!`)
+            } else {
+                client.commands.get(command).run(message, args, client);
+            }
         }
     }
 
@@ -28,79 +32,79 @@ module.exports = async (client, message) => {
         const cmd = tempCmd.substring(1);
         if(cmd === 'ping') {
             //client.commands.get('ping').run(message, args, client);
-            runCommand('ping');
+            runCommand('ping', false);
         }
         else if(cmd === 'pie' || cmd === 'pierate') {
             //client.commands.get('pie').run(message, args, client);
-            runCommand('pie');
+            runCommand('pie', false);
         }
         else if(cmd === 'muffin') {
             //client.commands.get('muffin').run(message, args, client);
-            runCommand('muffin');
+            runCommand('muffin', false);
         }
         else if(cmd === 'potato' || cmd === 'tater') {
             //client.commands.get('potato').run(message, args, client);
-            runCommand('potato');
+            runCommand('potato', false);
         }
         else if(cmd === 'icecream' || cmd === 'ice' || cmd === 'cream') {
             //client.commands.get('icecream').run(message, args, client);
-            runCommand('icecream');
+            runCommand('icecream', false);
         }
-        else if(cmd === 'pizza') {
+        else if(cmd === 'pizza', false) {
             //client.commands.get('pizza').run(message, args, client);
             runCommand('pizza');
         }
-        else if(cmd === 'fish') {
+        else if(cmd === 'fish', false) {
             //client.commands.get('fish').run(message, args, client);
-            runCommand('fish');
+            runCommand('fish', false);
         }
         else if(cmd === 'menu') {
             //client.commands.get('menu').run(message, args, client);
-            runCommand('menu');
+            runCommand('menu', false);
         }
         else if(cmd === 'ask') {
             //client.commands.get('ask').run(message, args, client);
-            runCommand('ask');
+            runCommand('ask', false);
         }
         else if(cmd === 'help' || cmd === 'commands') {
             //client.commands.get('help').run(message, args, client);
-            runCommand('help');
+            runCommand('help', false);
         }
         else if(cmd === 'scale' || cmd === 'commands') {
             //client.commands.get('scale').run(message, args, client);
-            runCommand('scale');
+            runCommand('scale', false);
         }
         else if(cmd === 'odds' || cmd === 'odd' || cmd === 'whataretheodds' || cmd === 'chance' || cmd === 'chances' || cmd === 'whatisthechance' || cmd === 'odss') {
             //client.commands.get('odds').run(message, args, client);
-            runCommand('odds');
+            runCommand('odds', false);
         }
         else if(cmd === 'coinflip' || cmd === 'coin' || cmd === 'cf') {
             //client.commands.get('coinflip').run(message, args, client);
-            runCommand('coinflip');
+            runCommand('coinflip', false);
         }
         else if(cmd === 'stats' || cmd === 'info') {
             //client.commands.get('stats').run(message, args, client);
-            runCommand('stats');
+            runCommand('stats', false);
         }
         else if(cmd === 'global' || cmd === 'globalstats' || cmd === 'allstats') {
             //client.commands.get('global').run(message, args, client);
-            runCommand('global');
+            runCommand('global', false);
         }
         else if(cmd === 'server' || cmd === 'guild') {
             //client.commands.get('server').run(message, args, client);
-            runCommand('server');
+            runCommand('server', false);
         }
         else if(cmd === 'pi' || cmd === 'π') {
             //client.commands.get('pi').run(message, args, client);
-            runCommand('pi');
+            runCommand('pi', false);
         }
         else if(cmd === 'wowee' || cmd === 'wowtf') {
             //client.commands.get('wowee').run(message, args, client);
-            runCommand('wowee');
+            runCommand('wowee', false);
         }
         else if(cmd === 'say' || cmd === 'tts') {
             //client.commands.get('say').run(message, args, client);
-            runCommand('say');
+            runCommand('say', false);
         }
 
         // ADMIN COMMANDS
@@ -126,14 +130,10 @@ module.exports = async (client, message) => {
                 message.channel.send("🤔")
             }
         }
-    } else {
+    } else { // NON PREFIX COMMANDS... I.E. "ok"
         cmd = tempCmd;
         if(cmd === 'ok' && args.length == 0) {
-            if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) {
-                
-            } else {
-                client.commands.get('ok').run(message, args, client);
-            }
+            runCommand('ok', true);
         }
     }
 };
