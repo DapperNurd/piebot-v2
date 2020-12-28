@@ -135,5 +135,8 @@ module.exports = async (client, message) => {
         if(cmd === 'ok' && args.length == 0) {
             runCommand('ok', true);
         }
+        if(cmd === 'wowee' && args.length == 0) {
+            runCommand('woweetext', false);
+        }
     }
 };
