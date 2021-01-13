@@ -135,7 +135,7 @@ module.exports = async (client, message) => {
             }
         }
     } else { // NON PREFIX COMMANDS... I.E. "ok"
-        cmd = args.toLowerCase();;
+        cmd = message.content.toLowerCase();;
         if(cmd === 'ok') {
             runCommand('ok', true);
         }
