@@ -102,6 +102,10 @@ module.exports = async (client, message) => {
             //client.commands.get('wowee').run(message, args, client);
             runCommand('wowee', false);
         }
+        else if(cmd === 'thonk' || cmd === 'think') {
+            //client.commands.get('wowee').run(message, args, client);
+            runCommand('thonk', false);
+        }
         else if(cmd === 'say' || cmd === 'tts') {
             //client.commands.get('say').run(message, args, client);
             runCommand('say', false);
@@ -135,8 +139,11 @@ module.exports = async (client, message) => {
         if(cmd === 'ok' && args.length == 0) {
             runCommand('ok', true);
         }
-        if(cmd === 'wowee' && args.length == 0) {
+        if(cmd.includes('wowee')) {
             runCommand('woweetext', false);
+        }
+        if(cmd.includes('hmm') || cmd === "thonk") {
+            runCommand('thonktext', false);
         }
     }
 };
