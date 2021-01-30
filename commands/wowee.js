@@ -3,7 +3,7 @@ module.exports = {
     description: 'wowee',
     run: async (message, args, client) => {
         const randomNum = Math.floor(Math.random() * 100) + 1;
-        if(randomNum < 12) {
+        if(randomNum < 5) {
             message.react("😂");
         } else {
             const emoji = (message.content.split(" ")[0].toLowerCase().substring(1) == "wowee") ? "<:Wowee:758396947769196575>" : "<:wowtf:775407711709036595>"
