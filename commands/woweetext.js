@@ -4,7 +4,7 @@ module.exports = {
     name: 'woweetext',
     description: 'wowee text',
     run: async (message, args, client) => {
-        if(!message.content.startsWith("<:")) {
+        if(!(message.content.startsWith("<:") && message.content.endsWith(">"))) {
             message.react("758396947769196575");
         }
     }
