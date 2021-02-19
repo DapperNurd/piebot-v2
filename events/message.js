@@ -140,10 +140,10 @@ module.exports = async (client, message) => {
             runCommand('ok', true);
         }
         if(cmd.includes('wowee')) {
-            runCommand('woweetext', false);
+            runCommand('woweetext', true);
         }
         if(cmd.includes('hmm') || cmd === "thonk") {
-            runCommand('thonktext', false);
+            runCommand('thonktext', true);
         }
     }
 };
