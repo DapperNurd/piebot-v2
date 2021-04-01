@@ -4,7 +4,7 @@ module.exports = client => {
     client.user.setPresence({
         status: 'online',
         activity: {
-            name: 'Pie Clicker',
+            name: 'Muffin Clicker', //PIE CLICKER
             type: 'PLAYING',
             url: 'https://twitch.tv/sleeplesskyru'
         }
