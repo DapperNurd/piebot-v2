@@ -14,7 +14,7 @@ module.exports = {
     run: async (message, args, client) => {
         if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Examples**\n\`!menu pie\`\n\`!menu all\`").then(function (sentMessage) {
             sentMessage.react("🥧");
-            sentMessage.react("766932300410912780");
+            sentMessage.react("827060748983074856");
             sentMessage.react("🥔");
             sentMessage.react("🍦");
             sentMessage.react("🍕");
