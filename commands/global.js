@@ -34,7 +34,7 @@ module.exports = {
         const globalEmbed = new Discord.MessageEmbed()
         .setColor('#FFFFFF')
         .setTitle(`Global Stats`)
-        .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
+        .setAuthor('Muffinbot Stats', 'https://i.imgur.com/8j0tOnN.png') //Piebot, check help.js for old link
         .setThumbnail('https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49917/globe-showing-americas-emoji-clipart-md.png')
         .addFields(
             //{ name: 'Pie Count', value: globalVar.pieCount, inline: true },
