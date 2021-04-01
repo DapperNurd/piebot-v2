@@ -12,8 +12,9 @@ module.exports = {
     name: 'menu',
     description: "this is a menu command!",
     run: async (message, args, client) => {
-        if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Examples**\n\`!menu pie\`\n\`!menu all\`").then(function (sentMessage) {
-            sentMessage.react("🥧");
+        //if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Examples**\n\`!menu pie\`\n\`!menu all\`").then(function (sentMessage) {
+        if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Examples**\n\`!menu all\`").then(function (sentMessage) {
+            //sentMessage.react("🥧");
             sentMessage.react("827060748983074856");
             sentMessage.react("🥔");
             sentMessage.react("🍦");
