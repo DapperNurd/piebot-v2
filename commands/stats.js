@@ -44,10 +44,10 @@ module.exports = {
                 .setColor('#FFFFFF')
                 .setTitle(`${statUser.username }'s User Stats`)
                 .setDescription('User not in database')
-                .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
+                .setAuthor('Muffinbot Stats', 'https://i.imgur.com/8j0tOnN.png')//Piebot, check help.js for old image link
                 .setThumbnail(statUser.avatarURL({ dynamic: true }))
                 .addFields(
-                    { name: 'Pie Count', value: '0', inline: true },
+                    //{ name: 'Pie Count', value: '0', inline: true },
                     { name: 'Muffin Count', value: '0', inline: true },
                     { name: 'Potato Count', value: '0', inline: true },
                     { name: 'Ice Cream Count', value: '0', inline: true },
@@ -55,8 +55,8 @@ module.exports = {
                     { name: 'Fish Fillet Count', value: '0', inline: true }
                 )
                 .setTimestamp()
-                .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
-                if(bannedUsersVar != null && statUser.id == bannedUsersVar.userID) statsNoDBEmbed.setDescription('This user is banned from Piebot commands.');
+                .setFooter(`MuffinbotV2 by ${client.users.cache.get("189510396569190401").username}`);//Piebot
+                if(bannedUsersVar != null && statUser.id == bannedUsersVar.userID) statsNoDBEmbed.setDescription('This user is banned from Muffinbot commands.');//Piebot
 
                 return message.channel.send(statsNoDBEmbed);
             }
@@ -66,10 +66,10 @@ module.exports = {
         const statsEmbed = new Discord.MessageEmbed()
         .setColor('#FFFFFF')
         .setTitle(`${statUser.username }'s User Stats`)
-        .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
+        .setAuthor('Muffinbot Stats', 'https://i.imgur.com/8j0tOnN.png') //Piebot, check help.js for old link
         .setThumbnail(statUser.avatarURL({ dynamic: true }))
         .addFields(
-            { name: 'Pie Count', value: userUniqueCounts.pieCount, inline: true },
+            //{ name: 'Pie Count', value: userUniqueCounts.pieCount, inline: true },
             { name: 'Muffin Count', value: userUniqueCounts.muffinCount, inline: true },
             { name: 'Potato Count', value: userUniqueCounts.potatoCount, inline: true },
             { name: 'Ice Cream Count', value: userUniqueCounts.iceCreamCount, inline: true },
@@ -77,9 +77,9 @@ module.exports = {
             { name: 'Fish Fillet Count', value: userUniqueCounts.fishCount, inline: true }
         )
         .setTimestamp()
-        .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
+        .setFooter(`MuffinbotV2 by ${client.users.cache.get("189510396569190401").username}`);//Piebot
 
-        if(bannedUsersVar != null && statUser.id == bannedUsersVar.userID) statsEmbed.setDescription('This user is banned from Piebot commands.');
+        if(bannedUsersVar != null && statUser.id == bannedUsersVar.userID) statsEmbed.setDescription('This user is banned from Muffinbot commands.');//Piebot
 
         message.channel.send(statsEmbed);
         

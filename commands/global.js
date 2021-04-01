@@ -37,7 +37,7 @@ module.exports = {
         .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
         .setThumbnail('https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49917/globe-showing-americas-emoji-clipart-md.png')
         .addFields(
-            { name: 'Pie Count', value: globalVar.pieCount, inline: true },
+            //{ name: 'Pie Count', value: globalVar.pieCount, inline: true },
             { name: 'Muffin Count', value: globalVar.muffinCount, inline: true },
             { name: 'Potato Count', value: globalVar.potatoCount, inline: true },
             { name: 'Ice Cream Count', value: globalVar.iceCreamCount, inline: true },
@@ -45,7 +45,7 @@ module.exports = {
             { name: 'Fish Fillet Count', value: globalVar.fishCount, inline: true }
         )
         .setTimestamp()
-        .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
+        .setFooter(`MuffinbotV2 by ${client.users.cache.get("189510396569190401").username}`);
 
         message.channel.send(globalEmbed);
         

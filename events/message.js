@@ -34,10 +34,14 @@ module.exports = async (client, message) => {
             //client.commands.get('ping').run(message, args, client);
             runCommand('ping', false);
         }
-        else if(cmd === 'pie' || cmd === 'pierate') {
+
+
+        /*else if(cmd === 'pie' || cmd === 'pierate') {
             //client.commands.get('pie').run(message, args, client);
             runCommand('pie', false);
-        }
+        }*/
+
+
         else if(cmd === 'muffin') {
             //client.commands.get('muffin').run(message, args, client);
             runCommand('muffin', false);
@@ -94,10 +98,14 @@ module.exports = async (client, message) => {
             //client.commands.get('server').run(message, args, client);
             runCommand('server', false);
         }
-        else if(cmd === 'pi' || cmd === 'π') {
+
+        
+        /*else if(cmd === 'pi' || cmd === 'π') {
             //client.commands.get('pi').run(message, args, client);
             runCommand('pi', false);
-        }
+        }*/
+
+
         else if(cmd === 'wowee' || cmd === 'wowtf') {
             //client.commands.get('wowee').run(message, args, client);
             runCommand('wowee', false);
