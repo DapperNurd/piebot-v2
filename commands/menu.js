@@ -12,9 +12,8 @@ module.exports = {
     name: 'menu',
     description: "this is a menu command!",
     run: async (message, args, client) => {
-        //if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Examples**\n\`!menu pie\`\n\`!menu all\`").then(function (sentMessage) {
-        if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Example**\n\`!menu all\`").then(function (sentMessage) {
-            //sentMessage.react("🥧");
+        if(args.length < 1) message.channel.send("Please specify which menu to view. \n**Examples**\n\`!menu pie\`\n\`!menu all\`").then(function (sentMessage) {
+            sentMessage.react("🥧");
             sentMessage.react("827060748983074856");
             sentMessage.react("🥔");
             sentMessage.react("🍦");
@@ -151,11 +150,11 @@ module.exports = {
 
         if(args[0]) {
             const menu = args[0];
-            /*if(menu == "pie" || menu == "pies") {
+            if(menu == "pie" || menu == "pies") {
                 message.author.send(pieEmbed);
                 message.react("📬");
             }
-            else */if(menu == "muffin" || menu == "muffin") {
+            else if(menu == "muffin" || menu == "muffin") {
                 message.author.send(muffinEmbed);
                 message.react("📬");
             }
@@ -176,7 +175,7 @@ module.exports = {
                 message.react("📬");
             }
             else if(menu == "all" || menu == "full"|| menu == "total") {
-                //message.author.send(pieEmbed);
+                message.author.send(pieEmbed);
                 message.author.send(muffinEmbed);
                 message.author.send(potatoEmbed);
                 message.author.send(iceCreamEmbed);

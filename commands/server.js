@@ -37,10 +37,10 @@ module.exports = {
         const statsEmbed = new Discord.MessageEmbed()
         .setColor('#ffffff')
         .setTitle(`${message.guild.name} Server Stats`)
-        .setAuthor('Muffinbot Stats', 'https://i.imgur.com/8j0tOnN.png')//Piebot, CHECK HELP.JS FOR ORIGINAL IMAGE LINK (funnily enough, it used the old one i forgot to change)
+        .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png')
         .setThumbnail(message.guild.iconURL())
         .addFields(
-            //{ name: 'Pie Count', value: serverCounts.pieCount, inline: true },
+            { name: 'Pie Count', value: serverCounts.pieCount, inline: true },
             { name: 'Muffin Count', value: serverCounts.muffinCount, inline: true },
             { name: 'Potato Count', value: serverCounts.potatoCount, inline: true },
             { name: 'Ice Cream Count', value: serverCounts.iceCreamCount, inline: true },
@@ -48,7 +48,7 @@ module.exports = {
             { name: 'Fish Fillet Count', value: serverCounts.fishCount, inline: true }
         )
         .setTimestamp()
-        .setFooter(`MuffinbotV2 by ${client.users.cache.get("189510396569190401").username}`);//Muffinbot
+        .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
 
         message.channel.send(statsEmbed);
         

@@ -4,9 +4,9 @@ module.exports = client => {
     client.user.setPresence({
         status: 'online',
         activity: {
-            name: 'Muffin Clicker', //PIE CLICKER
+            name: 'Pie Clicker',
             type: 'PLAYING',
-            url: 'https://twitch.tv/sleeplesskyru'
+            url: 'https://twitch.tv/DapperNurd'
         }
     });
 };

@@ -34,10 +34,10 @@ module.exports = {
         const globalEmbed = new Discord.MessageEmbed()
         .setColor('#FFFFFF')
         .setTitle(`Global Stats`)
-        .setAuthor('Muffinbot Stats', 'https://i.imgur.com/8j0tOnN.png') //Piebot, check help.js for old link
+        .setAuthor('Piebot Stats', 'https://i.imgur.com/GPtkfXN.png') //Piebot, check help.js for old link
         .setThumbnail('https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49917/globe-showing-americas-emoji-clipart-md.png')
         .addFields(
-            //{ name: 'Pie Count', value: globalVar.pieCount, inline: true },
+            { name: 'Pie Count', value: globalVar.pieCount, inline: true },
             { name: 'Muffin Count', value: globalVar.muffinCount, inline: true },
             { name: 'Potato Count', value: globalVar.potatoCount, inline: true },
             { name: 'Ice Cream Count', value: globalVar.iceCreamCount, inline: true },
@@ -45,7 +45,7 @@ module.exports = {
             { name: 'Fish Fillet Count', value: globalVar.fishCount, inline: true }
         )
         .setTimestamp()
-        .setFooter(`MuffinbotV2 by ${client.users.cache.get("189510396569190401").username}`);
+        .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
 
         message.channel.send(globalEmbed);
         
