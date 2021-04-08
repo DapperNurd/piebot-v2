@@ -15,7 +15,7 @@ module.exports = {
             var randomNum = Math.floor(Math.random() * 101);
 
             switch (true) {
-                case (randomNum < 70):
+                case (randomNum < 75):
                     response = yesOrNoResponses[Math.floor(Math.random() * yesOrNoResponses.length)];
                     break;
                 case (randomNum < 90):
