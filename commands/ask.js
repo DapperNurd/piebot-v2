@@ -15,10 +15,10 @@ module.exports = {
             var randomNum = Math.floor(Math.random() * 101);
 
             switch (true) {
-                case (randomNum < 75):
+                case (randomNum < 80):
                     response = yesOrNoResponses[Math.floor(Math.random() * yesOrNoResponses.length)];
                     break;
-                case (randomNum < 90):
+                case (randomNum < 92):
                     response = middleResponses[Math.floor(Math.random() * middleResponses.length)];
                     break;
                 case (randomNum <= 100):
