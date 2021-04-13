@@ -9,10 +9,9 @@ module.exports = {
             return message.channel.send("**Incorrect Format:** Please use the following format: `/sendmsg (channelID) (message)`");
         }
 
-        var sendText = "test";
-        var newString = args;
-        message.channel.send(`Sent ${newString} to channel: " + ${client.channels.cache.get(args[0]).name}`);
+        var sendText = args.shift().join(" ");
+        message.channel.send(`Sent \```${sendText}\``` to channel: **${client.channels.cache.get(args[0]).name}**`);
 
-        client.channels.cache.get(args[0]).send(args);
+        client.channels.cache.get(args[0]).send(sendText);
     }
 }
