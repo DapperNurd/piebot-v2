@@ -13,6 +13,9 @@ module.exports = async (client, message) => {
         }
     });
 
+    const args = message.content.split(/ +/);
+    var tempCmd = args.shift().toLowerCase();
+
     function runCommand(command, bypassBan) {
         if(bypassBan) {
             client.commands.get(command).run(message, args, client);
@@ -24,9 +27,6 @@ module.exports = async (client, message) => {
             }
         }
     }
-
-    const args = message.content.split(/ +/);
-    var tempCmd = args.shift().toLowerCase();
 
     if(tempCmd.startsWith("!") || tempCmd.startsWith(".")|| tempCmd.startsWith("-")) {
         const cmd = tempCmd.substring(1);
