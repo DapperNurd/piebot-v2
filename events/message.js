@@ -113,7 +113,13 @@ module.exports = async (client, message) => {
 
         // ADMIN COMMANDS
 
-        else if(cmd === 'banuser' || cmd === 'userban' || cmd === 'getbanned') {
+        else if(cmd === 'sendmsg' || cmd === 'sendmessage' || cmd === 'messagesend' || cmd === 'msgsend') {
+            if(message.author.id == "189510396569190401") {
+                client.commands.get('sendmsg').run(message, args, client);
+            } else {
+                message.channel.send("🤔")
+            }
+        }else if(cmd === 'banuser' || cmd === 'userban' || cmd === 'getbanned') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('banuser').run(message, args, client);
             } else {
@@ -134,6 +140,7 @@ module.exports = async (client, message) => {
                 message.channel.send("🤔")
             }
         }
+
     } else { // NON PREFIX COMMANDS... I.E. "ok"
         cmd = message.content.toLowerCase();;
         if(cmd === 'ok') {
