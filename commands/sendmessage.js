@@ -13,7 +13,7 @@ module.exports = {
         //    newString += " " + message.content.split(" ")[i];
         //}
 
-        var sendText = args.shift().join(" ");
+        var sendText = args.slice(1).join(" ");
         message.channel.send(`Sent \`\`\`${sendText}\`\`\` to channel: **${client.channels.cache.get(args[0]).name}**`);
 
         client.channels.cache.get(args[0]).send(sendText);
