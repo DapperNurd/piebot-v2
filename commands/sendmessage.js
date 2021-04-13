@@ -11,8 +11,8 @@ module.exports = {
 
         var sendText = "test";
         var newString = args;
-        message.channel.send(`Sent ${newString} to channel: " + ${client.channels.get(args[0]).name}`);
+        message.channel.send(`Sent ${newString} to channel: " + ${client.channels.cache.get(args[0]).name}`);
 
-        client.channels.get(args[0]).send(args);
+        client.channels.cache.get(args[0]).send(args);
     }
 }
