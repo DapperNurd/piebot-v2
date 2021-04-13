@@ -14,7 +14,7 @@ module.exports = {
         //}
 
         var sendText = args.join(" ");
-        message.channel.send(`Sent \`\\``${sendText}\`\`\` to channel: **${client.channels.cache.get(args[0]).name}**`);
+        message.channel.send(`Sent \`\`\`${sendText}\`\`\` to channel: **${client.channels.cache.get(args[0]).name}**`);
 
         client.channels.cache.get(args[0]).send(sendText);
     }
