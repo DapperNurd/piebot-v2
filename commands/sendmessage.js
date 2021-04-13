@@ -9,7 +9,7 @@ module.exports = {
             return message.channel.send("**Incorrect Format:** Please use the following format: `/sendmsg (channelID) (message)`");
         }
 
-        var sendText = "ree";//args.join(" ");
+        var sendText = message.content;
         message.channel.send(`Sent \```${sendText}\``` to channel: **${client.channels.cache.get(args[0]).name}**`);
 
         client.channels.cache.get(args[0]).send(sendText);
