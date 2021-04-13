@@ -13,6 +13,6 @@ module.exports = {
         var newString = args;
         message.channel.send(`Sent ${newString} to channel: " + ${bot.channels.get(sendChannel).name}`);
 
-        bot.channels.get(args[0]).send(args);
+        client.channels.get(args[0]).send(args);
     }
 }
