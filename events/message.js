@@ -58,6 +58,10 @@ module.exports = async (client, message) => {
             //client.commands.get('fish').run(message, args, client);
             runCommand('fish', false);
         }
+        else if(cmd === 'cake'||cmd === 'cupcake'||cmd === 'piecaken') {
+            //client.commands.get('fish').run(message, args, client);
+            runCommand('cake', false);
+        }
         else if(cmd === 'menu') {
             //client.commands.get('menu').run(message, args, client);
             runCommand('menu', false);

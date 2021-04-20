@@ -8,10 +8,10 @@ module.exports = {
         if(args.length < 2) {
             return message.channel.send("**Incorrect Format:** Please use the following format: `/sendmsg (channelID) (message)`");
         }
-        
-        var sendText = args.slice(1).join(" ");
-        message.channel.send(`Sent following text: \`\`\`${sendText}\`\`\` to channel: \`\`\`${client.channels.cache.get(args[0]).name}\`\`\``);
 
+        var sendText = args.slice(1).join(" ");
+        
+        message.channel.send(`Sent following text: \`\`\`${sendText}\`\`\` to channel: \`\`\`${client.channels.cache.get(args[0]).name}\`\`\``);
         client.channels.cache.get(args[0]).send(sendText);
     }
 }
