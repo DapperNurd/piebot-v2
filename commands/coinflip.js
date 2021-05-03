@@ -11,7 +11,7 @@ module.exports = {
             coin = "Tails";
         }
         else if(num == 101) {
-            coin = "oh my god! It landed on it's side";
+            coin = "Oh my god! It landed on it's side!";
         }
         else {
             coin = "Heads";
