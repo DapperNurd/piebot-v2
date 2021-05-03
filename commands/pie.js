@@ -142,7 +142,7 @@ module.exports = {
         } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {
             var sendText = `Here, ${piePerson}! Kim wants you to have a slice of her ${pieAdj} ${newPie}! There have been ${pieCountNum} pies given out on ${message.guild.name}.`
         } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pierate" ) {
-            var sendText = `Arrrgh, ${piePerson}! Kim wants ye to have a slice of 'er ${pieAdj} ${newPie}! There 'ave been ${pieCountNum} pie given out on${the}${message.guild.name}.`
+            var sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountNum} pie given out on${the}${message.guild.name}.`
         }
         message.channel.send(sendText).then(function (botSentMessage) {
 
