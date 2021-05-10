@@ -139,11 +139,17 @@ module.exports = {
         var adjRandom = Math.floor(Math.random() * 100) + 1;
         var muffinAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
+        var phrase = muffinPhrases[Math.floor(Math.random() * muffinPhrases.length)];
+        phrase = phrase.replace('[USER]', muffinPerson);
+        phrase = phrase.replace('[MUFFIN ADJ]', muffinAdj);
+        phrase = phrase.replace('[MUFFIN]', newMuffin);
+
+        var sendText = "wowee";
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        if(sorryRand > 95) {
-            var sendText = `Sorry, ${muffinPerson}, but I couldn't resist. I ate your ${muffinAdj} ${newMuffin}. There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
+        if(sorryRand > 90) {
+            sendText = `Sorry, ${muffinPerson}, but I couldn't resist. I ate your ${muffinAdj} ${newMuffin}. There have been ${muffinCountNum} muffins given out on Twitch.`
         } else {
-            var sendText = `Here, ${muffinPerson}! Kecatas wants you to have a ${muffinAdj} ${newMuffin}! There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
+            sendText = `${phrase} Kec has given out ${muffinCountNum} muffins on Twitch.`
         }
 
         if(newMuffin == "muffin time") {
