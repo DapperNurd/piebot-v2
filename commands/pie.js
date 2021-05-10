@@ -164,14 +164,15 @@ module.exports = {
             }
         }
 
+        var sendText = "wowee";
         if(sorryRand > 90) {
-            var sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountLocal} pies given out on Twitch.`
+            sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountLocal} pies given out on Twitch.`
         } else if(cmd == "pie") {
-            var sendText = `${phrase} There have been ${pieCountLocal} pies given out on Twitch.`
+            sendText = `${phrase} There have been ${pieCountLocal} pies given out on Twitch.`
         } else if(cmd == "pierate" ) {
-            var sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountLocal} pie given out on the Twitch.`
+            sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountLocal} pie given out on the Twitch.`
         }
-        
+
         message.channel.send(sendText).then(function (botSentMessage) {
 
             if(pieCountNum.toString().includes("69")) {
