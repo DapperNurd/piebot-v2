@@ -149,6 +149,12 @@ module.exports = {
             }
         }
 
+        var phrase = pizzaPhrases[Math.floor(Math.random() * pizzaPhrases.length)];
+        phrase = phrase.replace('[USER]', pizzaPerson);
+        phrase = phrase.replace('[PIZZA ADJ]', pizzaAdj);
+        phrase = phrase.replace('[PIZZA]', newPizza);
+        phrase = phrase.replace('[CRUST]', crustType);
+
         var sendText = "woweee";
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
         if(sorryRand > 90) {
