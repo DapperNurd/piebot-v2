@@ -167,9 +167,9 @@ module.exports = {
         var sendText = "wowee";
         if(sorryRand > 90) {
             sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountLocal} pies given out on Twitch.`
-        } else if(cmd == "pie") {
+        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {
             sendText = `${phrase} There have been ${pieCountLocal} pies given out on Twitch.`
-        } else if(cmd == "pierate" ) {
+        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pierate") {
             sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountLocal} pie given out on the Twitch.`
         }
 
