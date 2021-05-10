@@ -157,7 +157,7 @@ module.exports = {
             }
         }
         if(phrase.includes('[S]')) {
-            if(piePerson.toLowerCase().endsWith('s')) {
+            if(piePerson.toString().toLowerCase().endsWith('s')) {
                 phrase = phrase.replace('[S]', "'");
             } else {
                 phrase = phrase.replace('[S]', "'s");
