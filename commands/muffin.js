@@ -17,6 +17,13 @@ const legendaryMuffins = ["Kecatas' 'special' muffin", "muffin time"];
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
 const negAdjectives = ["day-old", "overcooked"];
 
+
+const muffinPhrases = ["Here, [USER]! Kecatas wants you to have one of his [MUFFIN ADJ] [MUFFIN]s!",
+    "[USER], you have stumbled upon Kecatas's stash of [MUFFIN ADJ] [MUFFIN]s. He won't know if you take just one, right?",
+    "From the kitchen you can smell that Kecatas has prepared a batch of [MUFFIN ADJ] [MUFFIN]s. He offers [USER] one. What a good guy!",
+    "Kecatas spent all morning baking a dozen [MUFFIN ADJ] [MUFFIN]s and wants you to try one, [USER]!",
+    "Muffin Master Kecatas is testing a new recipe of [MUFFIN ADJ] [MUFFIN]s and gives you one to try. How does it taste, [USER]?"];
+
 module.exports = {
     name: 'muffin',
     description: "this is a muffin command!",

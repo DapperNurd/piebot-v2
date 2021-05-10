@@ -21,6 +21,13 @@ const legendaryPies = ["creampie", "cow pie", "cutie pie"];
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
 const negAdjectives = ["day-old", "overcooked"];
 
+const piePhrases = ["Here, [USER]! Kim wants you to have a slice of her [PIE ADJ] [PIE]!",
+    "Using artisnal skill and experience, Master Chef Kim has prepared [A] [PIE ADJ] [PIE] for you, [USER]!",
+    "With incredible skill and hand-picked ingredients, Kim has created [A] [PIE ADJ] [PIE] for [USER]!",
+    "[USER], you see [A] [PIE ADJ] [PIE] sitting on the table in Kim's kitchen. You decide to steal it, you sly fox.",
+    "Using her own patented recipe, Kim made a [PIE ADJ] [PIE] just for you, [USER]! Wow, it's delicious!",
+    "[A] [PIE ADJ] [PIE] floats down from the heavens and into [USER][S] hands. You can tell that it was prepared by Kim with love." ];
+
 module.exports = {
     name: 'pie',
     description: "this is a pie command!",
@@ -136,14 +143,35 @@ module.exports = {
         var pieAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        var the = (message.guild.name.toLowerCase().startsWith("the")) ? " " : " the "
-        if(sorryRand > 95) {
-            var sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
-        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {
-            var sendText = `Here, ${piePerson}! Kim wants you to have a slice of her ${pieAdj} ${newPie}! There have been ${pieCountNum} pies given out on ${message.guild.name}.`
-        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pierate" ) {
-            var sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountNum} pie given out on${the}${message.guild.name}.`
+
+        var phrase = piePhrases[Math.floor(Math.random() * piePhrases.length)];
+        phrase = phrase.replace('[USER]', piePerson);
+        phrase = phrase.replace('[PIE ADJ]', pieAdj);
+        phrase = phrase.replace('[PIE]', newPie);
+        if(phrase.includes('[A]')) {
+            var a = (pieAdj.startsWith("a") || pieAdj.startsWith("e") || pieAdj.startsWith("i") || pieAdj.startsWith("o") || pieAdj.startsWith("u")) ? "an" : "a";
+            if(phrase.charAt(0) == "[") {
+                phrase = phrase.replace('[A]', a.charAt(0).toUpperCase() + a.slice(1));
+            } else {
+                phrase = phrase.replace('[A]', a);
+            }
         }
+        if(phrase.includes('[S]')) {
+            if(piePerson.toLowerCase().endsWith('s')) {
+                phrase = phrase.replace('[S]', "'");
+            } else {
+                phrase = phrase.replace('[S]', "'s");
+            }
+        }
+
+        if(sorryRand > 90) {
+            var sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountLocal} pies given out on Twitch.`
+        } else if(cmd == "pie") {
+            var sendText = `${phrase} There have been ${pieCountLocal} pies given out on Twitch.`
+        } else if(cmd == "pierate" ) {
+            var sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountLocal} pie given out on the Twitch.`
+        }
+        
         message.channel.send(sendText).then(function (botSentMessage) {
 
             if(pieCountNum.toString().includes("69")) {

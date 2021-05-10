@@ -19,6 +19,13 @@ const negAdjectives = ["day-old", "overcooked", "frozen"];
 
 const crusts = ["deep dish", "thin crust", "stuffed crust"];
 
+const pizzaPhrases = ["Here, [USER]! ItalianStallion wants you to have a slice of her [PIZZA ADJ] [CRUST][PIZZA] pizza!",
+    "[USER], you enter ItalianStallions pizzaria and order up a slice of [PIZZA ADJ] [CRUST][PIZZA] pizza. Yum!",
+    "ItalianStallion has chosen only the finest ingredients for her [PIZZA ADJ] [CRUST][PIZZA] pizza. She looks around the room and choses [USER] to have the first slice!",
+    "[USER], donning your pizza thief costume, you sneak into ItalianStallions kitchen and make off with her [PIZZA ADJ] [CRUST][PIZZA] pizza. You're a menace!",
+    "The smell of ItalianStallion's [PIZZA ADJ] [CRUST][PIZZA] pizza fills your nose, [USER]. She offers you a slice!"
+    ];
+
 module.exports = {
     name: 'pizza',
     description: "this is a pizza command!",
