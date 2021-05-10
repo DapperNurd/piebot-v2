@@ -148,19 +148,13 @@ module.exports = {
                 crustType = crusts[Math.floor(Math.random() * crusts.length)]+" ";
             }
         }
-        
-        var phrase = pizzaPhrases[Math.floor(Math.random() * pizzaPhrases.length)];
-        phrase = phrase.replace('[USER]', pizzaPerson);
-        phrase = phrase.replace('[PIZZA ADJ]', pizzaAdj);
-        phrase = phrase.replace('[PIZZA]', newPizza);
-        phrase = phrase.replace('[CRUST]', crustType);
 
         var sendText = "woweee";
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
         if(sorryRand > 90) {
-            sendText = `Sorry, ${pizzaPerson}, but I couldn't resist. I ate your ${pizzaAdj} ${crustType}${newPizza} pizza. There have been ${pizzaCountNum} pizzas given out on Twitch.`
+            sendText = `Sorry, ${pizzaPerson}, but I couldn't resist. I ate your ${pizzaAdj} ${crustType}${newPizza} pizza. There have been ${pizzaCountNum} pizzas given out on ${message.guild.name}.`
         } else {
-            sendText = `${phrase} ItalianStallion has given out ${pizzaCountNum} pizzas on Twitch.`
+            sendText = `${phrase} ItalianStallion has given out ${pizzaCountNum} pizzas on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
