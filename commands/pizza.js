@@ -163,8 +163,6 @@ module.exports = {
             sendText = `${phrase} ItalianStallion has given out ${pizzaCountNum} pizzas on Twitch.`
         }
 
-        client.say(channel, sendText);
-
         message.channel.send(sendText).then(function (botSentMessage) {
 
             if(pizzaCountNum.toString().includes("69")) {
