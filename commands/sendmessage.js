@@ -6,7 +6,7 @@ module.exports = {
     description: "this is the send message command!",
     run: async (message, args, client) => {
         if(args.length < 2) {
-            return message.channel.send("**Incorrect Format:** Please use the following format: `/sendmsg (channelID) (message)`");
+            return message.channel.send("**Incorrect Format:** Please use the following format: `!sendmsg (channelID) (message)`");
         }
 
         var sendText = args.slice(1).join(" ");
