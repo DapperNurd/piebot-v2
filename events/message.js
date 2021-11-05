@@ -70,9 +70,13 @@ module.exports = async (client, message) => {
             //client.commands.get('ask').run(message, args, client);
             runCommand('ask', false);
         }
-        else if(cmd === 'anime' || cmd === 'tiddies' || cmd === 'animetiddies') {
+        else if(cmd === 'tiddies' || cmd === 'animetiddies' || cmd === 'animetits' || cmd === 'animetitties' || cmd === 'titties' || cmd === 'tits') {
             //client.commands.get('ask').run(message, args, client);
             runCommand('tiddies', false);
+        }
+        else if(cmd === 'gif' || cmd === 'search' || cmd === 'find' || cmd === 'getme' || cmd === 'gifs' || cmd === 'findme') {
+            //client.commands.get('ask').run(message, args, client);
+            runCommand('gifs', false);
         }
         else if(cmd === 'help' || cmd === 'commands') {
             //client.commands.get('help').run(message, args, client);
