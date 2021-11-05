@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 module.exports = {
-    name: 'gif',
+    name: 'tiddies',
     description: "this is the ask command!",
     run: async (message, args, client) => {
         
