@@ -70,6 +70,10 @@ module.exports = async (client, message) => {
             //client.commands.get('ask').run(message, args, client);
             runCommand('ask', false);
         }
+        else if(cmd === 'anime' || cmd === 'tiddies' || cmd === 'animetiddies') {
+            //client.commands.get('ask').run(message, args, client);
+            runCommand('tiddies', false);
+        }
         else if(cmd === 'help' || cmd === 'commands') {
             //client.commands.get('help').run(message, args, client);
             runCommand('help', false);
