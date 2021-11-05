@@ -5,10 +5,20 @@ module.exports = {
     description: "this is the ask command!",
     run: async (message, args, client) => {
         
-        var url = `https://g.tenor.com/v1/search?q=excited&key=LIVDSRZULELA&limit=8`
-        let response = await fetch(url);
-        let json = await response.json();
+        if(args.length > 0) {
+            var keywords = args.join(" ");
 
-        message.channel.send(json.results[0].url);
+            var url = `https://g.tenor.com/v1/search?q=${keywords}&key=LIVDSRZULELA`
+            let response = await fetch(url);
+            let json = await response.json();
+
+            message.channel.send(json.results[0].url);
+            message.channel.send(message.content);
+            console.log(response);
+        } 
+        else {
+            message.channel.send("What?")
+        }
+
     }
 }
