@@ -17,6 +17,7 @@ module.exports = {
                 const index = Math.floor(Math.random() * json.results.length);
                 message.channel.send(json.results[index].url);
             } catch(e) {
+                console.log(e);
                 message.channel.send("https://tenor.com/view/windows-error-gif-21406993");
             }
             
