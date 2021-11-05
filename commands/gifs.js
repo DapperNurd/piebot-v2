@@ -9,11 +9,17 @@ module.exports = {
             var keywords = args.join(" ");
 
             var url = `https://g.tenor.com/v1/search?q=${keywords}&key=LIVDSRZULELA`
-            let response = await fetch(url);
-            let json = await response.json();
+            try {
+                let response = await fetch(url);
 
-            const index = Math.floor(Math.random() * json.results.length);
-            message.channel.send(json.results[index].url);
+                let json = await response.json();
+
+                const index = Math.floor(Math.random() * json.results.length);
+                message.channel.send(json.results[index].url);
+            } catch(e) {
+                message.channel.send("https://tenor.com/view/windows-error-gif-21406993");
+            }
+            
         } 
         else {
             message.channel.send("What?")
