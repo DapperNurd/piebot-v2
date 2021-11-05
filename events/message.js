@@ -70,7 +70,7 @@ module.exports = async (client, message) => {
             //client.commands.get('ask').run(message, args, client);
             runCommand('ask', false);
         }
-        else if(cmd === 'tiddies' || cmd === 'animetiddies' || cmd === 'animetits' || cmd === 'animetitties' || cmd === 'titties' || cmd === 'tits') {
+        else if(cmd === 'tiddies' || cmd === 'animetiddies' || cmd === 'animetits' || cmd === 'animetitties' || cmd === 'titties' || cmd === 'tits' || cmd === 'tiddie' || cmd === 'tit' || cmd === 'titty' || cmd === 'tiddy' || cmd === 'tittie') {
             //client.commands.get('ask').run(message, args, client);
             runCommand('tiddies', false);
         }
