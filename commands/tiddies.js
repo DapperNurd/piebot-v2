@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 module.exports = {
-    name: 'tiddies',
+    name: 'gif',
     description: "this is the ask command!",
     run: async (message, args, client) => {
         
@@ -12,7 +12,8 @@ module.exports = {
             let response = await fetch(url);
             let json = await response.json();
 
-            message.channel.send(json.results[0].url);
+            const index = Math.floor(Math.random() * json.results.length);
+            message.channel.send(json.results[index].url);
             message.channel.send(message.content);
             console.log(response);
         } 
