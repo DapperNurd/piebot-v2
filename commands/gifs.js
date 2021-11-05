@@ -14,7 +14,6 @@ module.exports = {
 
             const index = Math.floor(Math.random() * json.results.length);
             message.channel.send(json.results[index].url);
-            console.log(response);
         } 
         else {
             message.channel.send("What?")
