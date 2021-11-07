@@ -5,7 +5,7 @@ module.exports = {
     description: "this is the ask command!",
     run: async (message, args, client) => {
     
-        var keywords = "anime tiddies";
+        var keywords = "anime titties";
 
         var url = `https://g.tenor.com/v1/search?q=${keywords}&key=LIVDSRZULELA`
         let response = await fetch(url);
