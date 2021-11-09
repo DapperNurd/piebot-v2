@@ -9,7 +9,11 @@ const guildSchema = mongoose.Schema({
     potatoCount: Number,
     iceCreamCount: Number,
     pizzaCount: Number,
-    fishCount: Number
+    fishCount: Number,
+    cakeCount: Number,
+    cookieCount: Number,
+    pastaCount: Number,
+    sandwichCount: Number
 });
 
 module.exports = mongoose.model('Guild', guildSchema, 'guilds');
