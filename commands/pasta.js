@@ -147,6 +147,7 @@ module.exports = {
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
 
         //var plural = (pasta == "baked potato") ? "a" : "some"
+        var plural = "some"
 
         if(sorryRand > 95) {
             var sendText = `Sorry, ${pastaPerson}, but I couldn't resist. I ate your ${pastaAdj} ${pasta}. There have been ${pastaCountNum} pastas given out on ${message.guild.name}.`
