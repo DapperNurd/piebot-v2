@@ -12,7 +12,7 @@ const uncommonPotatoes = ["loaded potato skins", "potato chips", "roasted potato
 const rarePotatoes = ["potato gnocchi", "potato pancakes", "potato bread", "potato soup"
 ];
 
-const legendaryPotatoes = ["pocket potatoes (courtesy of Boneless)"];
+const legendaryPotatoes = ["pocket potatoes, his very own recipe"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
 const negAdjectives = ["day-old", "overcooked"];
@@ -139,7 +139,7 @@ module.exports = {
         if(sorryRand > 95) {
             var sendText = `Sorry, ${potatoPerson}, but I couldn't resist. I ate your ${potatoAdj} ${potato}. There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${potatoPerson}! Nurd wants you to have ${plural} ${potatoAdj} ${potato}! There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
+            var sendText = `Here, ${potatoPerson}! Boneless wants you to have ${plural} ${potatoAdj} ${potato}! There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
         }
 
         if(message.content.split(" ")[0].toLowerCase().substring(1) == "tater") {
