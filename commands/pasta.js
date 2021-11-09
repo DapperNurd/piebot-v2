@@ -150,9 +150,9 @@ module.exports = {
         var plural = "some"
 
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${pastaPerson}, but I couldn't resist. I ate your ${pastaAdj} ${pasta}. There have been ${pastaCountNum} pastas given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${pastaPerson}, but I couldn't resist. I ate your ${pastaAdj} ${pasta}. There have been ${pastaCountNum} pasta dishes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${pastaPerson}! Nurd wants you to have ${plural} ${pastaAdj} ${pasta}! There have been ${pastaCountNum} pastas given out on ${message.guild.name}.`
+            var sendText = `Here, ${pastaPerson}! Nurd wants you to have ${plural} ${pastaAdj} ${pasta}! There have been ${pastaCountNum} pasta dishes given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
