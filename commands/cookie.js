@@ -3,16 +3,16 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonCookies = ["chocolate chip", "sugar", "oatmeal raisin", "chicken alfredo", "spaghetti with meatballs", "baked ziti", "five cheese ravioli"
+const commonCookies = ["chocolate chip", "sugar", "oatmeal raisin", "snickerdoodle", "double chocolate", "white chocolate macadamia"
 ];
 
-const uncommonCookies = ["molasses", "seafood alfredo", "creamy tomato penne", "chicken rigatoni", "macaroni salad", "beef stroganoff", "stuffed shells"
+const uncommonCookies = ["molasses", "shortbread", "peanut butter", "gingerbread", "toffee", "M&M"
 ];
 
-const rareCookies = ["biscotti", "trennete al pesto", "carbonara", "drunken noodles", "chow mein"
+const rareCookies = ["biscotti", "cookie dough", "fortune", "peanut butter chocolate chip", "macaron"
 ];
 
-const legendaryCookies = ["Kraft blue box", "Chef Boyardee Beef Ravioli"];
+const legendaryCookies = ["double stuff oreo"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
 const negAdjectives = ["day-old", "overcooked"];
@@ -142,22 +142,22 @@ module.exports = {
         }
 
         var adjRandom = Math.floor(Math.random() * 100) + 1;
-        var pastaAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
+        var cookieAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
 
-        //var plural = (pasta == "baked potato") ? "a" : "some"
-        var plural = "some"
+        var plural = (cookie == "cookie dough") ? "some" : "a"
+        if(plural == "a" && cookieAdj == "overcooked") { plural = "an" };
 
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${cookiePerson}, but I couldn't resist. I ate your ${cookieAdj} ${cookie}. There have been ${cookieCountNum} pasta dishes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${cookiePerson}, but I couldn't resist. I ate your ${cookieAdj} ${cookie}. There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${cookiePerson}! Trauma wants you to have ${plural} ${cookieAdj} ${cookie}! There have been ${cookieCountNum} pasta dishes given out on ${message.guild.name}.`
+            var sendText = `Here, ${cookiePerson}! Burn wants you to have ${plural} ${cookieAdj} ${cookie}! There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
 
-            if(pastaCountNum.toString().includes("69")) {
+            if(cookieCountNum.toString().includes("69")) {
                 botSentMessage.react("😏");
             }
 

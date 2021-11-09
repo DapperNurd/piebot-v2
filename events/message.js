@@ -54,6 +54,10 @@ module.exports = async (client, message) => {
             //client.commands.get('icecream').run(message, args, client);
             runCommand('pasta', false);
         }
+        else if(cmd === 'cookie' || cmd === 'cookies') {
+            //client.commands.get('icecream').run(message, args, client);
+            runCommand('cookie', false);
+        }
         else if(cmd === 'pizza') {
             //client.commands.get('pizza').run(message, args, client);
             runCommand('pizza', false);
