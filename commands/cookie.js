@@ -3,30 +3,30 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonPastas = ["spaghetti", "fettucine alfredo", "mac and cheese", "chicken alfredo", "spaghetti with meatballs", "baked ziti", "five cheese ravioli"
+const commonCookies = ["chocolate chip", "sugar", "oatmeal raisin", "chicken alfredo", "spaghetti with meatballs", "baked ziti", "five cheese ravioli"
 ];
 
-const uncommonPastas = ["shrimp alfredo", "seafood alfredo", "creamy tomato penne", "chicken rigatoni", "macaroni salad", "beef stroganoff", "stuffed shells"
+const uncommonCookies = ["molasses", "seafood alfredo", "creamy tomato penne", "chicken rigatoni", "macaroni salad", "beef stroganoff", "stuffed shells"
 ];
 
-const rarePastas = ["lasagna", "trennete al pesto", "carbonara", "drunken noodles", "chow mein"
+const rareCookies = ["biscotti", "trennete al pesto", "carbonara", "drunken noodles", "chow mein"
 ];
 
-const legendaryPastas = ["Kraft blue box", "Chef Boyardee Beef Ravioli"];
+const legendaryCookies = ["Kraft blue box", "Chef Boyardee Beef Ravioli"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
 const negAdjectives = ["day-old", "overcooked"];
 
 module.exports = {
-    name: 'pasta',
-    description: "this is a pasta command!",
-    commonPastas,
-    uncommonPastas,
-    rarePastas,
-    legendaryPastas,
+    name: 'cookie',
+    description: "this is a cookie command!",
+    commonCookies,
+    uncommonCookies,
+    rareCookies,
+    legendaryCookies,
     run: async (message, args, client) => {
 
-        const pastaCountVar = await Guild.findOne({
+        const cookieCountVar = await Guild.findOne({
             guildID: message.guild.id
         }, (err, guild) => { // if the guild was not found in the list, in the rare case that piebot goes to a new server
             if(err) console.error(err);
@@ -84,8 +84,8 @@ module.exports = {
             }
         });
 
-        var userPastaCount = userUniqueCounts.pastaCount;
-        userPastaCount++;
+        var usercookieCount = userUniqueCounts.cookieCount;
+        userCookieCount++;
 
         const globalVar = await GlobalCount.findOne({
             globalID: "global"
@@ -115,30 +115,30 @@ module.exports = {
             }
         });
 
-        var pastaCountNum = pastaCountVar.pastaCount;
-        pastaCountNum++;
+        var cookieCountNum = cookieCountVar.cookieCount;
+        cookieCountNum++;
 
-        var globalPastaCount = globalVar.pastaCount;
-        globalPastaCount++;
+        var globalCookieCount = globalVar.cookieCount;
+        globalCookieCount++;
 
-        var pastaPerson = (args.length > 0) ? args[0] : message.author;
+        var cookiePerson = (args.length > 0) ? args[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
             case (randomNum < 55):
-                pasta = commonPastas[Math.floor(Math.random() * commonPastas.length)];
+                cookie = commonCookies[Math.floor(Math.random() * commonCookies.length)];
                 break;
             case (randomNum < 95):
-                pasta = uncommonPastas[Math.floor(Math.random() * uncommonPastas.length)];
+                cookie = uncommonCookies[Math.floor(Math.random() * uncommonCookies.length)];
                 break;
             case (randomNum < 100):
-                pasta = rarePastas[Math.floor(Math.random() * rarePastas.length)];
+                cookie = rareCookies[Math.floor(Math.random() * rareCookies.length)];
                 break;
             case (randomNum >= 100):
-                pasta = legendaryPastas[Math.floor(Math.random() * legendaryPastas.length)];
+                cookie = legendaryCookies[Math.floor(Math.random() * legendaryCookies.length)];
                 break;
             default:
-                pasta = commonPastas[Math.floor(Math.random() * commonPastas.length)];
+                cookie = commonCookies[Math.floor(Math.random() * commonCookies.length)];
         }
 
         var adjRandom = Math.floor(Math.random() * 100) + 1;
@@ -150,9 +150,9 @@ module.exports = {
         var plural = "some"
 
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${pastaPerson}, but I couldn't resist. I ate your ${pastaAdj} ${pasta}. There have been ${pastaCountNum} pasta dishes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${cookiePerson}, but I couldn't resist. I ate your ${cookieAdj} ${cookie}. There have been ${cookieCountNum} pasta dishes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${pastaPerson}! Nurd wants you to have ${plural} ${pastaAdj} ${pasta}! There have been ${pastaCountNum} pasta dishes given out on ${message.guild.name}.`
+            var sendText = `Here, ${cookiePerson}! Trauma wants you to have ${plural} ${cookieAdj} ${cookie}! There have been ${cookieCountNum} pasta dishes given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
@@ -163,16 +163,16 @@ module.exports = {
 
         });
 
-        await pastaCountVar.updateOne({
-            pastaCount: pastaCountNum
+        await cookieCountVar.updateOne({
+            cookieCount: cookieCountNum
         })
 
         await globalVar.updateOne({
-            pastaCount: globalPastaCount
+            cookieCount: globalCookieCount
         })
 
         await userUniqueCounts.updateOne({
-            pastaCount: userPastaCount
+            cookieCount: userCookieCount
         })
 
     }
