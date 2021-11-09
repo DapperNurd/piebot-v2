@@ -180,13 +180,13 @@ module.exports = {
             if(pieCountNum.toString().includes("69")) {
                 botSentMessage.react("😏");
             }
-            if(newPie == " prickly pear pie") {
+            if(newPie == "prickly pear pie") {
                 botSentMessage.react("🌵");
             }
-            if(newPie == " pecan pie" && message.author.id.toString() == "307350352594862080") {
+            if(newPie == "pecan pie" && message.author.id.toString() == "307350352594862080") {
                 botSentMessage.react("😂");
             }
-            if(newPie == " pecan pie" && (piePerson.toLowerCase() == "kecatas" || piePerson.toLowerCase() == "kec" || piePerson.toLowerCase() == "cactus")) {
+            if(newPie == "pecan pie" && (piePerson.toLowerCase() == "kecatas" || piePerson.toLowerCase() == "kec" || piePerson.toLowerCase() == "cactus")) {
                 botSentMessage.react("😂");
             }
 
