@@ -26,7 +26,7 @@ module.exports = {
     legendaryPastas,
     run: async (message, args, client) => {
 
-        const potatoCountVar = await Guild.findOne({
+        const pastaCountVar = await Guild.findOne({
             guildID: message.guild.id
         }, (err, guild) => { // if the guild was not found in the list, in the rare case that piebot goes to a new server
             if(err) console.error(err);
@@ -115,7 +115,7 @@ module.exports = {
             }
         });
 
-        var pastaCountNum = potatoCountVar.pastaCount;
+        var pastaCountNum = pastaCountVar.pastaCount;
         pastaCountNum++;
 
         var globalPastaCount = globalVar.pastaCount;
@@ -163,7 +163,7 @@ module.exports = {
 
         });
 
-        await potatoCountVar.updateOne({
+        await pastaCountVar.updateOne({
             pastaCount: pastaCountNum
         })
 
