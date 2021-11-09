@@ -12,7 +12,7 @@ const uncommonMuffins = ["chocolate chip muffin", "cornbread muffin", "pumpkin m
 const rareMuffins = ["chocolate chunk muffin", "apple cinnamon muffin", "snickerdoodle muffin"
 ];
 
-const legendaryMuffins = ["Kecatas' 'special' muffin", "drudanae muffin", "muffin time"];
+const legendaryMuffins = [`Kecatas' "special" muffin`, "drudanae muffin", "muffin time"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"]
 const negAdjectives = ["day-old", "overcooked"];
