@@ -199,7 +199,7 @@ module.exports = {
         // SANDWICH MENU
         const totalSandwichCount = sandwichMenu.commonSandwiches.length + sandwichMenu.uncommonSandwiches.length + sandwichMenu.rareSandwiches.length + sandwichMenu.legendarySandwiches.length;
         const sandwichEmbed = new Discord.MessageEmbed()
-        .setColor('#d6b642')
+        .setColor('#d6bf4b')
         .setTitle(`Sandwich Menu`)
         .setDescription(`Number of Sandwiches: ${totalSandwichCount}`)
         .setAuthor(`Global Sandwich Count: ${globalVar.sandwichCount}`)

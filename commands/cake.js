@@ -3,16 +3,16 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonCakes = ["chocolate", "vanilla", "carrot", "birthday", "spice", "coffee", "ice cream"
+const commonCakes = ["chocolate cake", "vanilla cake", "carrot cake", "birthday cake", "spice cake", "coffee cake", "ice cream cake"
 ];
 
-const uncommonCakes = ["red velvet", "strawberry", "coconut", "lemon", "pound", "pumpkin spice", "sponge", "pineapple upside down"
+const uncommonCakes = ["red velvet cake", "strawberry shortcake", "coconut cake", "lemon cake", "pound cake", "pumpkin spice cake", "sponge cake", "pineapple upside down cake"
 ];
 
-const rareCakes = ["cake pop", "dulce de leche", "chocolate lava", "tiramisu", "mexican chocolate"
+const rareCakes = ["cake pop", "dulce de leche cake", "chocolate lava cake", "tiramisu", "mexican chocolate cake"
 ];
 
-const legendaryCakes = ["fruit", "pancake"];
+const legendaryCakes = ["fruitcake", "pancake"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
 const negAdjectives = ["day-old", "flourless", "overcooked"];
@@ -151,21 +151,10 @@ module.exports = {
             plural = "";
         }
 
-        var cakeLabel = " cake";
-        if(cake == "pancake" || cake == "cake pop" || cake == "tiramisu") {
-            cakeLabel = "";
-        } 
-        else if (cake == "strawberry") {
-            cakeLabel = " shortcake";
-        }
-        else if (cake == "fruit") {
-            cakeLabel = "cake";
-        }
-
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${cakePerson}, but I couldn't resist. I ate your${plural} ${cakeAdj} ${cake}${cakeLabel}. There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${cakePerson}, but I couldn't resist. I ate your${plural} ${cakeAdj} ${cake}. There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${cakePerson}! Destronate wants you to have a${plural} ${cakeAdj} ${cake}${cakeLabel}! There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `Here, ${cakePerson}! Destronate wants you to have a${plural} ${cakeAdj} ${cake}! There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {

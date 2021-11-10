@@ -3,16 +3,16 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonSandwiches = ["ham and cheese", "grilled cheese", "BLT", "roast beef", "turkey", "peanut butter and jelly", "bologna"
+const commonSandwiches = ["ham and cheese sandwich", "grilled cheese sandwich", "BLT sandwich", "roast beef sandwich", "turkey sandwich", "peanut butter and jelly sandwich", "bologna sandwich"
 ];
 
-const uncommonSandwiches = ["panini", "club", "reuben", "cuban", "tuna salad", "egg salad", "french dip", "meatball", "peanut butter and honey", "pastrami", "all-american"
+const uncommonSandwiches = ["panini sandwich", "club sandwich", "reuben sandwich", "cuban sandwich", "tuna salad sandwich", "egg salad sandwich", "french dip sandwich", "meatball sub", "peanut butter and honey sandwich", "pastrami sandwich", "all-american sub"
 ];
 
-const rareSandwiches = ["cheeseburger", "philly cheesesteak", "patty melt", "chicken", "ice cream"
+const rareSandwiches = ["cheeseburger", "philly cheesesteak", "patty melt", "chicken sandwich", "ice cream sandwich"
 ];
 
-const legendarySandwiches = ["peanut butter and banana", "hot dog"];
+const legendarySandwiches = ["peanut butter and banana sandwich", "hot dog"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
 const negAdjectives = ["day-old", "dry"];
@@ -149,17 +149,10 @@ module.exports = {
         var plural = "a"
         if(plural == "a" && sandwichAdj == "overcooked") { plural = "an" };
 
-        var sandwichLabel = " sandwich";
-        if(sandwich == "cheeseburger" || sandwich == "philly cheesesteak" || sandwich == "patty melt" || sandwich == "hot dog") {
-            sandwichLabel = "";
-        } else if (sandwich == "meatball") {
-            sandwichLabel = " sub";
-        }
-
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${sandwichPerson}, but I couldn't resist. I ate your ${sandwichAdj} ${sandwich}${sandwichLabel}. There have been ${sandwichCountNum} sandwiches given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${sandwichPerson}, but I couldn't resist. I ate your ${sandwichAdj} ${sandwich}. There have been ${sandwichCountNum} sandwiches given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${sandwichPerson}! Manton wants you to have ${plural} ${sandwichAdj} ${sandwich}${sandwichLabel}! There have been ${sandwichCountNum} sandwiches given out on ${message.guild.name}.`
+            var sendText = `Here, ${sandwichPerson}! Manton wants you to have ${plural} ${sandwichAdj} ${sandwich}! There have been ${sandwichCountNum} sandwiches given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
