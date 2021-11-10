@@ -118,7 +118,7 @@ module.exports = {
         var cakeCountNum = cakeCountVar.cakeCount;
         cakeCountNum++;
 
-        var globalCakeCount = globalVar.CakeCount;
+        var globalCakeCount = globalVar.cakeCount;
         globalCakeCount++;
 
         var cakePerson = (args.length > 0) ? args[0] : message.author;
