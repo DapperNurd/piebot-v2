@@ -52,6 +52,10 @@ module.exports = {
                     { name: 'Potato Count', value: '0', inline: true },
                     { name: 'Ice Cream Count', value: '0', inline: true },
                     { name: 'Pizza Count', value: '0', inline: true },
+                    { name: 'Pasta Count', value: '0', inline: true },
+                    { name: 'Cake Count', value: '0', inline: true },
+                    { name: 'Cookie Count', value: '0', inline: true },
+                    { name: 'Sandwich Count', value: '0', inline: true },
                     { name: 'Fish Fillet Count', value: '0', inline: true }
                 )
                 .setTimestamp()
@@ -74,6 +78,10 @@ module.exports = {
             { name: 'Potato Count', value: userUniqueCounts.potatoCount, inline: true },
             { name: 'Ice Cream Count', value: userUniqueCounts.iceCreamCount, inline: true },
             { name: 'Pizza Count', value: userUniqueCounts.pizzaCount, inline: true },
+            { name: 'Pasta Count', value: userUniqueCounts.pastaCount, inline: true },
+            { name: 'Cake Count', value: userUniqueCounts.cakeCount, inline: true },
+            { name: 'Cookie Count', value: userUniqueCounts.cookieCount, inline: true },
+            { name: 'Sandwich Count', value: userUniqueCounts.sandwichCount, inline: true },
             { name: 'Fish Fillet Count', value: userUniqueCounts.fishCount, inline: true }
         )
         .setTimestamp()

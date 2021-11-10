@@ -20,6 +20,10 @@ module.exports = {
                     potatoCount: 0,
                     iceCreamCount: 0,
                     pizzaCount: 0,
+                    pastaCount: 0,
+                    cakeCount: 0,
+                    cookieCount: 0,
+                    sandwichCount: 0,
                     fishCount: 0
                 });
 
@@ -42,6 +46,10 @@ module.exports = {
             { name: 'Potato Count', value: globalVar.potatoCount, inline: true },
             { name: 'Ice Cream Count', value: globalVar.iceCreamCount, inline: true },
             { name: 'Pizza Count', value: globalVar.pizzaCount, inline: true },
+            { name: 'Pasta Count', value: globalVar.pastaCount, inline: true },
+            { name: 'Cake Count', value: globalVar.cakeCount, inline: true },
+            { name: 'Cookie Count', value: globalVar.cookieCount, inline: true },
+            { name: 'Sandwich Count', value: globalVar.sandwichCount, inline: true },
             { name: 'Fish Fillet Count', value: globalVar.fishCount, inline: true }
         )
         .setTimestamp()

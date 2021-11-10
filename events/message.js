@@ -52,15 +52,15 @@ module.exports = async (client, message) => {
         }
         else if(cmd === 'pasta' || cmd === 'pastas' || cmd === 'noodle' || cmd === 'noodles') {
             //client.commands.get('icecream').run(message, args, client);
-            //runCommand('pasta', false);
+            runCommand('pasta', false);
         }
         else if(cmd === 'cookie' || cmd === 'cookies') {
             //client.commands.get('icecream').run(message, args, client);
-            //runCommand('cookie', false);
+            runCommand('cookie', false);
         }
         else if(cmd === 'sandwich' || cmd === 'sandwiches' || cmd === 'sammich' || cmd === 'sammiches' || cmd === 'sammy' || cmd === 'sammies') {
             //client.commands.get('icecream').run(message, args, client);
-            //runCommand('sandwich', false);
+            runCommand('sandwich', false);
         }
         else if(cmd === 'cake' || cmd === 'cakes') {
             //client.commands.get('icecream').run(message, args, client);
