@@ -6,10 +6,10 @@ const GlobalCount = require('../models/globalCount');
 const commonSandwiches = ["ham and cheese", "grilled cheese", "BLT", "roast beef", "turkey", "peanut butter and jelly", "bologna"
 ];
 
-const uncommonSandwiches = ["panini", "club", "reuben", "cuban", "tuna salad", "egg salad", "french dip", "meatball", "peanut butter and honey", "pastrami"
+const uncommonSandwiches = ["panini", "club", "reuben", "cuban", "tuna salad", "egg salad", "french dip", "meatball", "peanut butter and honey", "pastrami", "all-american"
 ];
 
-const rareSandwiches = ["cheeseburger", "philly cheesesteak", "patty melt", "chicken"
+const rareSandwiches = ["cheeseburger", "philly cheesesteak", "patty melt", "chicken", "ice cream"
 ];
 
 const legendarySandwiches = ["peanut butter and banana", "hot dog"];

@@ -38,11 +38,11 @@ module.exports = async (client, message) => {
             //client.commands.get('pie').run(message, args, client);
             runCommand('pie', false);
         }
-        else if(cmd === 'muffin') {
+        else if(cmd === 'muffin' || cmd === 'muffins' || cmd === 'cupcake') {
             //client.commands.get('muffin').run(message, args, client);
             runCommand('muffin', false);
         }
-        else if(cmd === 'potato' || cmd === 'tater') {
+        else if(cmd === 'potato' || cmd === 'tater' || cmd === 'potatoes' || cmd === 'potatos') {
             //client.commands.get('potato').run(message, args, client);
             runCommand('potato', false);
         }
@@ -52,27 +52,27 @@ module.exports = async (client, message) => {
         }
         else if(cmd === 'pasta' || cmd === 'pastas' || cmd === 'noodle' || cmd === 'noodles') {
             //client.commands.get('icecream').run(message, args, client);
-            runCommand('pasta', false);
+            //runCommand('pasta', false);
         }
         else if(cmd === 'cookie' || cmd === 'cookies') {
             //client.commands.get('icecream').run(message, args, client);
-            runCommand('cookie', false);
+            //runCommand('cookie', false);
         }
         else if(cmd === 'sandwich' || cmd === 'sandwiches' || cmd === 'sammich' || cmd === 'sammiches' || cmd === 'sammy' || cmd === 'sammies') {
             //client.commands.get('icecream').run(message, args, client);
-            runCommand('sandwich', false);
+            //runCommand('sandwich', false);
         }
-        else if(cmd === 'pizza') {
+        else if(cmd === 'cake' || cmd === 'cakes') {
+            //client.commands.get('icecream').run(message, args, client);
+            runCommand('cake', false);
+        }
+        else if(cmd === 'pizza' || cmd === "pizzas") {
             //client.commands.get('pizza').run(message, args, client);
             runCommand('pizza', false);
         }
         else if(cmd === 'fish') {
             //client.commands.get('fish').run(message, args, client);
             runCommand('fish', false);
-        }
-        else if(cmd === 'cake'||cmd === 'cupcake'||cmd === 'piecaken') {
-            //client.commands.get('fish').run(message, args, client);
-            runCommand('cake', false);
         }
         else if(cmd === 'menu') {
             //client.commands.get('menu').run(message, args, client);

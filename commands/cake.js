@@ -3,19 +3,19 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonCakes = ["ham and cheese", "grilled cheese", "BLT", "roast beef", "turkey", "peanut butter and jelly", "bologna"
+const commonCakes = ["chocolate", "vanilla", "carrot", "birthday", "spice", "coffee", "ice cream"
 ];
 
-const uncommonCakes = ["panini", "club", "reuben", "cuban", "tuna salad", "egg salad", "french dip", "meatball", "peanut butter and honey", "pastrami"
+const uncommonCakes = ["red velvet", "strawberry", "coconut", "lemon", "pound", "pumpkin spice", "sponge", "pineapple upside down"
 ];
 
-const rareCakes = ["cheeseburger", "philly cheesesteak", "patty melt", "chicken"
+const rareCakes = ["cake pop", "dulce de leche", "chocolate lava", "tiramisu", "mexican chocolate"
 ];
 
-const legendaryCakes = ["peanut butter and banana", "hot dog"];
+const legendaryCakes = ["fruit", "pancake"];
 
 const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
-const negAdjectives = ["day-old", "dry"];
+const negAdjectives = ["day-old", "flourless", "overcooked"];
 
 module.exports = {
     name: 'cake',
@@ -146,20 +146,26 @@ module.exports = {
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
 
-        var plural = "a"
-        if(plural == "a" && cakeAdj == "overcooked") { plural = "an" };
+        var plural = " slice of"
+        if(cake == "pancake" || cake == "cake pop") {
+            plural = "";
+        }
 
-        var cakeLabel = " sandwich";
-        if(cake == "cheeseburger" || cake == "philly cheesesteak" || cake == "patty melt" || cake == "hot dog") {
+        var cakeLabel = " cake";
+        if(cake == "pancake" || cake == "cake pop" || cake == "tiramisu") {
             cakeLabel = "";
-        } else if (cake == "meatball") {
-            cakeLabel = " sub";
+        } 
+        else if (cake == "strawberry") {
+            cakeLabel = " shortcake";
+        }
+        else if (cake == "fruit") {
+            cakeLabel = "cake";
         }
 
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${cakePerson}, but I couldn't resist. I ate your ${cakeAdj} ${cake}${cakeLabel}. There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${cakePerson}, but I couldn't resist. I ate your${plural} ${cakeAdj} ${cake}${cakeLabel}. There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${cakePerson}! Manton wants you to have ${plural} ${cakeAdj} ${cake}${cakeLabel}! There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `Here, ${cakePerson}! Destronate wants you to have a${plural} ${cakeAdj} ${cake}${cakeLabel}! There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
