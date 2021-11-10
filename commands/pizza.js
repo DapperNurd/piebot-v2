@@ -122,7 +122,7 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 55):
+            case (randomNum < 50):
                 newPizza = commonPizzas[Math.floor(Math.random() * commonPizzas.length)];
                 break;
             case (randomNum < 95):

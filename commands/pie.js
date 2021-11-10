@@ -123,7 +123,7 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 55):
+            case (randomNum < 50):
                 newPie = commonPies[Math.floor(Math.random() * commonPies.length)];
                 break;
             case (randomNum < 95):

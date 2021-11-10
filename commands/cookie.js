@@ -3,10 +3,10 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonCookies = ["chocolate chip", "sugar", "oatmeal raisin", "snickerdoodle", "double chocolate", "white chocolate macadamia"
+const commonCookies = ["chocolate chip", "sugar", "oatmeal raisin", "snickerdoodle", "double chocolate chip", "white chocolate macadamia"
 ];
 
-const uncommonCookies = ["molasses", "shortbread", "peanut butter", "gingerbread", "toffee", "M&M"
+const uncommonCookies = ["molasses", "shortbread", "peanut butter", "gingerbread", "toffee chunk", "M&M", "caramel popcorn"
 ];
 
 const rareCookies = ["biscotti", "cookie dough", "fortune", "peanut butter chocolate chip", "macaron"
@@ -125,7 +125,7 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 55):
+            case (randomNum < 50):
                 cookie = commonCookies[Math.floor(Math.random() * commonCookies.length)];
                 break;
             case (randomNum < 95):

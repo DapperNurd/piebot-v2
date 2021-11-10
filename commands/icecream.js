@@ -115,7 +115,7 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 55):
+            case (randomNum < 50):
                 newCream = commonCreams[Math.floor(Math.random() * commonCreams.length)];
                 break;
             case (randomNum < 95):
