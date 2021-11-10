@@ -3,7 +3,7 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonSandwiches = ["ham and cheese", "grilled cheese", "BLT", "roast beef", "turkey", "peanut butter and jelly"
+const commonSandwiches = ["ham and cheese", "grilled cheese", "BLT", "roast beef", "turkey", "peanut butter and jelly", "bologna"
 ];
 
 const uncommonSandwiches = ["panini", "club", "reuben", "cuban", "tuna salad", "egg salad", "french dip", "meatball", "peanut butter and honey", "pastrami"
