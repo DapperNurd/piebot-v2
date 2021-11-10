@@ -6,7 +6,7 @@ const GlobalCount = require('../models/globalCount');
 const commonCookies = ["chocolate chip", "sugar", "oatmeal raisin", "snickerdoodle", "double chocolate chip", "white chocolate macadamia"
 ];
 
-const uncommonCookies = ["molasses", "shortbread", "peanut butter", "gingerbread", "toffee chunk", "M&M", "caramel popcorn"
+const uncommonCookies = ["molasses", "shortbread", "peanut butter", "gingerbread", "toffee chunk", "M&M", "caramel popcorn", "maple pecan", "granola cluster"
 ];
 
 const rareCookies = ["biscotti", "cookie dough", "fortune", "peanut butter chocolate chip", "macaron"
