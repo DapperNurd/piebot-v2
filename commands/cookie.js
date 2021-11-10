@@ -84,7 +84,7 @@ module.exports = {
             }
         });
 
-        var usercookieCount = userUniqueCounts.cookieCount;
+        var userCookieCount = userUniqueCounts.cookieCount;
         userCookieCount++;
 
         const globalVar = await GlobalCount.findOne({
