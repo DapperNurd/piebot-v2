@@ -58,6 +58,10 @@ module.exports = async (client, message) => {
             //client.commands.get('icecream').run(message, args, client);
             runCommand('cookie', false);
         }
+        else if(cmd === 'sandwich' || cmd === 'sandwiches' || cmd === 'sammich' || cmd === 'sammiches' || cmd === 'sammy' || cmd === 'sammies') {
+            //client.commands.get('icecream').run(message, args, client);
+            runCommand('sandwich', false);
+        }
         else if(cmd === 'pizza') {
             //client.commands.get('pizza').run(message, args, client);
             runCommand('pizza', false);
