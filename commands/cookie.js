@@ -149,10 +149,13 @@ module.exports = {
         var plural = (cookie == "cookie dough") ? "some" : "a"
         if(plural == "a" && cookieAdj == "overcooked") { plural = "an" };
 
+        var cookieLabel = " cookie";
+        if(cookie == "double stuff oreo" || cookie == "cookie dough" || cookie == "macaron") { cookieLabel = ""; }
+
         if(sorryRand > 95) {
-            var sendText = `Sorry, ${cookiePerson}, but I couldn't resist. I ate your ${cookieAdj} ${cookie}. There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${cookiePerson}, but I couldn't resist. I ate your ${cookieAdj} ${cookie}${cookieLabel}. There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${cookiePerson}! Burn wants you to have ${plural} ${cookieAdj} ${cookie}! There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
+            var sendText = `Here, ${cookiePerson}! Burn wants you to have ${plural} ${cookieAdj} ${cookie}${cookieLabel}! There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
