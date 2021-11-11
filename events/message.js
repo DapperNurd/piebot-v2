@@ -90,6 +90,10 @@ module.exports = async (client, message) => {
             //client.commands.get('ask').run(message, args, client);
             runCommand('gifs', false);
         }
+        else if(cmd === 'trash') {
+            //client.commands.get('ask').run(message, args, client);
+            runCommand('trash', false);
+        }
         else if(cmd === 'help' || cmd === 'commands') {
             //client.commands.get('help').run(message, args, client);
             runCommand('help', false);
