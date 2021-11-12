@@ -133,7 +133,7 @@ module.exports = {
         var fishAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        if(sorryRand > 96) {
+        if(sorryRand > 92) {
             switch (true) {
                 case (randomNum < 55):
                     newFish2 = commonFish[Math.floor(Math.random() * commonFish.length)];

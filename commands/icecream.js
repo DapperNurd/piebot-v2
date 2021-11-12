@@ -136,7 +136,7 @@ module.exports = {
 
         
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        if(sorryRand > 95) {
+        if(sorryRand > 92) {
             var sendText = `Sorry, ${iceCreamPerson}, but I couldn't resist. I ate your ${iceCreamAdj} ${newCream}. There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${iceCreamPerson}! Meadfetcher wants you to have some ${iceCreamAdj} ${newCream}! There have been ${iceCreamCountNum} ice creams given out on ${message.guild.name}.`

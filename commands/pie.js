@@ -167,7 +167,7 @@ module.exports = {
         var the = (message.guild.name.toLowerCase().startsWith("the")) ? " " : " the "
 
         var sendText = "wowee";
-        if(sorryRand > 90) {
+        if(sorryRand > 92) {
             sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
         } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {
             sendText = `${phrase} There have been ${pieCountNum} pies given out on ${message.guild.name}.`

@@ -149,7 +149,7 @@ module.exports = {
         var plural = "a"
         if(plural == "a" && sandwichAdj == "overcooked") { plural = "an" };
 
-        if(sorryRand > 95) {
+        if(sorryRand > 92) {
             var sendText = `Sorry, ${sandwichPerson}, but I couldn't resist. I ate your ${sandwichAdj} ${sandwich}. There have been ${sandwichCountNum} sandwiches given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${sandwichPerson}! Manton wants you to have ${plural} ${sandwichAdj} ${sandwich}! There have been ${sandwichCountNum} sandwiches given out on ${message.guild.name}.`

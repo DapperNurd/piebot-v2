@@ -157,7 +157,7 @@ module.exports = {
 
         var sendText = "woweee";
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        if(sorryRand > 90) {
+        if(sorryRand > 95) {
             sendText = `Sorry, ${pizzaPerson}, but I couldn't resist. I ate your ${pizzaAdj} ${crustType}${newPizza} pizza. There have been ${pizzaCountNum} pizzas given out on ${message.guild.name}.`
         } else {
             sendText = `${phrase} ItalianStallion has given out ${pizzaCountNum} pizzas on ${message.guild.name}.`

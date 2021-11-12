@@ -136,7 +136,7 @@ module.exports = {
 
         var plural = (potato == "baked potato") ? "a" : "some"
 
-        if(sorryRand > 95) {
+        if(sorryRand > 92) {
             var sendText = `Sorry, ${potatoPerson}, but I couldn't resist. I ate your ${potatoAdj} ${potato}. There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${potatoPerson}! Boneless wants you to have ${plural} ${potatoAdj} ${potato}! There have been ${potatoCountNum} potatoes given out on ${message.guild.name}.`

@@ -149,7 +149,7 @@ module.exports = {
         var plural = (cookie == "cookie dough") ? "some" : "a"
         if(plural == "a" && cookieAdj == "overcooked") { plural = "an" };
 
-        if(sorryRand > 95) {
+        if(sorryRand > 92) {
             var sendText = `Sorry, ${cookiePerson}, but I couldn't resist. I ate your ${cookieAdj} ${cookie}. There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${cookiePerson}! Burnzip wants you to have ${plural} ${cookieAdj} ${cookie}! There have been ${cookieCountNum} cookies given out on ${message.guild.name}.`

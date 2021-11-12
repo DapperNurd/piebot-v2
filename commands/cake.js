@@ -151,7 +151,7 @@ module.exports = {
             plural = "";
         }
 
-        if(sorryRand > 95) {
+        if(sorryRand > 92) {
             var sendText = `Sorry, ${cakePerson}, but I couldn't resist. I ate your${plural} ${cakeAdj} ${cake}. There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
         } else {
             var sendText = `Here, ${cakePerson}! Destronate wants you to have a${plural} ${cakeAdj} ${cake}! There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`

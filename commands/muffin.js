@@ -145,7 +145,7 @@ module.exports = {
 
         var sendText = "wowee";
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
-        if(sorryRand > 90) {
+        if(sorryRand > 92) {
             sendText = `Sorry, ${muffinPerson}, but I couldn't resist. I ate your ${muffinAdj} ${newMuffin}. There have been ${muffinCountNum} muffins given out on ${message.guild.name}.`
         } else {
             sendText = `${phrase} Kec has given out ${muffinCountNum} muffins on ${message.guild.name}.`
