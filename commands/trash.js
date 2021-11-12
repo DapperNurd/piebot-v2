@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const gifLink = "https://tenor.com/view/spider-man3-you-are-trash-brock-your-trash-brock-youre-trash-brock-tobey-maguire-gif-19938212"
 var keywords = "trash";
 
