@@ -21,7 +21,11 @@ module.exports = {
             max = args[1];
         }
 
-        var rolledNum = Math.random() * (max - min) + min;
+        // makes sure they are whole numbers
+        min = Math.ceil(min);
+        max = Math.floor(max);
+
+        var rolledNum = Math.floor(Math.random() * (max - min) + min);
 
         message.channel.send(`${message.author} rolled a ${rolledNum} out of ${max}!`)
     }
