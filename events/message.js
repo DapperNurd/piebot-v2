@@ -110,6 +110,10 @@ module.exports = async (client, message) => {
             //client.commands.get('coinflip').run(message, args, client);
             runCommand('coinflip', false);
         }
+        else if(cmd === 'roll' || cmd === 'dice' || cmd === 'diceroll') {
+            //client.commands.get('coinflip').run(message, args, client);
+            runCommand('roll', false);
+        }
         else if(cmd === 'stats' || cmd === 'info') {
             //client.commands.get('stats').run(message, args, client);
             runCommand('stats', false);
