@@ -32,7 +32,11 @@ module.exports = {
                         muffinCount: 0,
                         potatoCount: 0,
                         iceCreamCount: 0,
-                        pizzaCount: 0
+                        pizzaCount: 0,
+                        cakeCount: 0,
+                        cookieCount: 0,
+                        pastaCount: 0,
+                        sandwichCount: 0
                     });
     
                     newUser.save()

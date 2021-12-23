@@ -46,7 +46,11 @@ module.exports = {
                     potatoCount: 0,
                     iceCreamCount: 0,
                     pizzaCount: 0,
-                    fishCount: 0
+                    fishCount: 0,
+                    cakeCount: 0,
+                    cookieCount: 0,
+                    pastaCount: 0,
+                    sandwichCount: 0
                 });
 
                 newGuild.save()
@@ -71,7 +75,11 @@ module.exports = {
                     potatoCount: 0,
                     iceCreamCount: 0,
                     pizzaCount: 0,
-                    fishCount: 0
+                    fishCount: 0,
+                    cakeCount: 0,
+                    cookieCount: 0,
+                    pastaCount: 0,
+                    sandwichCount: 0
                 });
 
                 newUser.save()
@@ -98,7 +106,11 @@ module.exports = {
                     potatoCount: 0,
                     iceCreamCount: 0,
                     pizzaCount: 0,
-                    fishCount: 0
+                    fishCount: 0,
+                    cakeCount: 0,
+                    cookieCount: 0,
+                    pastaCount: 0,
+                    sandwichCount: 0
                 });
 
                 newGlobal.save()
