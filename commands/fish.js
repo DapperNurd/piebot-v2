@@ -121,7 +121,7 @@ module.exports = {
         var globalFishCount = globalVar.fishCount;
         globalFishCount++;
 
-        var fishPerson = (args.length > 0) ? args[0] : message.author;
+        var fishPerson = (args[index+1]) ? args[index+1] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {

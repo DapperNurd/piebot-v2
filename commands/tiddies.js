@@ -11,8 +11,8 @@ module.exports = {
         let response = await fetch(url);
         let json = await response.json();
 
-        const index = Math.floor(Math.random() * json.results.length);
-        message.channel.send(json.results[index].url);
+        const i = Math.floor(Math.random() * json.results.length);
+        message.channel.send(json.results[i].url);
 
     }
 }
