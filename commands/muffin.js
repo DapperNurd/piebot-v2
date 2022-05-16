@@ -30,7 +30,7 @@ module.exports = {
     uncommonMuffins,
     rareMuffins,
     legendaryMuffins,
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
 
         const muffinCountVar = await Guild.findOne({
             guildID: message.guild.id

@@ -6,7 +6,7 @@ var keywords = "trash";
 module.exports = {
     name: 'trash',
     description: "this is the trash command!",
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
 
         var rand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100;
 

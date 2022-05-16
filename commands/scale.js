@@ -1,7 +1,7 @@
 module.exports = {
     name: 'scale',
     description: "this is the scale command!",
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
         if(args.length < 2) {
             message.channel.send('What? Please phrase the command as "!scale (max) (question)"');
         } else {

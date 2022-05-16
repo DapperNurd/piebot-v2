@@ -24,7 +24,7 @@ module.exports = {
     uncommonPotatoes,
     rarePotatoes,
     legendaryPotatoes,
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
 
         const potatoCountVar = await Guild.findOne({
             guildID: message.guild.id

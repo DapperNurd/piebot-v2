@@ -24,7 +24,7 @@ module.exports = {
     uncommonPastas,
     rarePastas,
     legendaryPastas,
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
 
         const pastaCountVar = await Guild.findOne({
             guildID: message.guild.id

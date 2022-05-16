@@ -3,7 +3,7 @@ require('events').EventEmitter.defaultMaxListeners = 20;
 module.exports = {
     name: 'ok',
     description: 'ok',
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
         var random = Math.floor(Math.random() * (17 - 7)) + 7; // it's weird but basically this makes it so piebot will send a message after a random number of messages that aren't piebot
                                                                // from 7 to 17, though I'm not sure how much the 17 max actually affects it
         message.channel.messages.fetch({ limit: random }).then(messages => {

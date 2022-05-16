@@ -34,7 +34,7 @@ module.exports = {
     rarePizzas,
     legendaryPizzas,
     crusts,
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
 
         const pizzaCountVar = await Guild.findOne({
             guildID: message.guild.id

@@ -5,7 +5,7 @@ const GlobalCount = require('../models/globalCount');
 module.exports = {
     name: 'global',
     description: "this is the global command!",
-    run: async (message, args, client) => {
+    run: async (commandSent, message, args, client) => {
 
         const globalVar = await GlobalCount.findOne({
             globalID: "global"

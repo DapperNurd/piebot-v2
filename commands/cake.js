@@ -24,7 +24,7 @@ module.exports = {
     uncommonCakes,
     rareCakes,
     legendaryCakes,
-    run: async (message, args, client) => {
+    run: async (commandSent, message, args, client) => {
 
         const cakeCountVar = await Guild.findOne({
             guildID: message.guild.id

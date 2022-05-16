@@ -4,7 +4,7 @@ const fakePi = "π"
 module.exports = {
     name: 'pi',
     description: "this is a pi command!",
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
         var rand = Math.floor(Math.random() * 100) + 1;
         const sendPi = (rand > 95) ? fakePi : pi
         message.channel.send(`\`${sendPi}\``).then(m=> m.delete({timeout:180000}));

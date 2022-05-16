@@ -1,7 +1,7 @@
 module.exports = {
     name: 'thonk',
     description: 'thonk',
-    run: async (message, args, client, index) => {
+    run: async (commandSent, message, args, client) => {
         const randomNum = Math.floor(Math.random() * 100) + 1;
         if(randomNum < 5) {
             message.react("😂");

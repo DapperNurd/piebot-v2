@@ -46,12 +46,12 @@ module.exports = async (client, message) => {
      */
     function runCommand(command, bypassBan) {
         if(bypassBan) {
-            client.commands.get(command).run(message, args, client);
+            client.commands.get(command).run(tempCmd, message, args, client);
         } else {
             if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
                 message.channel.send(`${message.author}, you are banned from using commands!`)
             } else {
-                client.commands.get(command).run(message, args, client);
+                client.commands.get(command).run(tempCmd, message, args, client);
             }
         }
     }

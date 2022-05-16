@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 module.exports = {
     name: 'gifs',
     description: "this is the ask command!",
-    run: async (message, args, client) => {
+    run: async (commandSent, message, args, client) => {
         
         if(args.length > 0) {
             var keywords = args.join(" ");

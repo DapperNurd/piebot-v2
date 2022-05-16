@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 module.exports = {
     name: 'tiddies',
     description: "this is the ask command!",
-    run: async (message, args, client) => {
+    run: async (commandSent, message, args, client) => {
     
         var keywords = "anime titties";
 
