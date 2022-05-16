@@ -24,7 +24,7 @@ module.exports = {
     uncommonCookies,
     rareCookies,
     legendaryCookies,
-    run: async (message, args, client, index) => {
+    run: async (message, args, client) => {
 
         const cookieCountVar = await Guild.findOne({
             guildID: message.guild.id
@@ -115,18 +115,13 @@ module.exports = {
             }
         });
 
-        var msgAfterCmd = message.content.substring(index);
-        var argsAfterCmd = msgAfterCmd.split(/ +/);
-
-        argsAfterCmd.shift();
-
         var cookieCountNum = cookieCountVar.cookieCount;
         cookieCountNum++;
 
         var globalCookieCount = globalVar.cookieCount;
         globalCookieCount++;
 
-        var cookiePerson = (argsAfterCmd.length > 0) ? argsAfterCmd[0] : message.author;
+        var cookiePerson = (args.length > 0) ? args[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {

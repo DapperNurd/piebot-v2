@@ -4,12 +4,12 @@ const BannedUser = require('../models/bannedUsers')
 module.exports = {
     name: 'banuser',
     description: "this is the BAN command!",
-    run: async (message, args, client, index) => {
+    run: async (message, args, client) => {
         if(args.length == 0) {
             return message.channel.send("**Error:** Please add an ID after the command. \nExample: **!banuser 12345678910**");
         }
         var banUser = client.users.cache.get(args[0]);
-        if (args[index+1].startsWith('<@') && args[index+1].endsWith('>')) {
+        if (args[0].startsWith('<@') && args[0].endsWith('>')) {
             var id = args[0].slice(2, -1);
     
             if (id.startsWith('!')) {

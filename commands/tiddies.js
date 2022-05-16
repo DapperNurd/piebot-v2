@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 module.exports = {
     name: 'tiddies',
     description: "this is the ask command!",
-    run: async (message, args, client, index) => {
+    run: async (message, args, client) => {
     
         var keywords = "anime titties";
 
@@ -11,8 +11,8 @@ module.exports = {
         let response = await fetch(url);
         let json = await response.json();
 
-        const i = Math.floor(Math.random() * json.results.length);
-        message.channel.send(json.results[i].url);
+        const index = Math.floor(Math.random() * json.results.length);
+        message.channel.send(json.results[index].url);
 
     }
 }

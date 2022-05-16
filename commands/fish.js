@@ -24,7 +24,7 @@ module.exports = {
     uncommonFish,
     rareFish,
     legendaryFish,
-    run: async (message, args, client, index) => {
+    run: async (message, args, client) => {
 
         const fishCountVar = await Guild.findOne({
             guildID: message.guild.id
@@ -115,18 +115,13 @@ module.exports = {
             }
         });
 
-        var msgAfterCmd = message.content.substring(index);
-        var argsAfterCmd = msgAfterCmd.split(/ +/);
-
-        argsAfterCmd.shift();
-
         var fishCountNum = fishCountVar.fishCount;
         fishCountNum++;
 
         var globalFishCount = globalVar.fishCount;
         globalFishCount++;
 
-        var fishPerson = (argsAfterCmd.length > 0) ? argsAfterCmd[0] : message.author;
+        var fishPerson = (args.length > 0) ? args[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {

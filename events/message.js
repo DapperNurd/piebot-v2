@@ -29,6 +29,14 @@ module.exports = async (client, message) => {
         letterCount += args[i].length+1;
     }
 
+    // updates args to only include stuff after the command argument
+    var msgAfterCmd = message.content.substring(index);
+    var argsAfterCmd = msgAfterCmd.split(/ +/);
+
+    argsAfterCmd.shift();
+
+    args = argsAfterCmd;
+
     /**
      * @brief function that checks for banned users and also access the command's appropriate file
      * @param {*} command command file to access

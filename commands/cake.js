@@ -24,7 +24,7 @@ module.exports = {
     uncommonCakes,
     rareCakes,
     legendaryCakes,
-    run: async (message, args, client, index) => {
+    run: async (message, args, client) => {
 
         const cakeCountVar = await Guild.findOne({
             guildID: message.guild.id
@@ -121,7 +121,7 @@ module.exports = {
         var globalCakeCount = globalVar.cakeCount;
         globalCakeCount++;
 
-        var cakePerson = (args[index+1]) ? args[index+1] : message.author;
+        var cakePerson = (args.length > 0) ? args[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {

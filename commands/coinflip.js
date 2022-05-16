@@ -1,7 +1,7 @@
 module.exports = {
     name: 'coinflip',
     description: "this is the coinflip command!",
-    run: async (message, args, client, index) => {
+    run: async (message, args, client) => {
         var num = Math.floor(Math.random() * 101) + 1;
         var coin = "";
         if(num < 50) {
