@@ -19,12 +19,14 @@ module.exports = async (client, message) => {
     var index = -1;
 
     // loops through array of arguments in message and looks for one starting with a command prefix ( ! . - )
+    var letterCount = 0;
     for(let i = 0; i < args.length; i++) {
         if(args[i].startsWith("!") || args[i].startsWith(".") || args[i].startsWith("-")) {
             tempCmd = args[i].toLowerCase();
-            index = i;
+            index = letterCount;
             break;
         }
+        letterCount += args[i].length;
     }
 
     /**
