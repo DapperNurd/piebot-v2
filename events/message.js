@@ -13,7 +13,7 @@ module.exports = async (client, message) => {
         }
     });
 
-    const args = message.content.split(/ +/);
+    var args = message.content.split(/ +/);
     //var tempCmd = args.shift().toLowerCase(); old code
     var tempCmd = "null";
     var index = -1;
