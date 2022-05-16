@@ -5,6 +5,8 @@ module.exports = {
     description: "this is the ask command!",
     run: async (message, args, client, index) => {
         
+        console.log(index);
+
         var msg = message.content.substring(index);
         var newArgs = msg.split(/ +/)
 
