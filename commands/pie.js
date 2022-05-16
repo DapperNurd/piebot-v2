@@ -178,12 +178,12 @@ module.exports = {
 
         var the = (message.guild.name.toLowerCase().startsWith("the")) ? " " : " the "
 
-        var sendText = "wowee";
+        var sendText = "Error with with send message @DapperNurd";
         if(sorryRand > 92) {
             sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
-        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pie") {
+        } else if(args[0].toLowerCase().substring(1) == "pie") {
             sendText = `${phrase} There have been ${pieCountNum} pies given out on ${message.guild.name}.`
-        } else if(message.content.split(" ")[0].toLowerCase().substring(1) == "pierate") {
+        } else if(args[0].toLowerCase().substring(1) == "pierate") {
             sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountNum} pie given out on${the}${message.guild.name}.`
         }
 
