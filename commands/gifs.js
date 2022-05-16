@@ -5,8 +5,14 @@ module.exports = {
     description: "this is the ask command!",
     run: async (message, args, client, index) => {
         
-        if(args.length > 0) {
-            var keywords = args.join(" ");
+        var msg = message.content.substring(index);
+        var newArgs = msg.content.split(/ +/)
+
+        console.log(msg);
+        console.log(newArgs);
+
+        if(newArgs.length > 0) {
+            var keywords = newArgs.join(" ");
 
             var url = `https://g.tenor.com/v1/search?q=${keywords}&key=LIVDSRZULELA`
             try {
