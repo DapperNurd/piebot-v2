@@ -11,6 +11,7 @@ module.exports = {
         var newArgs = msg.split(/ +/)
 
         console.log(msg);
+        newArgs.shift();
         console.log(newArgs);
 
         if(newArgs.length > 0) {
