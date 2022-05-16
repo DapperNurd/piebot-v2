@@ -115,13 +115,18 @@ module.exports = {
             }
         });
 
+        var msgAfterCmd = message.content.substring(index);
+        var argsAfterCmd = msgAfterCmd.split(/ +/);
+
+        argsAfterCmd.shift();
+
         var cookieCountNum = cookieCountVar.cookieCount;
         cookieCountNum++;
 
         var globalCookieCount = globalVar.cookieCount;
         globalCookieCount++;
 
-        var cookiePerson = (args[index+1]) ? args[index+1] : message.author;
+        var cookiePerson = (argsAfterCmd.length > 0) ? argsAfterCmd[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {

@@ -4,18 +4,14 @@ module.exports = {
     name: 'gifs',
     description: "this is the ask command!",
     run: async (message, args, client, index) => {
-        
-        console.log(index);
 
-        var msg = message.content.substring(index);
-        var newArgs = msg.split(/ +/)
+        var msgAfterCmd = message.content.substring(index);
+        var argsAfterCmd = msgAfterCmd.split(/ +/);
 
-        console.log(msg);
-        newArgs.shift();
-        console.log(newArgs);
+        argsAfterCmd.shift();
 
-        if(newArgs.length > 0) {
-            var keywords = newArgs.join(" ");
+        if(argsAfterCmd.length > 0) {
+            var keywords = argsAfterCmd.join(" ");
 
             var url = `https://g.tenor.com/v1/search?q=${keywords}&key=LIVDSRZULELA`
             try {

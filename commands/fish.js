@@ -115,13 +115,18 @@ module.exports = {
             }
         });
 
+        var msgAfterCmd = message.content.substring(index);
+        var argsAfterCmd = msgAfterCmd.split(/ +/);
+
+        argsAfterCmd.shift();
+
         var fishCountNum = fishCountVar.fishCount;
         fishCountNum++;
 
         var globalFishCount = globalVar.fishCount;
         globalFishCount++;
 
-        var fishPerson = (args[index+1]) ? args[index+1] : message.author;
+        var fishPerson = (argsAfterCmd.length > 0) ? argsAfterCmd[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
