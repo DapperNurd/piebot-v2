@@ -14,8 +14,22 @@ module.exports = async (client, message) => {
     });
 
     const args = message.content.split(/ +/);
-    var tempCmd = args.shift().toLowerCase();
+    //var tempCmd = args.shift().toLowerCase(); old code
+    var tempCmd = "null";
 
+    // loops through array of arguments in message and looks for one starting with a command prefix ( ! . - )
+    for(let i = 0; i < args.length; i++) {
+        if(args[i].startsWith("!") || args[i].startsWith(".") || args[i].startsWith("-")) {
+            tempCmd = args[i].toLowerCase();
+            break;
+        }
+    }
+
+    /**
+     * @brief function that checks for banned users and also access the command's appropriate file
+     * @param {*} command command file to access
+     * @param {*} bypassBan boolean whether command is usuable by banned users
+     */
     function runCommand(command, bypassBan) {
         if(bypassBan) {
             client.commands.get(command).run(message, args, client);
@@ -28,7 +42,8 @@ module.exports = async (client, message) => {
         }
     }
 
-    if(tempCmd.startsWith("!") || tempCmd.startsWith(".")|| tempCmd.startsWith("-")) {
+    // if a command argument is found within the message
+    if(tempCmd != "null") {
         const cmd = tempCmd.substring(1);
         if(cmd === 'ping') {
             //client.commands.get('ping').run(message, args, client);
