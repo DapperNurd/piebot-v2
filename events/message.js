@@ -26,7 +26,7 @@ module.exports = async (client, message) => {
             index = letterCount;
             break;
         }
-        letterCount += args[i].length;
+        letterCount += args[i].length+1;
     }
 
     /**
