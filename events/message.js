@@ -37,8 +37,6 @@ module.exports = async (client, message) => {
 
     args = argsAfterCmd;
 
-    console.log(args);
-
     /**
      * @brief function that checks for banned users and also access the command's appropriate file
      * @param {*} command command file to access
