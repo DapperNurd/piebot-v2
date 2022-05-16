@@ -37,6 +37,8 @@ module.exports = async (client, message) => {
 
     args = argsAfterCmd;
 
+    console.log(args);
+
     /**
      * @brief function that checks for banned users and also access the command's appropriate file
      * @param {*} command command file to access
@@ -49,7 +51,7 @@ module.exports = async (client, message) => {
             if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
                 message.channel.send(`${message.author}, you are banned from using commands!`)
             } else {
-                client.commands.get(command).run(message, args, client, index);
+                client.commands.get(command).run(message, args, client);
             }
         }
     }
