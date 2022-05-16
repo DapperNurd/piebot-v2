@@ -6,7 +6,7 @@ module.exports = {
     run: async (message, args, client, index) => {
         
         var msg = message.content.substring(index);
-        var newArgs = msg.content.split(/ +/)
+        var newArgs = msg.split(/ +/)
 
         console.log(msg);
         console.log(newArgs);
