@@ -24,7 +24,7 @@ module.exports = {
     uncommonFish,
     rareFish,
     legendaryFish,
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         const fishCountVar = await Guild.findOne({
             guildID: message.guild.id

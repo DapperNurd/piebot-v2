@@ -24,7 +24,7 @@ module.exports = {
     uncommonCookies,
     rareCookies,
     legendaryCookies,
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         const cookieCountVar = await Guild.findOne({
             guildID: message.guild.id

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'roll',
     description: "this is the dice roll command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         // Math.random() * (max - min) + min
 

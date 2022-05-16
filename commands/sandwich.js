@@ -24,7 +24,7 @@ module.exports = {
     uncommonSandwiches,
     rareSandwiches,
     legendarySandwiches,
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         const sandwichCountVar = await Guild.findOne({
             guildID: message.guild.id

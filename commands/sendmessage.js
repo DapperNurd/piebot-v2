@@ -4,7 +4,7 @@ const BannedUser = require('../models/bannedUsers')
 module.exports = {
     name: 'sendmsg',
     description: "this is the send message command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         if(args.length < 2) {
             return message.channel.send("**Incorrect Format:** Please use the following format: `!sendmsg (channelID) (message)`");
         }

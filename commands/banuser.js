@@ -4,7 +4,7 @@ const BannedUser = require('../models/bannedUsers')
 module.exports = {
     name: 'banuser',
     description: "this is the BAN command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         if(args.length == 0) {
             return message.channel.send("**Error:** Please add an ID after the command. \nExample: **!banuser 12345678910**");
         }

@@ -8,7 +8,7 @@ var oddResponses = ["I'll let you know later.", "You know the answer to that alr
 module.exports = {
     name: 'ask',
     description: "this is the ask command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         if(args.length < 1) {
             message.channel.send("What?")
         } else {

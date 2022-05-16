@@ -4,7 +4,7 @@ const User = require('../models/user');
 module.exports = {
     name: 'manualadd',
     description: "this is a manualadd command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         if(args.length < 1) {
             return message.channel.send("Please type a user after the command. \nExample: **!manualadd @Nurd**").then(m=> m.delete({timeout:10000}));
         } else {

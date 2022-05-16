@@ -5,7 +5,7 @@ const Guild = require('../models/guild');
 module.exports = {
     name: 'server',
     description: "this is a server command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         const serverCounts = await Guild.findOne({
             guildID: message.guild.id

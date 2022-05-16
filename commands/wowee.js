@@ -1,7 +1,7 @@
 module.exports = {
     name: 'wowee',
     description: 'wowee',
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         const randomNum = Math.floor(Math.random() * 100) + 1;
         if(randomNum < 5) {
             message.react("😂");

@@ -27,7 +27,7 @@ module.exports = {
     uncommonCreams,
     rareCreams,
     legendaryCreams,
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         const iceCreamCountVar = await Guild.findOne({
             guildID: message.guild.id

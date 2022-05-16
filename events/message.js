@@ -16,11 +16,13 @@ module.exports = async (client, message) => {
     const args = message.content.split(/ +/);
     //var tempCmd = args.shift().toLowerCase(); old code
     var tempCmd = "null";
+    var index = -1;
 
     // loops through array of arguments in message and looks for one starting with a command prefix ( ! . - )
     for(let i = 0; i < args.length; i++) {
         if(args[i].startsWith("!") || args[i].startsWith(".") || args[i].startsWith("-")) {
             tempCmd = args[i].toLowerCase();
+            index = i;
             break;
         }
     }
@@ -37,7 +39,7 @@ module.exports = async (client, message) => {
             if(bannedUsersVar != null && message.author.id == bannedUsersVar.userID) { // CHECKS IF THE PERSON IS BANNED
                 message.channel.send(`${message.author}, you are banned from using commands!`)
             } else {
-                client.commands.get(command).run(message, args, client);
+                client.commands.get(command).run(message, args, client, index);
             }
         }
     }
@@ -168,7 +170,8 @@ module.exports = async (client, message) => {
             } else {
                 message.channel.send("🤔")
             }
-        }else if(cmd === 'banuser' || cmd === 'userban' || cmd === 'getbanned') {
+        }
+        else if(cmd === 'banuser' || cmd === 'userban' || cmd === 'getbanned') {
             if(message.author.id == "189510396569190401") {
                 client.commands.get('banuser').run(message, args, client);
             } else {

@@ -35,7 +35,7 @@ module.exports = {
     uncommonPies,
     rarePies,
     legendaryPies,
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
 
         const pieCountVar = await Guild.findOne({
             guildID: message.guild.id

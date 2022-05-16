@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 module.exports = {
     name: 'ping',
     description: "this is a ping command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         message.channel.send('Calculating Ping...').then(resultMessage => {
             const ping = resultMessage.createdTimestamp - message.createdTimestamp
 

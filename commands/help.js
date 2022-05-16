@@ -7,7 +7,7 @@ const miscCommands = ["!help, !commands", "!stats, !info", "!global", "!server, 
 module.exports = {
     name: 'help',
     description: "this is a help command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         const helpEmbed = new Discord.MessageEmbed()
         .setDescription("Command Prefixes\n`!` `.` `-`")
         .setColor('#FFFFFF')

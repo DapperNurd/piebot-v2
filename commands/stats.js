@@ -6,7 +6,7 @@ const BannedUser = require('../models/bannedUsers')
 module.exports = {
     name: 'stats',
     description: "this is a stats command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         var statUser = message.author
 
         if(args.length > 0) {

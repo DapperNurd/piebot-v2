@@ -3,7 +3,7 @@ starts = ["Looks like it's... ", "Seems to be... ", "I think it's... ", ""]
 module.exports = {
     name: 'odds',
     description: "this is the odds command!",
-    run: async (message, args, client) => {
+    run: async (message, args, client, index) => {
         if(args.length < 1) {
             message.channel.send('What?');
         } else {
