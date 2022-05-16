@@ -44,7 +44,9 @@ module.exports = async (client, message) => {
 
     // if a command argument is found within the message
     if(tempCmd != "null") {
+        console.log(tempCmd);
         const cmd = tempCmd.substring(1);
+        console.log(cmd);
         if(cmd === 'ping') {
             //client.commands.get('ping').run(message, args, client);
             runCommand('ping', false);
