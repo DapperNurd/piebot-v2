@@ -4,6 +4,6 @@ module.exports = {
     name: 'thonktext',
     description: 'thonk text',
     run: async (commandSent, message, args, client) => {
-        message.react("978871590722891796");
+        message.react("983576552488984586");
     }
 }
