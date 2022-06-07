@@ -44,7 +44,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     pastaCount: 0,
-                    sandwichCount: 0
+                    sandwichCount: 0,
+                    trashCount: 0
                 });
 
                 newGuild.save() // adds the guild to the list
@@ -73,7 +74,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     pastaCount: 0,
-                    sandwichCount: 0
+                    sandwichCount: 0,
+                    trashCount: 0
                 });
 
                 newUser.save() // adds the user to the database with 0's for all numbers
@@ -104,7 +106,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     pastaCount: 0,
-                    sandwichCount: 0
+                    sandwichCount: 0,
+                    trashCount: 0
                 });
 
                 newGlobal.save()

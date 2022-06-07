@@ -13,7 +13,8 @@ const guildSchema = mongoose.Schema({
     cakeCount: Number,
     cookieCount: Number,
     pastaCount: Number,
-    sandwichCount: Number
+    sandwichCount: Number,
+    trashCount: Number
 });
 
 module.exports = mongoose.model('Guild', guildSchema, 'guilds');

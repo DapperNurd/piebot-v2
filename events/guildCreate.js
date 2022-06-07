@@ -11,7 +11,12 @@ module.exports = async(client, guild) => {
         potatoCount: 0,
         iceCreamCount: 0,
         pizzaCount: 0,
-        fishCount: 0
+        fishCount: 0,
+        cakeCount: 0,
+        cookieCount: 0,
+        pastaCount: 0,
+        sandwichCount: 0,
+        trashCount: 0
     });
 
     guild.save()

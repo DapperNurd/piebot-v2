@@ -103,6 +103,10 @@ module.exports = async (client, message) => {
             //client.commands.get('fish').run(message, args, client);
             runCommand('fish', false);
         }
+        else if(cmd === 'trash') {
+            //client.commands.get('ask').run(message, args, client);
+            //runCommand('trash', false);
+        }
         else if(cmd === 'menu') {
             //client.commands.get('menu').run(message, args, client);
             runCommand('menu', false);
@@ -118,10 +122,6 @@ module.exports = async (client, message) => {
         else if(cmd === 'gif' || cmd === 'search' || cmd === 'find' || cmd === 'getme' || cmd === 'gifs' || cmd === 'findme') {
             //client.commands.get('ask').run(message, args, client);
             runCommand('gifs', false);
-        }
-        else if(cmd === 'trash') {
-            //client.commands.get('ask').run(message, args, client);
-            runCommand('trash', false);
         }
         else if(cmd === 'help' || cmd === 'commands') {
             //client.commands.get('help').run(message, args, client);

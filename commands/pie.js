@@ -55,7 +55,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     pastaCount: 0,
-                    sandwichCount: 0
+                    sandwichCount: 0,
+                    trashCount: 0
                 });
 
                 newGuild.save()
@@ -84,7 +85,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     pastaCount: 0,
-                    sandwichCount: 0
+                    sandwichCount: 0,
+                    trashCount: 0
                 });
 
                 newUser.save()
@@ -115,7 +117,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     pastaCount: 0,
-                    sandwichCount: 0
+                    sandwichCount: 0,
+                    trashCount: 0
                 });
 
                 newGlobal.save()

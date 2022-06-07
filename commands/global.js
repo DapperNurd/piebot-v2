@@ -24,7 +24,8 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     sandwichCount: 0,
-                    fishCount: 0
+                    fishCount: 0,
+                    trashCount: 0
                 });
 
                 newGlobal.save()
@@ -50,7 +51,8 @@ module.exports = {
             { name: 'Cake Count', value: globalVar.cakeCount, inline: true },
             { name: 'Cookie Count', value: globalVar.cookieCount, inline: true },
             { name: 'Sandwich Count', value: globalVar.sandwichCount, inline: true },
-            { name: 'Fish Fillet Count', value: globalVar.fishCount, inline: true }
+            { name: 'Fish Fillet Count', value: globalVar.fishCount, inline: true },
+            { name: 'Trash Count', value: globalVar.trashCount, inline: true }
         )
         .setTimestamp()
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
