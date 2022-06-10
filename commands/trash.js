@@ -3,7 +3,9 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-// 14 categories
+// 13 categories
+
+const totalItems = 210;
 
 const food = [];
 const foodAdj = [];
@@ -20,14 +22,11 @@ const electronicsAdj = [];
 const toys = [];
 const toysAdj = [];
 
-const gross = [];
-const grossAdj = [];
-
 const toiletries = [];
 const toiletriesAdj = [];
 
-const illegal = [];
-const illegalAdj = [];
+const wtf = [];
+const wtfAdj = [];
 
 const tools = [];
 const toolsAdj = [];
@@ -45,7 +44,6 @@ const furniture = [];
 const furnitureAdj = [];
 
 const misc = [];
-const miscAdj = [];
 
 // only here for viewing purposes, will delete when done
 const trashPhrases = ["Here, [USER]! Kecatas wants you to have one of his [MUFFIN ADJ] [MUFFIN]s!",
@@ -180,15 +178,15 @@ module.exports = {
 
 
         // generates a number from 1 to 14 to pick one of the 14 categories
-        var randomCategory = Math.floor(Math.random() * 14) + 1;
+        var randomCategory = Math.floor(Math.random() * 13) + 1;
         switch (randomCategory) {
             case (1):
                 newTrash = food[Math.floor(Math.random() * food.length)];
                 trashAdj = foodAdj[Math.floor(Math.random() * foodAdj.length)];
                 break;
             case (2):
-                newTrash = drink[Math.floor(Math.random() * drink.length)];
-                trashAdj = drinkAdj[Math.floor(Math.random() * drinkAdj.length)];
+                newTrash = drinks[Math.floor(Math.random() * drinks.length)];
+                trashAdj = drinksAdj[Math.floor(Math.random() * drinksAdj.length)];
                 break;
             case (3):
                 newTrash = clothing[Math.floor(Math.random() * clothing.length)];
@@ -203,38 +201,34 @@ module.exports = {
                 trashAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
                 break;
             case (6):
-                newTrash = gross[Math.floor(Math.random() * gross.length)];
-                trashAdj = grossAdj[Math.floor(Math.random() * grossAdj.length)];
-                break;
-            case (7):
                 newTrash = toiletries[Math.floor(Math.random() * toiletries.length)];
                 trashAdj = toiletriesAdj[Math.floor(Math.random() * toiletriesAdj.length)];
                 break;
-            case (8):
-                newTrash = illegal[Math.floor(Math.random() * illegal.length)];
-                trashAdj = illegalAdj[Math.floor(Math.random() * illegalAdj.length)];
+            case (7):
+                newTrash = wtf[Math.floor(Math.random() * wtf.length)];
+                trashAdj = wtfAdj[Math.floor(Math.random() * wtfAdj.length)];
                 break;
-            case (9):
+            case (8):
                 newTrash = tools[Math.floor(Math.random() * tools.length)];
                 trashAdj = toolsAdj[Math.floor(Math.random() * toolsAdj.length)];
                 break;
-            case (10):
+            case (9):
                 newTrash = kitchen[Math.floor(Math.random() * kitchen.length)];
                 trashAdj = kitchenAdj[Math.floor(Math.random() * kitchenAdj.length)];
                 break;
-            case (11):
+            case (10):
                 newTrash = collectibles[Math.floor(Math.random() * collectibles.length)];
                 trashAdj = collectiblesAdj[Math.floor(Math.random() * collectiblesAdj.length)];
                 break;
-            case (12):
+            case (11):
                 newTrash = animals[Math.floor(Math.random() * animals.length)];
                 trashAdj = animalsAdj[Math.floor(Math.random() * animalsAdj.length)];
                 break;
-            case (13):
+            case (12):
                 newTrash = furniture[Math.floor(Math.random() * furniture.length)];
                 trashAdj = furnitureAdj[Math.floor(Math.random() * furniture.Adjlength)];
                 break;
-            case (14):
+            case (13):
                 newTrash = misc[Math.floor(Math.random() * misc.length)];
                 // misc is adjective-less
                 trashAdj = "";
