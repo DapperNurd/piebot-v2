@@ -537,8 +537,11 @@ module.exports = {
             newTrash = newTrash.replace('[ADJ]', trashAdj);
         }
         // For certain items, picks "an" or "a" to have proper grammar with the adjective following
+
+        var vowels = ("aeiouAEIOU"); 
+
         if(newTrash.includes("[AN]")) {
-            if(trashAdj.startsWith("a") || trashAdj.startsWith("e") || trashAdj.startsWith("i") || trashAdj.startsWith("o") || trashAdj.startsWith("o")) { 
+            if(vowels.indexOf(trashAdj[0]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
             } else {
                 newTrash = newTrash.replace('[AN]', "a");
