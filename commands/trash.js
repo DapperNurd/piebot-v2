@@ -462,8 +462,8 @@ module.exports = {
         // sets person response to either the user or the first argument, depending on the existance of the argument
         var trashPerson = (args.length > 0) ? args[0] : message.author;
 
-        var newTrash;
-        var trashAdj;
+        var newTrash = "";
+        var trashAdj = "";
 
 
         // FIGURE OUT CHANCE TO HAVE NO ADJECTIVE
@@ -537,7 +537,7 @@ module.exports = {
         }
         // For certain items, picks "an" or "a" to have proper grammar with the adjective following
         if(newTrash.includes("[AN]")) {
-            if(trashAdj.startsWith("a") || trashAdj.startsWith("e") || trashAdj.startsWith("i") || trashAdj.startsWith("o") || trashAdj.startsWith("u")) { 
+            if(trashAdj.startsWith("a") || trashAdj.startsWith("e") || trashAdj.startsWith("i") || trashAdj.startsWith("o") || trashAdj.startsWith("o")) { 
                 newTrash = newTrash.replace('[AN]', "an");
             } else {
                 newTrash = newTrash.replace('[AN]', "a");
@@ -555,7 +555,7 @@ module.exports = {
 
         // Makes the phrase use proper singular/plural words when referring to trash count
         if(phrase.includes("[S]")) {
-            phrase = phrase.replace('[AN]', ((trashCountNum > 1) ? "s" : ""));
+            phrase = phrase.replace('[S]', ((trashCountNum > 1) ? "s" : ""));
         }
 
         message.channel.send(phrase).then(function (botSentMessage) {
