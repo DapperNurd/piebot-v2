@@ -555,7 +555,7 @@ module.exports = {
 
         // Makes the phrase use proper singular/plural words when referring to trash count
         if(phrase.includes("[S]")) {
-            phrase = phrase.replace('[AN]', ((count > 1) ? "s" : ""));
+            phrase = phrase.replace('[AN]', ((trashCountNum > 1) ? "s" : ""));
         }
 
         message.channel.send(phrase).then(function (botSentMessage) {
