@@ -532,7 +532,7 @@ module.exports = {
         }
 
         // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
-        var phrase = (newTrash == "Trash's secret stash") ? specialPhrase : trashPhrases[Math.floor(Math.random() * trashPhrases.length)];
+        var phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
 
         // replaces all the placeholders in the phrase with the proper information
         phrase = phrase.replace('[USER]', trashPerson);
