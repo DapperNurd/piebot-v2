@@ -190,7 +190,7 @@ const toiletriesAdj = [ "brand-new",
 
 // These need to be lacking a space so the empty adjective does not cause a double space (the adjectives also end with a space)
 const wtf = [   "[AN] [ADJ]sawed-off shotgun",
-                "[AN] [ADJ]uncut bank notes",
+                "some [ADJ]uncut bank notes",
                 "[AN] [ADJ]wad of $100 bills",
                 "[AN] [ADJ]elephant tusk",
                 "[AN] [ADJ]bomb",
