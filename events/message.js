@@ -105,7 +105,7 @@ module.exports = async (client, message) => {
         }
         else if(cmd === 'trash') {
             //client.commands.get('ask').run(message, args, client);
-            //runCommand('trash', false);
+            runCommand('trash', false);
         }
         else if(cmd === 'menu') {
             //client.commands.get('menu').run(message, args, client);
