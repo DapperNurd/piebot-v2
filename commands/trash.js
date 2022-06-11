@@ -341,15 +341,15 @@ const misc = [  "Kim's burnt pies",
                 "10 bags of cement"  ];
 
 // list of phrases that piebot can pick from when sending a message
-const phrases = [   "[USER] goes rummaging through the garbage and finds [ITEM]. There have been [COUNT] piece[S] of trash found on [SERVER].",
-                    "[USER] dug through Trash's special dumpster and found [item]. They should probably pay for that... There have been [COUNT] piece[S] of trash found on [SERVER]. ",
-                    "Trashed caught [USER] sifting through his dumpster. They managed to sneak away with [ITEM] without getting caught. There have been [COUNT] piece[S] of trash found on [SERVER]. ",
-                    "[USER] accidentally knocked over a trash can and [ITEM] fell out. There have been [COUNT] piece[S] of trash found on [SERVER]. ",
-                    "Trashed has graced [USER] with [ITEM] from his personal bin. There have been [COUNT] piece[S] of trash found on [SERVER]. ",
-                    "Uh, oh... [USER] was caught digging in a dumpster by the Police. They had [ITEM] removed from their person. There have been [COUNT] piece[S] of trash found on [SERVER].  ",
-                    "It's trash day, and [USER] notices [ITEM] fall out of their neighbor's garbage as the truck picks it up. There have been [COUNT] piece[S] of trash found on [SERVER].",
-                    "In frustration, [USER] kicked over a trash bin and found [ITEM] as debris spewed everywhere! There have been [COUNT] piece[S] of trash found on [SERVER].",
-                    "Walking home, [USER] was thrown into a dumpster by some thugs. Before crawling out they found [ITEM]. Their wallet may have been stolen but at least they take home a prize! There have been [COUNT] piece[S] of trash found on [SERVER]."   ];
+const phrases = [   "[USER] goes rummaging through the garbage and finds [ITEM]. There have been [COUNT] pieces of trash found on [SERVER].",
+                    "[USER] dug through Trash's special dumpster and found [item]. They should probably pay for that... There have been [COUNT] pieces of trash found on [SERVER]. ",
+                    "Trashed caught [USER] sifting through his dumpster. They managed to sneak away with [ITEM] without getting caught. There have been [COUNT] pieces of trash found on [SERVER]. ",
+                    "[USER] accidentally knocked over a trash can and [ITEM] fell out. There have been [COUNT] pieces of trash found on [SERVER]. ",
+                    "Trashed has graced [USER] with [ITEM] from his personal bin. There have been [COUNT] pieces of trash found on [SERVER]. ",
+                    "Uh, oh... [USER] was caught digging in a dumpster by the Police. They had [ITEM] removed from their person. There have been [COUNT] pieces of trash found on [SERVER].  ",
+                    "It's trash day, and [USER] notices [ITEM] fall out of their neighbor's garbage as the truck picks it up. There have been [COUNT] pieces of trash found on [SERVER].",
+                    "In frustration, [USER] kicked over a trash bin and found [ITEM] as debris spewed everywhere! There have been [COUNT] pieces of trash found on [SERVER].",
+                    "Walking home, [USER] was thrown into a dumpster by some thugs. Before crawling out they found [ITEM]. Their wallet may have been stolen but at least they take home a prize! There have been [COUNT] pieces of trash found on [SERVER]."   ];
 
 const specialPhrase = "[USER] went dumpster diving and found Trash's secret stash! how did they even find it? Trash wont be happy when he finds out. There have been [COUNT] pieces of trash found on [SERVER]. ";
 
@@ -552,11 +552,6 @@ module.exports = {
         phrase = phrase.replace('[ITEM]', newTrash);
         phrase = phrase.replace('[COUNT]', trashCountNum);
         phrase = phrase.replace('[SERVER]', message.guild.name);
-
-        // Makes the phrase use proper singular/plural words when referring to trash count
-        if(phrase.includes("[S]")) {
-            phrase = phrase.replace('[S]', ((trashCountNum > 1) ? "s" : ""));
-        }
 
         message.channel.send(phrase).then(function (botSentMessage) {
 
