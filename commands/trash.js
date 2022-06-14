@@ -530,20 +530,18 @@ module.exports = {
             default:
                 // using toys as the default because it has the most items, but it should never actually be called this way with the way the random generator works
                 newTrash = toys[Math.floor(Math.random() * toys.length)];
-                trashAdj = toys[Math.floor(Math.random() * toys.length)];
+                trashAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
         }
 
         // Adds in the proper adjective if there is an adjective to add
-        if(newTrash.includes("[ADJ]")) {
-            newTrash = newTrash.replace('[ADJ]', trashAdj);
-        }
+        newTrash = newTrash.replace('[ADJ]', trashAdj);
         // For certain items, picks "an" or "a" to have proper grammar with the adjective following
 
         // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
         var phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
 
-        const channel = await client.channels.fetch('369001523453231105');
-        channel.send({content: trashAdj});
+        // const channel = await client.channels.fetch('369001523453231105');
+        // channel.send({content: trashAdj});
         
         var vowels = ("aeiouAEIOU");
         if(newTrash.includes("[AN]")) {
