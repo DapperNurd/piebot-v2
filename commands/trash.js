@@ -339,6 +339,7 @@ const misc = [  "Kim's burnt pies",
                 "themself",
                 "a particle accelerator",
                 "a printed screenshot of a NFT",
+                "the answer to life, universe and everything",
                 "10 bags of cement"  ];
 
 // list of phrases that piebot can pick from when sending a message
