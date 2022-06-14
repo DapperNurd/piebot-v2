@@ -539,11 +539,13 @@ module.exports = {
         }
         // For certain items, picks "an" or "a" to have proper grammar with the adjective following
 
-        var vowels = ("aeiouAEIOU"); 
+        // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
+        var phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
 
         const channel = await client.channels.fetch('369001523453231105');
         channel.send({content: trashAdj});
-
+        
+        var vowels = ("aeiouAEIOU");
         if(newTrash.includes("[AN]")) {
             if(vowels.indexOf(trashAdj[0]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
@@ -551,9 +553,6 @@ module.exports = {
                 newTrash = newTrash.replace('[AN]', "a");
             }
         }
-
-        // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
-        var phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
 
         // replaces all the placeholders in the phrase with the proper information
         phrase = phrase.replace('[USER]', trashPerson);
