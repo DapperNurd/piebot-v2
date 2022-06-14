@@ -540,6 +540,9 @@ module.exports = {
 
         var vowels = ("aeiouAEIOU"); 
 
+        const channel = await client.channels.fetch('369001523453231105');
+        channel.send({content: trashAdj});
+
         if(newTrash.includes("[AN]")) {
             if(vowels.indexOf(trashAdj[0]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
