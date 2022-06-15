@@ -353,7 +353,7 @@ const phrases = [   "[USER] goes rummaging through the garbage and finds [ITEM].
                     "In frustration, [USER] kicked over a trash bin and found [ITEM] as debris spewed everywhere! There have been [COUNT] pieces of trash found on [SERVER].",
                     "Walking home, [USER] was thrown into a dumpster by some thugs. Before crawling out they found [ITEM]. Their wallet may have been stolen but at least they take home a prize! There have been [COUNT] pieces of trash found on [SERVER]."   ];
 
-const specialPhrase = "[USER] went dumpster diving and found Trash's secret stash! How did they even find it? Trash wont be happy when he finds out. There have been [COUNT] pieces of trash found on [SERVER].";
+const specialPhrase = "[USER] went dumpster diving and found [ITEM]! How did they even find it? Trash wont be happy when he finds out. There have been [COUNT] pieces of trash found on [SERVER].";
 
 module.exports = {
     name: 'trash',
@@ -543,8 +543,8 @@ module.exports = {
 
         const channel = await client.channels.fetch('369001523453231105');
         //if(!newTrash) channel.send({content: newTrash});
-        //if(!trashAdj) channel.send({content: trashAdj});
-        //if(!phrase) channel.send({content: phrase});
+        if(typeof trashAdj !== "string") channel.send({content: trashAdj});
+        if(typeof phrase !== "string") channel.send({content: phrase});
 
         
         var vowels = ("aeiouAEIOU");
