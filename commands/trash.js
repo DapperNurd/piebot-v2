@@ -543,8 +543,8 @@ module.exports = {
 
         const channel = await client.channels.fetch('369001523453231105');
         //if(!newTrash) channel.send({content: newTrash});
-        if(typeof trashAdj !== "string") channel.send({content: trashAdj});
-         channel.send({content: phrase});
+        //if(typeof trashAdj !== "string") channel.send({content: trashAdj});
+        //channel.send({content: phrase});
 
         
         var vowels = ("aeiouAEIOU");
