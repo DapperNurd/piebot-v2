@@ -541,7 +541,7 @@ module.exports = {
         var phrase = ((newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
 
         var vowels = ("aeiouAEIOU");
-        if(newTrash.includes("[AN]") && trashAdj != "") {
+        if(newTrash.includes("[AN]") && trashAdj[0]) {
             if(vowels.indexOf(trashAdj[0]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
             } else {
