@@ -539,7 +539,7 @@ module.exports = {
 
         // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
         var phrase = "";
-        phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
+        phrase = ((newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
 
         const channel = await client.channels.fetch('369001523453231105');
         //if(!newTrash) channel.send({content: newTrash});
@@ -569,7 +569,7 @@ module.exports = {
             });
         } else {
             channel.send({content: typeof phrase});
-            channel.send({content: phrase});
+            //channel.send({content: phrase});
         }
 
         await trashCountVar.updateOne({
