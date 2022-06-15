@@ -344,7 +344,7 @@ const misc = [  "Kim's burnt pies",
 
 // list of phrases that piebot can pick from when sending a message
 const phrases = [   "[USER] goes rummaging through the garbage and finds [ITEM]. There have been [COUNT] pieces of trash found on [SERVER].",
-                    "[USER] dug through Trash's special dumpster and found [ITEM]. They should probably pay for that... There have been [COUNT] pieces of trash found on [SERVER].",,
+                    "[USER] dug through Trash's special dumpster and found [ITEM]. They should probably pay for that... There have been [COUNT] pieces of trash found on [SERVER].",
                     "Trashed thought they heard [USER] sifting through his dumpster. They managed to sneak away with [ITEM] without getting caught. There have been [COUNT] pieces of trash found on [SERVER].",
                     "[USER] accidentally knocked over a trash can and [ITEM] fell out. There have been [COUNT] pieces of trash found on [SERVER].",
                     "Trashed has graced [USER] with [ITEM] from his personal bin. There have been [COUNT] pieces of trash found on [SERVER].",
