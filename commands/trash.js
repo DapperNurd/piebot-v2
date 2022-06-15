@@ -541,7 +541,7 @@ module.exports = {
         var phrase = ((newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
 
         const channel = await client.channels.fetch('369001523453231105');
-        channel.send({content: "" == null});
+        channel.send({content: "" == undefined});
 
         var vowels = ("aeiouAEIOU");
         if(newTrash.includes("[AN]")) {
