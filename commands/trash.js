@@ -205,7 +205,7 @@ const wtf = [   "[AN] [ADJ]sawed-off shotgun",
                 "[AN] [ADJ]Mona Lisa",
                 "[AN] [ADJ]time machine",
                 "[AN] [ADJ]copy of Half Life 3"    ];
-const wtfAdj = [ "fake ", "real ", "" ];
+const wtfAdj = [ "fake ", "real ", "[EMPTY]" ];
 
 const tools = [     "[AN] [ADJ] bucket",
                     "[AN] [ADJ] jackhammer",
@@ -341,6 +341,7 @@ const misc = [  "Kim's burnt pies",
                 "a printed screenshot of a NFT",
                 "the answer to life, universe and everything",
                 "10 bags of cement"  ];
+const miscAdj = "[EMPTY]";
 
 // list of phrases that piebot can pick from when sending a message
 const phrases = [   "[USER] goes rummaging through the garbage and finds [ITEM]. There have been [COUNT] pieces of trash found on [SERVER].",
@@ -525,7 +526,7 @@ module.exports = {
             case (13):
                 newTrash = misc[Math.floor(Math.random() * misc.length)];
                 // misc is adjective-less
-                trashAdj = "";
+                trashAdj = miscAdj;
                 break;
             default:
                 // using toys as the default because it has the most items, but it should never actually be called this way with the way the random generator works
@@ -541,12 +542,15 @@ module.exports = {
         var phrase = ((newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
 
         var vowels = ("aeiouAEIOU");
-        if(newTrash.includes("[AN]") && trashAdj[0]) {
+        if(newTrash.includes("[AN]")) {
             if(vowels.indexOf(trashAdj[0]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
             } else {
                 newTrash = newTrash.replace('[AN]', "a");
             }
+        }
+        if(trashAdj == "[EMPTY]") {
+            trashAdj = "";
         }
 
         // replaces all the placeholders in the phrase with the proper information
