@@ -549,7 +549,7 @@ module.exports = {
         
         var vowels = ("aeiouAEIOU");
         if(newTrash.includes("[AN]")) {
-            if(vowels.indexOf(trashAdj[0]) !== -1) { 
+            if(vowels?.indexOf(trashAdj[0]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
             } else {
                 newTrash = newTrash.replace('[AN]', "a");
