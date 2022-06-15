@@ -562,17 +562,15 @@ module.exports = {
             phrase = phrase.replace('[ITEM]', newTrash);
             phrase = phrase.replace('[COUNT]', trashCountNum);
             phrase = phrase.replace('[SERVER]', message.guild.name)
+            message.channel.send(phrase).then(function (botSentMessage) {
+                if(trashCountNum.toString().includes("69")) {
+                    botSentMessage.react("😏");
+                }
+            });
         } else {
             channel.send({content: typeof phrase});
+            channel.send({content: phrase});
         }
-
-        message.channel.send(phrase).then(function (botSentMessage) {
-
-            if(trashCountNum.toString().includes("69")) {
-                botSentMessage.react("😏");
-            }
-
-        });
 
         await trashCountVar.updateOne({
             trashCount: trashCountNum
