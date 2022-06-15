@@ -538,7 +538,8 @@ module.exports = {
         // For certain items, picks "an" or "a" to have proper grammar with the adjective following
 
         // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
-        var phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
+        var phrase = "";
+        phrase = (newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)];
 
         const channel = await client.channels.fetch('369001523453231105');
         if(!newTrash) channel.send({content: newTrash});
