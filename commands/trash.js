@@ -557,7 +557,7 @@ module.exports = {
         }
 
         // replaces all the placeholders in the phrase with the proper information
-        if(typeof phrase !== "string") {
+        if(typeof phrase != "string") {
             phrase = phrase.replace('[USER]', trashPerson);
             phrase = phrase.replace('[ITEM]', newTrash);
             phrase = phrase.replace('[COUNT]', trashCountNum);
