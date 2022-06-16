@@ -465,12 +465,9 @@ module.exports = {
         // sets person response to either the user or the first argument, depending on the existance of the argument
         var trashPerson = (args.length > 0) ? args[0] : message.author;
 
+        // initalizing as empty, probably not necessary
         var newTrash = "";
         var trashAdj = "";
-
-
-        // FIGURE OUT CHANCE TO HAVE NO ADJECTIVE
-
 
         // generates a number from 1 to 13 to pick one of the 14 categories
         var randomCategory = Math.floor(Math.random() * 13) + 1;
@@ -525,7 +522,7 @@ module.exports = {
                 break;
             case (13):
                 newTrash = misc[Math.floor(Math.random() * misc.length)];
-                // misc is adjective-less
+                // misc adjective is [EMPTY] and gets replaced with an empty string, this was done to prevent undefined errors
                 trashAdj = miscAdj;
                 break;
             default:
@@ -534,52 +531,51 @@ module.exports = {
                 trashAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
         }
 
-        // Adds in the proper adjective if there is an adjective to add
+        // Replaces phrase placeholder with chosen adjective
         newTrash = newTrash.replace('[ADJ]', trashAdj);
 
+        // If adjective is [EMPTY], gets replaced with an empty string... was originally done to prevent errors with undefined variables but might not even be needed anymore.
         if(newTrash.includes("[EMPTY]")) {
             newTrash = newTrash.replace("[EMPTY]", "");
         }
 
-        // For certain items, picks "an" or "a" to have proper grammar with the adjective following
-
-        // sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
+        // Sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
         var phrase = ((newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
 
         var vowels = ("aeiouAEIOU");
+        // For certain items, picks "an" or "a" to have proper grammar with the adjective following
         if(newTrash.includes("[AN]")) {
+            // Checks the character two spaces after the closing brackets of [AN] to determine whether or not to use "a" or "an".
             if(vowels.indexOf(newTrash[newTrash.indexOf("]")+2]) !== -1) { 
                 newTrash = newTrash.replace('[AN]', "an");
             } else {
                 newTrash = newTrash.replace('[AN]', "a");
             }
         }
-        
 
-        // replaces all the placeholders in the phrase with the proper information
-        if(typeof phrase === "string") {
-            phrase = phrase.replace('[USER]', trashPerson);
-            phrase = phrase.replace('[ITEM]', newTrash);
-            phrase = phrase.replace('[COUNT]', trashCountNum);
-            phrase = phrase.replace('[SERVER]', message.guild.name)
-            message.channel.send(phrase).then(function (botSentMessage) {
-                if(trashCountNum.toString().includes("69")) {
-                    botSentMessage.react("😏");
-                }
-            });
-        } else {
-            channel.send({content: typeof phrase});
-            //channel.send({content: phrase});
-        }
+        // Replaces all the placeholders in the phrase with the proper information
+        phrase = phrase.replace('[USER]', trashPerson);
+        phrase = phrase.replace('[ITEM]', newTrash);
+        phrase = phrase.replace('[COUNT]', trashCountNum);
+        phrase = phrase.replace('[SERVER]', message.guild.name)
 
+        message.channel.send(phrase).then(function (botSentMessage) {
+            if(trashCountNum.toString().includes("69")) {
+                botSentMessage.react("😏");
+            }
+        });
+
+        // Updates the non-local guild count
         await trashCountVar.updateOne({
             trashCount: trashCountNum
         })
 
+        // Updates the non-local global count
         await globalVar.updateOne({
             trashCount: globalTrashCount
         })
 
+        // Updates the non-local user count
         await userUniqueCounts.updateOne({
             trashCount: userTrashCount
         })
