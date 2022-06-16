@@ -37,7 +37,7 @@ module.exports = {
     legendaryPies,
     run: async (commandSent, message, args, client) => {
 
-        const pieCountVar = await Guild.findOne({
+        const guildCountVar = await Guild.findOne({
             guildID: message.guild.id
         }, (err, guild) => {
             if(err) console.error(err);
@@ -67,7 +67,7 @@ module.exports = {
             }
         });
 
-        const userUniqueCounts = await User.findOne({
+        const usersCountVar = await User.findOne({
             userID: message.author.id
         }, (err, user) => {
             if(err) console.error(err);
@@ -97,10 +97,7 @@ module.exports = {
             }
         });
 
-        var userPieCount = userUniqueCounts.pieCount;
-        userPieCount++;
-
-        const globalVar = await GlobalCount.findOne({
+        const globalCountVar = await GlobalCount.findOne({
             globalID: "global"
         }, (err, guild) => {
             if(err) console.error(err);
@@ -129,50 +126,56 @@ module.exports = {
             }
         });
 
-        var pieCountNum = pieCountVar.pieCount;
-        pieCountNum++;
-        var globalPieCount = globalVar.pieCount;
-        globalPieCount++;
+        var userCount = usersCountVar.pieCount;
+        userCount++;
 
-        var piePerson = (args.length > 0) ? args[0] : message.author;
+        var guildCount = guildCountVar.pieCount;
+        guildCount++;
+
+        var globalCount = globalCountVar.pieCount;
+        globalCount++;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
             case (randomNum < 50):
-                newPie = commonPies[Math.floor(Math.random() * commonPies.length)];
+                newItem = commonPies[Math.floor(Math.random() * commonPies.length)];
                 break;
             case (randomNum < 95):
-                newPie = uncommonPies[Math.floor(Math.random() * uncommonPies.length)];
+                newItem = uncommonPies[Math.floor(Math.random() * uncommonPies.length)];
                 break;
             case (randomNum < 100):
-                newPie = rarePies[Math.floor(Math.random() * rarePies.length)];
+                newItem = rarePies[Math.floor(Math.random() * rarePies.length)];
                 break;
             case (randomNum >= 100):
-                newPie = legendaryPies[Math.floor(Math.random() * legendaryPies.length)];
+                newItem = legendaryPies[Math.floor(Math.random() * legendaryPies.length)];
                 break;
             default:
-                newPie = commonPies[Math.floor(Math.random() * commonPies.length)];
+                newItem = commonPies[Math.floor(Math.random() * commonPies.length)];
         }
 
         var adjRandom = Math.floor(Math.random() * 100) + 1;
-        var pieAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
+        var newAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
 
+        var commandPerson = (args.length > 0) ? args[0] : message.author;
+
         var phrase = piePhrases[Math.floor(Math.random() * piePhrases.length)];
-        phrase = phrase.replace('[USER]', piePerson);
-        phrase = phrase.replace('[PIE ADJ]', pieAdj);
-        phrase = phrase.replace('[PIE]', newPie);
+        phrase = phrase.replace('[USER]', commandPerson);
+        phrase = phrase.replace('[PIE ADJ]', newAdj);
+        phrase = phrase.replace('[PIE]', newItem);
+
         if(phrase.includes('[A]')) {
-            var a = (pieAdj.startsWith("a") || pieAdj.startsWith("e") || pieAdj.startsWith("i") || pieAdj.startsWith("o") || pieAdj.startsWith("u")) ? "an" : "a";
+            var a = (newAdj.startsWith("a") || newAdj.startsWith("e") || newAdj.startsWith("i") || newAdj.startsWith("o") || newAdj.startsWith("u")) ? "an" : "a";
             if(phrase.charAt(0) == "[") {
                 phrase = phrase.replace('[A]', a.charAt(0).toUpperCase() + a.slice(1));
             } else {
                 phrase = phrase.replace('[A]', a);
             }
         }
+        
         if(phrase.includes('[S]')) {
-            if(piePerson.toString().toLowerCase().endsWith('s')) {
+            if(commandPerson.toString().toLowerCase().endsWith('s')) {
                 phrase = phrase.replace('[S]', "'");
             } else {
                 phrase = phrase.replace('[S]', "'s");
@@ -183,40 +186,40 @@ module.exports = {
 
         var sendText = "Error with with send message @DapperNurd";
         if(sorryRand > 92) {
-            sendText = `Sorry, ${piePerson}, but I couldn't resist. I ate your ${pieAdj} ${newPie}. There have been ${pieCountNum} pies given out on ${message.guild.name}.`
+            sendText = `Sorry, ${commandPerson}, but I couldn't resist. I ate your ${newAdj} ${newItem}. There have been ${guildCount} pies given out on ${message.guild.name}.`
         } else if(commandSent.toLowerCase().substring(1) == "pie") {
-            sendText = `${phrase} There have been ${pieCountNum} pies given out on ${message.guild.name}.`
+            sendText = `${phrase} There have been ${guildCount} pies given out on ${message.guild.name}.`
         } else if(commandSent.toLowerCase().substring(1) == "pierate") {
-            sendText = `Arrrgh, ${piePerson}! Captain Moosebeard wants ye to have a slice of 'is ${pieAdj} ${newPie}! There 'ave been ${pieCountNum} pie given out on${the}${message.guild.name}.`
+            sendText = `Arrrgh, ${commandPerson}! Captain Moosebeard wants ye to have a slice of 'is ${newAdj} ${newItem}! There 'ave been ${guildCount} pie given out on${the}${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
 
-            if(pieCountNum.toString().includes("69")) {
+            if(guildCount.toString().includes("69")) {
                 botSentMessage.react("😏");
             }
-            if(newPie == "prickly pear pie") {
+            if(newItem == "prickly pear pie") {
                 botSentMessage.react("🌵");
             }
-            if(newPie == "pecan pie" && message.author.id.toString() == "307350352594862080") {
+            if(newItem == "pecan pie" && message.author.id.toString() == "307350352594862080") {
                 botSentMessage.react("😂");
             }
-            if(newPie == "pecan pie" && (piePerson.toLowerCase() == "kecatas" || piePerson.toLowerCase() == "kec" || piePerson.toLowerCase() == "cactus")) {
+            if(newItem == "pecan pie" && (commandPerson.toLowerCase() == "kecatas" || commandPerson.toLowerCase() == "kec" || commandPerson.toLowerCase() == "cactus")) {
                 botSentMessage.react("😂");
             }
 
         });
 
-        await pieCountVar.updateOne({
-            pieCount: pieCountNum
+        await guildCountVar.updateOne({
+            pieCount: guildCount
         })
 
-        await globalVar.updateOne({
-            pieCount: globalPieCount
+        await globalCountVar.updateOne({
+            pieCount: globalCount
         })
 
-        await userUniqueCounts.updateOne({
-            pieCount: userPieCount
+        await usersCountVar.updateOne({
+            pieCount: userCount
         })
 
     }
