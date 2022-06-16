@@ -7,25 +7,25 @@ const GlobalCount = require('../models/globalCount');
 
 const totalItems = 210;
 
-const food = [  "[AN] [ADJ] apple core",
-                "[AN] [ADJ] banana peel",
-                "[AN] [ADJ] pickle",
-                "15 lbs of [ADJ] cheese",
-                "[AN] [ADJ] pineapple",
-                "[AN] [ADJ] pizza crust",
-                "some [ADJ] chicken bones",
-                "[AN] [ADJ] corn dog",
-                "[AN] [ADJ] hard-boiled egg",
-                "[AN] [ADJ] apple pie",
-                "some [ADJ] cheese curds",
-                "some [ADJ] salami",
-                "some [ADJ] pastromi",
-                "some [ADJ] donut holes",
-                "some [ADJ] anchovies",
-                "[AN] [ADJ] seasonal pie",
-                "a box of [ADJ] chocolates",
-                "[AN] [ADJ] avocado",
-                "a bag of [ADJ] doritos"    ];
+const food = [  "[AN] [newAdj] apple core",
+                "[AN] [newAdj] banana peel",
+                "[AN] [newAdj] pickle",
+                "15 lbs of [newAdj] cheese",
+                "[AN] [newAdj] pineapple",
+                "[AN] [newAdj] pizza crust",
+                "some [newAdj] chicken bones",
+                "[AN] [newAdj] corn dog",
+                "[AN] [newAdj] hard-boiled egg",
+                "[AN] [newAdj] apple pie",
+                "some [newAdj] cheese curds",
+                "some [newAdj] salami",
+                "some [newAdj] pastromi",
+                "some [newAdj] donut holes",
+                "some [newAdj] anchovies",
+                "[AN] [newAdj] seasonal pie",
+                "a box of [newAdj] chocolates",
+                "[AN] [newAdj] avocado",
+                "a bag of [newAdj] doritos"    ];
 const foodAdj = [   "rotten",
                     "fresh",
                     "moldy",
@@ -38,26 +38,26 @@ const foodAdj = [   "rotten",
                     "spoiled",
                     "expired"   ];
 
-const drinks = [    "[AN] [ADJ] gallon of milk",
-                    "[AN] [ADJ] bottle of water",
-                    "a carton of [ADJ] chocolate milk",
-                    "[AN] [ADJ] can of tomato juice",
-                    "[AN] [ADJ] can of beer",
-                    "[AN] [ADJ] capri-sun",
-                    "[AN] [ADJ] carton of apple juice",
-                    "[AN] [ADJ] 5-hour energy",
-                    "[AN] [ADJ] Chug Jug",
-                    "[AN] [ADJ] can of pepsi",
-                    "[AN] [ADJ] can of coca cola",
-                    "[AN] [ADJ] bottle of whiskey",
-                    "[AN] [ADJ] keg of beer",
-                    "[AN] [ADJ] pumpkin spice latte",
-                    "[AN] [ADJ] bottle of Mike's Hard Lemonade",
-                    "[AN] [ADJ] jug of maple syrup",
-                    "[AN] [ADJ] can of Red Bull",
-                    "[AN] [ADJ] can of Dr. Pepper",
-                    "[AN] [ADJ] can of Mountain Dew",
-                    "[AN] [ADJ] bottle of Fireball Whiskey"     ];
+const drinks = [    "[AN] [newAdj] gallon of milk",
+                    "[AN] [newAdj] bottle of water",
+                    "a carton of [newAdj] chocolate milk",
+                    "[AN] [newAdj] can of tomato juice",
+                    "[AN] [newAdj] can of beer",
+                    "[AN] [newAdj] capri-sun",
+                    "[AN] [newAdj] carton of apple juice",
+                    "[AN] [newAdj] 5-hour energy",
+                    "[AN] [newAdj] Chug Jug",
+                    "[AN] [newAdj] can of pepsi",
+                    "[AN] [newAdj] can of coca cola",
+                    "[AN] [newAdj] bottle of whiskey",
+                    "[AN] [newAdj] keg of beer",
+                    "[AN] [newAdj] pumpkin spice latte",
+                    "[AN] [newAdj] bottle of Mike's Hard Lemonade",
+                    "[AN] [newAdj] jug of maple syrup",
+                    "[AN] [newAdj] can of Red Bull",
+                    "[AN] [newAdj] can of Dr. Pepper",
+                    "[AN] [newAdj] can of Mountain Dew",
+                    "[AN] [newAdj] bottle of Fireball Whiskey"     ];
 const drinksAdj = [     "spoiled",
                         "half-drank",
                         "ice cold",
@@ -69,26 +69,26 @@ const drinksAdj = [     "spoiled",
                         "leaking",
                         "expired"     ];
 
-const clothing = [  "[AN] [ADJ] MAGA hat",
-                    "some [ADJ] underwear",
-                    "[AN] [ADJ] Abba t-shirt",
-                    "[AN] [ADJ] thong",
-                    "[AN] [ADJ] XXXL jock strap",
-                    "[AN] [ADJ] pair of crocs",
-                    "[AN] [ADJ] bunny girl outfit",
-                    "[AN] [ADJ] dragon furry suit",
-                    "[AN] [ADJ] pair of socks",
-                    "[AN] [ADJ] fanny pack ",
-                    "[AN] [ADJ] cowboy hat",
-                    "[AN] [ADJ] top hat",
-                    "[AN] [ADJ] bow tie",
-                    "[AN] [ADJ] helicopter hat",
-                    "[AN] [ADJ] umbrella",
-                    "[AN] [ADJ] lingerie",
-                    "[AN] [ADJ] blanket",
-                    "[AN] [ADJ] dog bed",
-                    "[AN] [ADJ] mattress",
-                    "[AN] [ADJ] pillow" ];
+const clothing = [  "[AN] [newAdj] MAGA hat",
+                    "some [newAdj] underwear",
+                    "[AN] [newAdj] Abba t-shirt",
+                    "[AN] [newAdj] thong",
+                    "[AN] [newAdj] XXXL jock strap",
+                    "[AN] [newAdj] pair of crocs",
+                    "[AN] [newAdj] bunny girl outfit",
+                    "[AN] [newAdj] dragon furry suit",
+                    "[AN] [newAdj] pair of socks",
+                    "[AN] [newAdj] fanny pack ",
+                    "[AN] [newAdj] cowboy hat",
+                    "[AN] [newAdj] top hat",
+                    "[AN] [newAdj] bow tie",
+                    "[AN] [newAdj] helicopter hat",
+                    "[AN] [newAdj] umbrella",
+                    "[AN] [newAdj] lingerie",
+                    "[AN] [newAdj] blanket",
+                    "[AN] [newAdj] dog bed",
+                    "[AN] [newAdj] mattress",
+                    "[AN] [newAdj] pillow" ];
 const clothingAdj = [   "ripped",
                         "clean",
                         "new",
@@ -100,24 +100,24 @@ const clothingAdj = [   "ripped",
                         "soaked",
                         "wet"   ];
 
-const electronics = [   "[AN] [ADJ] ipad",
-                        "[AN] [ADJ] game controller",
-                        "[AN] [ADJ] RTX 3080",
-                        "[AN] [ADJ] Morbius blu-ray disc",
-                        "[AN] [ADJ] keyboard",
-                        "[AN] [ADJ] USB-C cable",
-                        "[AN] [ADJ] texas instruments calculator",
-                        "[AN] [ADJ] printer",
-                        "[AN] [ADJ] Ratatouille blu-ray disc",
-                        "[AN] [ADJ] iPhone 4",
-                        "[AN] [ADJ] copy of Windows XP",
-                        "[AN] [ADJ] NES",
-                        "[AN] [ADJ] atari 2600",
-                        "six [ADJ] PS5s",
-                        "[AN] [ADJ] copy of ET: the video game",
-                        "[AN] [ADJ] car",
-                        "[AN] [ADJ] GPS tracker",
-                        "[AN] [ADJ] USB microphone" ];
+const electronics = [   "[AN] [newAdj] ipad",
+                        "[AN] [newAdj] game controller",
+                        "[AN] [newAdj] RTX 3080",
+                        "[AN] [newAdj] Morbius blu-ray disc",
+                        "[AN] [newAdj] keyboard",
+                        "[AN] [newAdj] USB-C cable",
+                        "[AN] [newAdj] texas instruments calculator",
+                        "[AN] [newAdj] printer",
+                        "[AN] [newAdj] Ratatouille blu-ray disc",
+                        "[AN] [newAdj] iPhone 4",
+                        "[AN] [newAdj] copy of Windows XP",
+                        "[AN] [newAdj] NES",
+                        "[AN] [newAdj] atari 2600",
+                        "six [newAdj] PS5s",
+                        "[AN] [newAdj] copy of ET: the video game",
+                        "[AN] [newAdj] car",
+                        "[AN] [newAdj] GPS tracker",
+                        "[AN] [newAdj] USB microphone" ];
 const electronicsAdj = [    "pristine",
                             "broken",
                             "unopened",
@@ -130,24 +130,24 @@ const electronicsAdj = [    "pristine",
                             "modded",
                             "roughed-up"    ];
 
-const toys = [  "six [ADJ] toy cars",
-                "[AN] [ADJ] LED llama figure",
-                "[AN] [ADJ] bubble blower",
-                "[AN] [ADJ] tricyle",
-                "[AN] [ADJ] yoyo",
-                "[AN] [ADJ] Rubix cube",
-                "[AN] [ADJ] model airplane",
-                "[AN] [ADJ] remote-controlled car",
-                "[AN] [ADJ] super soaker",
-                "[AN] [ADJ] teddy bear",
-                "a random assortment of [ADJ] legos",
-                "[AN] [ADJ] baseball bat",
-                "[AN] [ADJ] football",
-                "[AN] [ADJ] bowling ball",
-                "[AN] [ADJ] bowling pin",
-                "1000 [ADJ] puzzle pieces",
-                "10 [ADJ] puzzle pieces",
-                "[AN] [ADJ] jump rope"  ];
+const toys = [  "six [newAdj] toy cars",
+                "[AN] [newAdj] LED llama figure",
+                "[AN] [newAdj] bubble blower",
+                "[AN] [newAdj] tricyle",
+                "[AN] [newAdj] yoyo",
+                "[AN] [newAdj] Rubix cube",
+                "[AN] [newAdj] model airplane",
+                "[AN] [newAdj] remote-controlled car",
+                "[AN] [newAdj] super soaker",
+                "[AN] [newAdj] teddy bear",
+                "a random assortment of [newAdj] legos",
+                "[AN] [newAdj] baseball bat",
+                "[AN] [newAdj] football",
+                "[AN] [newAdj] bowling ball",
+                "[AN] [newAdj] bowling pin",
+                "1000 [newAdj] puzzle pieces",
+                "10 [newAdj] puzzle pieces",
+                "[AN] [newAdj] jump rope"  ];
 const toysAdj = [   "broken",
                     "heavily-used",
                     "sticky",
@@ -159,24 +159,24 @@ const toysAdj = [   "broken",
                     "pristine",
                     "slimy"     ];
 
-const toiletries = [    "[AN] [ADJ] toilet paper roll",
-                        "[AN] [ADJ] toothbrush",
-                        "some [ADJ] toenail clippers",
-                        "[AN] [ADJ] toilet",
-                        "[AN] [ADJ] hairbrush",
-                        "[AN] [ADJ] comb",
-                        "[AN] [ADJ] hair dryer",
-                        "[AN] [ADJ] toothpaste bottle",
-                        "[AN] [ADJ] bidet",
-                        "[AN] [ADJ] nail file",
-                        "[AN] [ADJ] lint roller",
-                        "[AN] [ADJ] stick of deoderant",
-                        "some [ADJ] dental floss",
-                        "[AN] [ADJ] straight razor",
-                        "[AN] [ADJ] rectal thermometer",
-                        "[AN] [ADJ] toilet brush",
-                        "[AN] [ADJ] COVID test kit",
-                        "[AN] [ADJ] ShamWow"    ];
+const toiletries = [    "[AN] [newAdj] toilet paper roll",
+                        "[AN] [newAdj] toothbrush",
+                        "some [newAdj] toenail clippers",
+                        "[AN] [newAdj] toilet",
+                        "[AN] [newAdj] hairbrush",
+                        "[AN] [newAdj] comb",
+                        "[AN] [newAdj] hair dryer",
+                        "[AN] [newAdj] toothpaste bottle",
+                        "[AN] [newAdj] bidet",
+                        "[AN] [newAdj] nail file",
+                        "[AN] [newAdj] lint roller",
+                        "[AN] [newAdj] stick of deoderant",
+                        "some [newAdj] dental floss",
+                        "[AN] [newAdj] straight razor",
+                        "[AN] [newAdj] rectal thermometer",
+                        "[AN] [newAdj] toilet brush",
+                        "[AN] [newAdj] COVID test kit",
+                        "[AN] [newAdj] ShamWow"    ];
 const toiletriesAdj = [ "brand-new",
                         "unused",
                         "dirty",
@@ -189,97 +189,97 @@ const toiletriesAdj = [ "brand-new",
                         "lightly-used" ];
 
 // These need to be lacking a space so the empty adjective does not cause a double space (the adjectives also end with a space)
-const wtf = [   "[AN] [ADJ]sawed-off shotgun",
-                "some [ADJ]uncut bank notes",
-                "[AN] [ADJ]wad of $100 bills",
-                "[AN] [ADJ]elephant tusk",
-                "[AN] [ADJ]bomb",
-                "[AN] [ADJ]gun",
-                "[AN] [ADJ]bale of cannabis",
-                "[AN] [ADJ]human hair",
-                "[AN] [ADJ]24 carat diamond",
-                "[AN] [ADJ]severed hand",
-                "[AN] [ADJ]severed foot",
-                "[AN] [ADJ]bar of gold",
-                "[AN] [ADJ]Declaration of Independence",
-                "[AN] [ADJ]Mona Lisa",
-                "[AN] [ADJ]time machine",
-                "[AN] [ADJ]copy of Half Life 3"    ];
+const wtf = [   "[AN] [newAdj]sawed-off shotgun",
+                "some [newAdj]uncut bank notes",
+                "[AN] [newAdj]wad of $100 bills",
+                "[AN] [newAdj]elephant tusk",
+                "[AN] [newAdj]bomb",
+                "[AN] [newAdj]gun",
+                "[AN] [newAdj]bale of cannabis",
+                "[AN] [newAdj]human hair",
+                "[AN] [newAdj]24 carat diamond",
+                "[AN] [newAdj]severed hand",
+                "[AN] [newAdj]severed foot",
+                "[AN] [newAdj]bar of gold",
+                "[AN] [newAdj]Declaration of Independence",
+                "[AN] [newAdj]Mona Lisa",
+                "[AN] [newAdj]time machine",
+                "[AN] [newAdj]copy of Half Life 3"    ];
 const wtfAdj = [ "fake ", "real ", "[EMPTY]" ];
 
-const tools = [     "[AN] [ADJ] bucket",
-                    "[AN] [ADJ] jackhammer",
-                    "[AN] [ADJ] hand drill",
-                    "some [ADJ] nails",
-                    "some [ADJ] scissors",
-                    "[AN] [ADJ] picnic table",
-                    "[AN] [ADJ] bottle opener",
-                    "[AN] [ADJ] tool box",
-                    "[AN] [ADJ] nail gun",
-                    "[AN] [ADJ] stapler",
-                    "[AN] [ADJ] sledge hammer",
-                    "[AN] [ADJ] bottle of glue",
-                    "some [ADJ] flex tape",
-                    "[AN] [ADJ] microscope",
-                    "[AN] [ADJ] lockpick",
-                    "[AN] [ADJ] shopping cart"     ];
+const tools = [     "[AN] [newAdj] bucket",
+                    "[AN] [newAdj] jackhammer",
+                    "[AN] [newAdj] hand drill",
+                    "some [newAdj] nails",
+                    "some [newAdj] scissors",
+                    "[AN] [newAdj] picnic table",
+                    "[AN] [newAdj] bottle opener",
+                    "[AN] [newAdj] tool box",
+                    "[AN] [newAdj] nail gun",
+                    "[AN] [newAdj] stapler",
+                    "[AN] [newAdj] sledge hammer",
+                    "[AN] [newAdj] bottle of glue",
+                    "some [newAdj] flex tape",
+                    "[AN] [newAdj] microscope",
+                    "[AN] [newAdj] lockpick",
+                    "[AN] [newAdj] shopping cart"     ];
 const toolsAdj = [ "broken", "advanced", "old", "worn", "factory-new", "dirty" ];
 
-const kitchen = [   "[AN] [ADJ] tubberware container",
-                    "[AN] [ADJ] pot",
-                    "[AN] [ADJ] whole oven",
-                    "[AN] [ADJ] kitchen sink",
-                    "[AN] [ADJ] silverware set",
-                    "[AN] [ADJ] blender",
-                    "[AN] [ADJ] refridgerator",
-                    "[AN] [ADJ] meat cleaver",
-                    "[AN] [ADJ] convection oven",
-                    "[AN] [ADJ] crock pot",
-                    "[AN] [ADJ] spoon",
-                    "[AN] [ADJ] pressure cooker",
-                    "[AN] [ADJ] glass jar",
-                    "[AN] [ADJ] porcelain plate",
-                    "[AN] [ADJ] tea cup",
-                    "[AN] [ADJ] tea pot",
-                    "[AN] [ADJ] spork",
-                    "[AN] [ADJ] deep freezer",
-                    "[AN] [ADJ] deep fryer"   ];
+const kitchen = [   "[AN] [newAdj] tubberware container",
+                    "[AN] [newAdj] pot",
+                    "[AN] [newAdj] whole oven",
+                    "[AN] [newAdj] kitchen sink",
+                    "[AN] [newAdj] silverware set",
+                    "[AN] [newAdj] blender",
+                    "[AN] [newAdj] refridgerator",
+                    "[AN] [newAdj] meat cleaver",
+                    "[AN] [newAdj] convection oven",
+                    "[AN] [newAdj] crock pot",
+                    "[AN] [newAdj] spoon",
+                    "[AN] [newAdj] pressure cooker",
+                    "[AN] [newAdj] glass jar",
+                    "[AN] [newAdj] porcelain plate",
+                    "[AN] [newAdj] tea cup",
+                    "[AN] [newAdj] tea pot",
+                    "[AN] [newAdj] spork",
+                    "[AN] [newAdj] deep freezer",
+                    "[AN] [newAdj] deep fryer"   ];
 const kitchenAdj = [ "broken", "new", "old", "dirty", "clean", "shiny", "stinky" ];
 
-const collectibles = [  "[AN] [ADJ] star wars lego death star set",
-                        "a binder of [ADJ] holoraphic pokemon cards",
-                        "[AN] [ADJ] back to the future lunchbox",
-                        "[AN] [ADJ] saved by the bell lunchbox",
-                        "a bag of [ADJ] silver dimes",
-                        "[AN] [ADJ] Darth Vader action figure",
-                        "[AN] [ADJ] Blockbuster member card",
-                        "[AN] [ADJ] book of stamps",
-                        "an assortment of [ADJ] Zippo lighters",
-                        "a box full of [ADJ] postcards",
-                        "[AN] [ADJ] copy of Marval Comics #1",
-                        "[AN] [ADJ] Babe Ruth Topps baseball card",
-                        "[AN] [ADJ] Honus Wagner baseball card",
-                        "some [ADJ] tickets to BlizCon",
-                        "[AN] [ADJ] Batmobile replica",
-                        "[AN] [ADJ] Delorean",
-                        "[AN] [ADJ] chunk of meteorite"  ];
+const collectibles = [  "[AN] [newAdj] star wars lego death star set",
+                        "a binder of [newAdj] holoraphic pokemon cards",
+                        "[AN] [newAdj] back to the future lunchbox",
+                        "[AN] [newAdj] saved by the bell lunchbox",
+                        "a bag of [newAdj] silver dimes",
+                        "[AN] [newAdj] Darth Vader action figure",
+                        "[AN] [newAdj] Blockbuster member card",
+                        "[AN] [newAdj] book of stamps",
+                        "an assortment of [newAdj] Zippo lighters",
+                        "a box full of [newAdj] postcards",
+                        "[AN] [newAdj] copy of Marval Comics #1",
+                        "[AN] [newAdj] Babe Ruth Topps baseball card",
+                        "[AN] [newAdj] Honus Wagner baseball card",
+                        "some [newAdj] tickets to BlizCon",
+                        "[AN] [newAdj] Batmobile replica",
+                        "[AN] [newAdj] Delorean",
+                        "[AN] [newAdj] chunk of meteorite"  ];
 const collectiblesAdj = [ "mint-condition", "pristine", "unkept", "dirty", "fake", "real" ];
 
-const animals = [   "[AN] [ADJ] rat",
-                    "[AN] [ADJ] raccoon",
-                    "[AN] [ADJ] opossum",
-                    "[AN] [ADJ] five-legged rat",
-                    "a family of [ADJ] spiders",
-                    "[AN] [ADJ] pigeon",
-                    "[AN] [ADJ] seagull",
-                    "[AN] [ADJ] coyote",
-                    "[AN] [ADJ] muskrat",
-                    "[AN] [ADJ] vulture",
-                    "two [ADJ] cockroaches",
-                    "[AN] [ADJ] squirrel",
-                    "a hoard of [ADJ] centipedes",
-                    "[AN] [ADJ] trash panda",
-                    "[AN] [ADJ] cat"    ];
+const animals = [   "[AN] [newAdj] rat",
+                    "[AN] [newAdj] raccoon",
+                    "[AN] [newAdj] opossum",
+                    "[AN] [newAdj] five-legged rat",
+                    "a family of [newAdj] spiders",
+                    "[AN] [newAdj] pigeon",
+                    "[AN] [newAdj] seagull",
+                    "[AN] [newAdj] coyote",
+                    "[AN] [newAdj] muskrat",
+                    "[AN] [newAdj] vulture",
+                    "two [newAdj] cockroaches",
+                    "[AN] [newAdj] squirrel",
+                    "a hoard of [newAdj] centipedes",
+                    "[AN] [newAdj] trash panda",
+                    "[AN] [newAdj] cat"    ];
 const animalsAdj = [    "rabid",
                         "domesticated",
                         "feral",
@@ -294,25 +294,25 @@ const animalsAdj = [    "rabid",
                         "nice",
                         "small"    ];
 
-const furniture = [     "[AN] [ADJ] couch",
-                        "[AN] [ADJ] gaming chair",
-                        "[AN] [ADJ] recliner",
-                        "[AN] [ADJ] rocking chair",
-                        "[AN] [ADJ] ottoman",
-                        "[AN] [ADJ] coo-coo clock ",
-                        "[AN] [ADJ] computer desk",
-                        "[ADJ] accoustic wall panels",
-                        "[AN] [ADJ] Ikea table",
-                        "[AN] [ADJ] coffee table",
-                        "[AN] [ADJ] entertainment center",
-                        "[AN] [ADJ] bar stool",
-                        "[AN] [ADJ] book shelf",
-                        "[AN] [ADJ] futon",
-                        "[AN] [ADJ] fold-up chair",
-                        "[AN] [ADJ] cradle",
-                        "[AN] [ADJ] throne",
-                        "[AN] [ADJ] bath chair",
-                        "some [ADJ] Shungite"   ];
+const furniture = [     "[AN] [newAdj] couch",
+                        "[AN] [newAdj] gaming chair",
+                        "[AN] [newAdj] recliner",
+                        "[AN] [newAdj] rocking chair",
+                        "[AN] [newAdj] ottoman",
+                        "[AN] [newAdj] coo-coo clock ",
+                        "[AN] [newAdj] computer desk",
+                        "[newAdj] accoustic wall panels",
+                        "[AN] [newAdj] Ikea table",
+                        "[AN] [newAdj] coffee table",
+                        "[AN] [newAdj] entertainment center",
+                        "[AN] [newAdj] bar stool",
+                        "[AN] [newAdj] book shelf",
+                        "[AN] [newAdj] futon",
+                        "[AN] [newAdj] fold-up chair",
+                        "[AN] [newAdj] cradle",
+                        "[AN] [newAdj] throne",
+                        "[AN] [newAdj] bath chair",
+                        "some [newAdj] Shungite"   ];
 const furnitureAdj = [  "dusty",
                         "old",
                         "new",
@@ -361,7 +361,7 @@ module.exports = {
     description: "this is a trash command!",
     run: async (commandSent, message, args, client) => {
 
-        const trashCountVar = await Guild.findOne({
+        const guildCountVar = await Guild.findOne({
             guildID: message.guild.id
         }, (err, guild) => {
             if(err) console.error(err);
@@ -391,7 +391,7 @@ module.exports = {
             }
         });
 
-        const userUniqueCounts = await User.findOne({
+        const usersCountVar = await User.findOne({
             userID: message.author.id
         }, (err, user) => {
             if(err) console.error(err);
@@ -421,7 +421,7 @@ module.exports = {
             }
         });
 
-        const globalVar = await GlobalCount.findOne({
+        const globalCountVar = await GlobalCount.findOne({
             globalID: "global"
         }, (err, guild) => {
             if(err) console.error(err);
@@ -451,133 +451,133 @@ module.exports = {
         });
 
         // taking the user's item count from the database and adding one to it locally
-        var userTrashCount = userUniqueCounts.trashCount;
-        userTrashCount++;
+        var userCount = usersCountVar.trashCount;
+        userCount++;
 
         // taking the servers's item count from the database and adding one to it locally
-        var trashCountNum = trashCountVar.trashCount;
-        trashCountNum++;
+        var guildCount = guildCountVar.trashCount;
+        guildCount++;
 
         // taking the global item count from the database and adding one to it locally
-        var globalTrashCount = globalVar.trashCount;
-        globalTrashCount++;
-
-        // sets person response to either the user or the first argument, depending on the existance of the argument
-        var trashPerson = (args.length > 0) ? args[0] : message.author;
+        var globalCount = globalCountVar.trashCount;
+        globalCount++;
 
         // initalizing as empty, probably not necessary
-        var newTrash = "";
-        var trashAdj = "";
+        var newItem = "";
+        var newAdj = "";
 
         // generates a number from 1 to 13 to pick one of the 14 categories
         var randomCategory = Math.floor(Math.random() * 13) + 1;
         switch (randomCategory) {
             case (1):
-                newTrash = food[Math.floor(Math.random() * food.length)];
-                trashAdj = foodAdj[Math.floor(Math.random() * foodAdj.length)];
+                newItem = food[Math.floor(Math.random() * food.length)];
+                newAdj = foodAdj[Math.floor(Math.random() * foodAdj.length)];
                 break;
             case (2):
-                newTrash = drinks[Math.floor(Math.random() * drinks.length)];
-                trashAdj = drinksAdj[Math.floor(Math.random() * drinksAdj.length)];
+                newItem = drinks[Math.floor(Math.random() * drinks.length)];
+                newAdj = drinksAdj[Math.floor(Math.random() * drinksAdj.length)];
                 break;
             case (3):
-                newTrash = clothing[Math.floor(Math.random() * clothing.length)];
-                trashAdj = clothingAdj[Math.floor(Math.random() * clothingAdj.length)];
+                newItem = clothing[Math.floor(Math.random() * clothing.length)];
+                newAdj = clothingAdj[Math.floor(Math.random() * clothingAdj.length)];
                 break;
             case (4):
-                newTrash = electronics[Math.floor(Math.random() * electronics.length)];
-                trashAdj = electronicsAdj[Math.floor(Math.random() * electronicsAdj.length)];
+                newItem = electronics[Math.floor(Math.random() * electronics.length)];
+                newAdj = electronicsAdj[Math.floor(Math.random() * electronicsAdj.length)];
                 break;
             case (5):
-                newTrash = toys[Math.floor(Math.random() * toys.length)];
-                trashAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
+                newItem = toys[Math.floor(Math.random() * toys.length)];
+                newAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
                 break;
             case (6):
-                newTrash = toiletries[Math.floor(Math.random() * toiletries.length)];
-                trashAdj = toiletriesAdj[Math.floor(Math.random() * toiletriesAdj.length)];
+                newItem = toiletries[Math.floor(Math.random() * toiletries.length)];
+                newAdj = toiletriesAdj[Math.floor(Math.random() * toiletriesAdj.length)];
                 break;
             case (7):
-                newTrash = wtf[Math.floor(Math.random() * wtf.length)];
-                trashAdj = wtfAdj[Math.floor(Math.random() * wtfAdj.length)];
+                newItem = wtf[Math.floor(Math.random() * wtf.length)];
+                newAdj = wtfAdj[Math.floor(Math.random() * wtfAdj.length)];
                 break;
             case (8):
-                newTrash = tools[Math.floor(Math.random() * tools.length)];
-                trashAdj = toolsAdj[Math.floor(Math.random() * toolsAdj.length)];
+                newItem = tools[Math.floor(Math.random() * tools.length)];
+                newAdj = toolsAdj[Math.floor(Math.random() * toolsAdj.length)];
                 break;
             case (9):
-                newTrash = kitchen[Math.floor(Math.random() * kitchen.length)];
-                trashAdj = kitchenAdj[Math.floor(Math.random() * kitchenAdj.length)];
+                newItem = kitchen[Math.floor(Math.random() * kitchen.length)];
+                newAdj = kitchenAdj[Math.floor(Math.random() * kitchenAdj.length)];
                 break;
             case (10):
-                newTrash = collectibles[Math.floor(Math.random() * collectibles.length)];
-                trashAdj = collectiblesAdj[Math.floor(Math.random() * collectiblesAdj.length)];
+                newItem = collectibles[Math.floor(Math.random() * collectibles.length)];
+                newAdj = collectiblesAdj[Math.floor(Math.random() * collectiblesAdj.length)];
                 break;
             case (11):
-                newTrash = animals[Math.floor(Math.random() * animals.length)];
-                trashAdj = animalsAdj[Math.floor(Math.random() * animalsAdj.length)];
+                newItem = animals[Math.floor(Math.random() * animals.length)];
+                newAdj = animalsAdj[Math.floor(Math.random() * animalsAdj.length)];
                 break;
             case (12):
-                newTrash = furniture[Math.floor(Math.random() * furniture.length)];
-                trashAdj = furnitureAdj[Math.floor(Math.random() * furniture.Adjlength)];
+                newItem = furniture[Math.floor(Math.random() * furniture.length)];
+                newAdj = furnitureAdj[Math.floor(Math.random() * furniture.Adjlength)];
                 break;
             case (13):
-                newTrash = misc[Math.floor(Math.random() * misc.length)];
+                newItem = misc[Math.floor(Math.random() * misc.length)];
                 // misc adjective is [EMPTY] and gets replaced with an empty string, this was done to prevent undefined errors
-                trashAdj = miscAdj;
+                newAdj = miscAdj;
                 break;
             default:
                 // using toys as the default because it has the most items, but it should never actually be called this way with the way the random generator works
-                newTrash = toys[Math.floor(Math.random() * toys.length)];
-                trashAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
+                newItem = toys[Math.floor(Math.random() * toys.length)];
+                newAdj = toysAdj[Math.floor(Math.random() * toysAdj.length)];
         }
 
         // Replaces phrase placeholder with chosen adjective
-        newTrash = newTrash.replace('[ADJ]', trashAdj);
+        newItem = newItem.replace('[newAdj]', newAdj);
 
         // If adjective is [EMPTY], gets replaced with an empty string... was originally done to prevent errors with undefined variables but might not even be needed anymore.
-        if(newTrash.includes("[EMPTY]")) {
-            newTrash = newTrash.replace("[EMPTY]", "");
+        if(newItem.includes("[EMPTY]")) {
+            newItem = newItem.replace("[EMPTY]", "");
         }
 
         // Sets the phrase to either a random phrase or the special phrase if the trash gotten was the secret stash
-        var phrase = ((newTrash == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
+        var phrase = ((newItem == "Trash's secret stash") ? specialPhrase : phrases[Math.floor(Math.random() * phrases.length)]);
 
         var vowels = ("aeiouAEIOU");
         // For certain items, picks "an" or "a" to have proper grammar with the adjective following
-        if(newTrash.includes("[AN]")) {
+        if(newItem.includes("[AN]")) {
             // Checks the character two spaces after the closing brackets of [AN] to determine whether or not to use "a" or "an".
-            if(vowels.indexOf(newTrash[newTrash.indexOf("]")+2]) !== -1) { 
-                newTrash = newTrash.replace('[AN]', "an");
+            if(vowels.indexOf(newItem[newItem.indexOf("]")+2]) !== -1) { 
+                newItem = newItem.replace('[AN]', "an");
             } else {
-                newTrash = newTrash.replace('[AN]', "a");
+                newItem = newItem.replace('[AN]', "a");
             }
         }
 
+        // sets person response to either the user or the first argument, depending on the existance of the argument
+        var commandPerson = (args.length > 0) ? args[0] : message.author;
+
         // Replaces all the placeholders in the phrase with the proper information
-        phrase = phrase.replace('[USER]', trashPerson);
-        phrase = phrase.replace('[ITEM]', newTrash);
-        phrase = phrase.replace('[COUNT]', trashCountNum);
+        phrase = phrase.replace('[USER]', commandPerson);
+        phrase = phrase.replace('[ITEM]', newItem);
+        phrase = phrase.replace('[COUNT]', guildCount);
         phrase = phrase.replace('[SERVER]', message.guild.name)
 
         message.channel.send(phrase).then(function (botSentMessage) {
-            if(trashCountNum.toString().includes("69")) {
+            if(guildCount.toString().includes("69")) {
                 botSentMessage.react("😏");
             }
         });
 
         // Updates the non-local guild count
-        await trashCountVar.updateOne({
-            trashCount: trashCountNum
+        await guildCountVar.updateOne({
+            trashCount: guildCount
         })
 
         // Updates the non-local global count
-        await globalVar.updateOne({
-            trashCount: globalTrashCount
+        await globalCountVar.updateOne({
+            trashCount: globalCount
         })
 
         // Updates the non-local user count
-        await userUniqueCounts.updateOne({
-            trashCount: userTrashCount
+        await usersCountVar.updateOne({
+            trashCount: userCount
         })
 
     }
