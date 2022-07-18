@@ -78,7 +78,7 @@ const clothing = [  "[AN] [newAdj] MAGA hat",
                     "[AN] [newAdj] bunny girl outfit",
                     "[AN] [newAdj] dragon furry suit",
                     "[AN] [newAdj] pair of socks",
-                    "[AN] [newAdj] fanny pack ",
+                    "[AN] [newAdj] fanny pack",
                     "[AN] [newAdj] cowboy hat",
                     "[AN] [newAdj] top hat",
                     "[AN] [newAdj] bow tie",
@@ -515,7 +515,7 @@ module.exports = {
                 break;
             case (12):
                 newItem = furniture[Math.floor(Math.random() * furniture.length)];
-                newAdj = furnitureAdj[Math.floor(Math.random() * furniture.Adjlength)];
+                newAdj = furnitureAdj[Math.floor(Math.random() * furnitureAdj.length)];
                 break;
             case (13):
                 newItem = misc[Math.floor(Math.random() * misc.length)];
