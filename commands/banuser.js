@@ -8,7 +8,7 @@ module.exports = {
         if(args.length == 0) {
             return message.channel.send("**Error:** Please add an ID after the command. \nExample: **!banuser 12345678910**");
         }
-        var banUser = client.users.cache.get(args[0]);
+        //var banUser = client.users.cache.get(args[0]);
         if (args[0].startsWith('<@') && args[0].endsWith('>')) {
             var id = args[0].slice(2, -1);
     
