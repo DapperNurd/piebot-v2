@@ -176,28 +176,32 @@ module.exports = async (client, message) => {
 
         else if(cmd === 'sendmsg' || cmd === 'sendmessage' || cmd === 'messagesend' || cmd === 'msgsend') {
             if(message.author.id == "189510396569190401") {
-                client.commands.get('sendmsg').run(message, args, client);
+                //client.commands.get('sendmsg').run(message, args, client);
+                runCommand('sendmsg', false);
             } else {
                 message.channel.send("🤔")
             }
         }
         else if(cmd === 'banuser' || cmd === 'userban' || cmd === 'getbanned') {
             if(message.author.id == "189510396569190401") {
-                client.commands.get('banuser').run(message, args, client);
+                //client.commands.get('banuser').run(message, args, client);
+                runCommand('banuser', false);
             } else {
                 message.channel.send("🤔")
             }
         }
         else if(cmd === 'manualadd' || cmd === 'add') {
             if(message.author.id == "189510396569190401") {
-                client.commands.get('manualadd').run(message, args, client);
+                //client.commands.get('manualadd').run(message, args, client);
+                runCommand('manualadd', false);
             } else {
                 message.channel.send("🤔")
             }
         }
         else if(cmd === 'unbanuser' || cmd === 'unuserban' || cmd === 'userunban' || cmd === 'getunbanned') {
             if(message.author.id == "189510396569190401") {
-                client.commands.get('unbanuser').run(message, args, client);
+                //client.commands.get('unbanuser').run(message, args, client);
+                runCommand('unbanuser', false);
             } else {
                 message.channel.send("🤔")
             }
