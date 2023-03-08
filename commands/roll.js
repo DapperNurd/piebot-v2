@@ -25,8 +25,8 @@ module.exports = {
         min = Math.ceil(min);
         max = Math.floor(max);
 
-        // ++max because max is exclusive
-        var rolledNum = Math.floor(Math.random() * (++max - min) + min);
+        // max+1 because max is exclusive
+        var rolledNum = Math.floor(Math.random() * ((max+1) - min) + min);
 
         message.channel.send(`${message.author} rolled a ${rolledNum} out of ${max}!`)
     }
