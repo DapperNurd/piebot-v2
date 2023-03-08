@@ -15,10 +15,18 @@ module.exports = {
         else if (args.length == 1) {
             min = 1;
             max = args[0];
+            if(isNaN(args[0])) {
+                message.channel.send("That's not a number...");
+                return;
+            }
         }
         else {
             min = args[0];
             max = args[1];
+            if(isNaN(args[0] || isNaN(1))) {
+                message.channel.send("That's not a number...");
+                return;
+            }
         }
 
         // makes sure they are whole numbers
