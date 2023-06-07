@@ -28,7 +28,9 @@ module.exports = {
                     { name: 'Cake Count', value: '0', inline: true },
                     { name: 'Cookie Count', value: '0', inline: true },
                     { name: 'Sandwich Count', value: '0', inline: true },
-                    { name: 'Fish Fillet Count', value: '0', inline: true }
+                    { name: 'Brownie Count', value: '0', inline: true },
+                    { name: 'Fish Fillet Count', value: '0', inline: true },
+                    { name: 'Trash Count', value: '0', inline: true }
                 )
                 .setTimestamp()
                 .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
@@ -53,7 +55,9 @@ module.exports = {
             { name: 'Cake Count', value: serverCounts.cakeCount, inline: true },
             { name: 'Cookie Count', value: serverCounts.cookieCount, inline: true },
             { name: 'Sandwich Count', value: serverCounts.sandwichCount, inline: true },
-            { name: 'Fish Fillet Count', value: serverCounts.fishCount, inline: true }
+            { name: 'Brownie Count', value: serverCounts.brownieCount, inline: true },
+            { name: 'Fish Fillet Count', value: serverCounts.fishCount, inline: true },
+            { name: 'Trash Count', value: serverCounts.trashCount, inline: true }
         )
         .setTimestamp()
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`);
