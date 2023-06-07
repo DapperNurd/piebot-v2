@@ -179,7 +179,7 @@ module.exports = {
         if(sorryRand > 92) {
             var sendText = `Sorry, ${browniePerson}, but I couldn't resist. I ate your ${brownieAdj} ${brownie}. There have been ${brownieCountNum} brownies given out on ${message.guild.name}.`
         } else {
-            var sendText = `${phrase} Beeble has given out ${brownieCountNum} muffins on ${message.guild.name}.`
+            var sendText = `${phrase} Beeble has given out ${brownieCountNum} brownies on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
