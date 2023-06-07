@@ -141,19 +141,19 @@ module.exports = {
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
             case (randomNum < 51): // 50% (1 to 50 )
-                brownie = commonCakes[Math.floor(Math.random() * commonBrownies.length)];
+                brownie = commonBrownies[Math.floor(Math.random() * commonBrownies.length)];
                 break;
             case (randomNum < 91): // 40% ( 51 to 90 )
-                brownie = uncommonCakes[Math.floor(Math.random() * uncommonBrownies.length)];
+                brownie = uncommonBrownies[Math.floor(Math.random() * uncommonBrownies.length)];
                 break;
             case (randomNum < 100): // 9% ( 91 to 99 )
-                brownie = rareCakes[Math.floor(Math.random() * rareBrownies.length)];
+                brownie = rareBrownies[Math.floor(Math.random() * rareBrownies.length)];
                 break;
             case (randomNum >= 100): // 1% ( 100 )
-                brownie = legendaryCakes[Math.floor(Math.random() * legendaryBrownies.length)];
+                brownie = legendaryBrownies[Math.floor(Math.random() * legendaryBrownies.length)];
                 break;
             default:
-                brownie = commonCakes[Math.floor(Math.random() * commonBrownies.length)];
+                brownie = commonBrownies[Math.floor(Math.random() * commonBrownies.length)];
         }
 
         var adjRandom = Math.floor(Math.random() * 100) + 1;
@@ -175,7 +175,7 @@ module.exports = {
         phrase = phrase.replace('[AN]', plural);
 
         if(sorryRand > 92) {
-            var sendText = `Sorry, ${browniePerson}, but I couldn't resist. I ate your ${brownieAdj} ${brownie}. There have been ${brownieCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${browniePerson}, but I couldn't resist. I ate your ${brownieAdj} ${brownie}. There have been ${brownieCountNum} brownies given out on ${message.guild.name}.`
         } else {
             var sendText = `${phrase} Beeble has given out ${brownieCountNum} muffins on ${message.guild.name}.`
         }
