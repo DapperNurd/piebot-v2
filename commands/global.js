@@ -24,6 +24,7 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     sandwichCount: 0,
+                    brownieCount: 0,
                     fishCount: 0,
                     trashCount: 0
                 });
@@ -51,6 +52,7 @@ module.exports = {
             { name: 'Cake Count', value: globalVar.cakeCount, inline: true },
             { name: 'Cookie Count', value: globalVar.cookieCount, inline: true },
             { name: 'Sandwich Count', value: globalVar.sandwichCount, inline: true },
+            { name: 'Brownie Count', value: globalVar.brownieCount, inline: true },
             { name: 'Fish Fillet Count', value: globalVar.fishCount, inline: true },
             { name: 'Trash Count', value: globalVar.trashCount, inline: true }
         )

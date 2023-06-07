@@ -51,7 +51,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save()
@@ -81,7 +82,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save()
@@ -113,7 +115,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -134,16 +137,16 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 50):
+            case (randomNum < 51): // 50% (1 to 50 )
                 newMuffin = commonMuffins[Math.floor(Math.random() * commonMuffins.length)];
                 break;
-            case (randomNum < 95):
+            case (randomNum < 91): // 40% ( 51 to 90 )
                 newMuffin = uncommonMuffins[Math.floor(Math.random() * uncommonMuffins.length)];
                 break;
-            case (randomNum < 100):
+            case (randomNum < 100): // 9% ( 91 to 99 )
                 newMuffin = rareMuffins[Math.floor(Math.random() * rareMuffins.length)];
                 break;
-            case (randomNum >= 100):
+            case (randomNum >= 100): // 1% ( 100 )
                 newMuffin = legendaryMuffins[Math.floor(Math.random() * legendaryMuffins.length)];
                 break;
             default:

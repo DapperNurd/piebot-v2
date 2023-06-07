@@ -48,7 +48,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save()
@@ -78,7 +79,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save()
@@ -110,7 +112,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -130,16 +133,16 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 50):
+            case (randomNum < 51): // 50% (1 to 50 )
                 newCream = commonCreams[Math.floor(Math.random() * commonCreams.length)];
                 break;
-            case (randomNum < 95):
+            case (randomNum < 91): // 40% ( 51 to 90 )
                 newCream = uncommonCreams[Math.floor(Math.random() * uncommonCreams.length)];
                 break;
-            case (randomNum < 100):
+            case (randomNum < 100): // 9% ( 91 to 99 )
                 newCream = rareCreams[Math.floor(Math.random() * rareCreams.length)];
                 break;
-            case (randomNum >= 100):
+            case (randomNum >= 100): // 1% ( 100 )
                 newCream = legendaryCreams[Math.floor(Math.random() * legendaryCreams.length)];
                 break;
             default:

@@ -45,7 +45,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save() // adds the guild to the list
@@ -75,7 +76,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save() // adds the user to the database with 0's for all numbers
@@ -107,7 +109,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -128,16 +131,16 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 50):
+            case (randomNum < 51): // 50% (1 to 50 )
                 pasta = commonPastas[Math.floor(Math.random() * commonPastas.length)];
                 break;
-            case (randomNum < 95):
+            case (randomNum < 91): // 40% ( 51 to 90 )
                 pasta = uncommonPastas[Math.floor(Math.random() * uncommonPastas.length)];
                 break;
-            case (randomNum < 100):
+            case (randomNum < 100): // 9% ( 91 to 99 )
                 pasta = rarePastas[Math.floor(Math.random() * rarePastas.length)];
                 break;
-            case (randomNum >= 100):
+            case (randomNum >= 100): // 1% ( 100 )
                 pasta = legendaryPastas[Math.floor(Math.random() * legendaryPastas.length)];
                 break;
             default:

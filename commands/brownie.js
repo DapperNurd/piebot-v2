@@ -3,30 +3,39 @@ const Guild = require('../models/guild');
 const User = require('../models/user');
 const GlobalCount = require('../models/globalCount');
 
-const commonCakes = ["chocolate cake", "vanilla cake", "carrot cake", "birthday cake", "spice cake", "coffee cake", "ice cream cake"
+const commonBrownies = ["blondie", "M&M brownie", "chocolate frosted brownie", "fudge chocolate brownie", "triple chocolate chunk brownie", "walnut brownie", "peanut butter brownie", "mint chocolate brownie", "coconut brownie", "nutella brownie"
 ];
 
-const uncommonCakes = ["red velvet cake", "strawberry shortcake", "coconut cake", "lemon cake", "pound cake", "pumpkin spice cake", "sponge cake", "pineapple upside down cake"
+const uncommonBrownies = ["raspberry cheesecake brownie", "cookies and cream brownies", "crumb coffee brownies", "cookie dough brownies", "espresso brownie", "salted caramel brownie", "cream cheese brownie"
 ];
 
-const rareCakes = ["cake pop", "dulce de leche cake", "chocolate lava cake", "tiramisu", "mexican chocolate cake"
+const rareBrownies = ["tiramisu brownie", "s'mores brownie", "marshmallow crunch brownie", "peppermit brownie", "pecan praline brownie", "caramel pretzel brownie"
 ];
 
-const legendaryCakes = ["fruitcake", "pancake"];
+const legendaryBrownies = ["Cosmic Brownie", "special 🌿🌱 brownie"];
 
-const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy"];
-const negAdjectives = ["day-old", "flourless", "overcooked"];
+const adjectives = ["delicious", "tasty", "scrumptious", "heavenly", "delectable", "delightful", "yummy", "homemade"];
+const negAdjectives = ["day-old", "overcooked", "undercooked"];
+
+const browniePhrases = ["Beeble baked a batch of her [BROWNIE ADJ] [BROWNIE]s, just for [USER]!",
+    "Here, [USER], Beeble wants you to have [AN] [BROWNIE ADJ] [BROWNIE].",
+    "Lucky day! Beeble presents [USER] with a plate of [BROWNIE ADJ] [BROWNIE]s alongside a nice, cool glass of milk.",
+    "[USER] found a tin of [BROWNIE ADJ] [BROWNIE]s left out with a note from Beeble saying to help yourself. So kind!",
+    "Beeble is testing a new recipe and wants [USER] to try her [BROWNIE ADJ] [BROWNIE]."];
+
+const cosmicPhrase = "Beeble got a box of [BROWNIE ADJ] [BROWNIE]s from the store, and she let [USER] have one.";
+const specialPhrase = "Beeble baked a batch of her secret [BROWNIE ADJ] [BROWNIE]s for [USER]...";
 
 module.exports = {
-    name: 'cake',
-    description: "this is a cake command!",
-    commonCakes,
-    uncommonCakes,
-    rareCakes,
-    legendaryCakes,
+    name: 'brownie',
+    description: "this is a brownie command!",
+    commonBrownies,
+    uncommonBrownies,
+    rareBrownies,
+    legendaryBrownies,
     run: async (commandSent, message, args, client) => {
 
-        const cakeCountVar = await Guild.findOne({
+        const brownieCountVar = await Guild.findOne({
             guildID: message.guild.id
         }, (err, guild) => { // if the guild was not found in the list, in the rare case that piebot goes to a new server
             if(err) console.error(err);
@@ -88,8 +97,8 @@ module.exports = {
             }
         });
 
-        var userCakeCount = userUniqueCounts.cakeCount;
-        userCakeCount++;
+        var userBrownieCount = userUniqueCounts.brownieCount;
+        userBrownieCount++;
 
         const globalVar = await GlobalCount.findOne({
             globalID: "global"
@@ -121,66 +130,74 @@ module.exports = {
             }
         });
 
-        var cakeCountNum = cakeCountVar.cakeCount;
-        cakeCountNum++;
+        var brownieCountNum = brownieCountVar.brownieCount;
+        brownieCountNum++;
 
-        var globalCakeCount = globalVar.cakeCount;
-        globalCakeCount++;
+        var globalBrownieCount = globalVar.brownieCount;
+        globalBrownieCount++;
 
-        var cakePerson = (args.length > 0) ? args[0] : message.author;
+        var browniePerson = (args.length > 0) ? args[0] : message.author;
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
             case (randomNum < 51): // 50% (1 to 50 )
-                cake = commonCakes[Math.floor(Math.random() * commonCakes.length)];
+                brownie = commonCakes[Math.floor(Math.random() * commonBrownies.length)];
                 break;
             case (randomNum < 91): // 40% ( 51 to 90 )
-                cake = uncommonCakes[Math.floor(Math.random() * uncommonCakes.length)];
+                brownie = uncommonCakes[Math.floor(Math.random() * uncommonBrownies.length)];
                 break;
             case (randomNum < 100): // 9% ( 91 to 99 )
-                cake = rareCakes[Math.floor(Math.random() * rareCakes.length)];
+                brownie = rareCakes[Math.floor(Math.random() * rareBrownies.length)];
                 break;
             case (randomNum >= 100): // 1% ( 100 )
-                cake = legendaryCakes[Math.floor(Math.random() * legendaryCakes.length)];
+                brownie = legendaryCakes[Math.floor(Math.random() * legendaryBrownies.length)];
                 break;
             default:
-                cake = commonCakes[Math.floor(Math.random() * commonCakes.length)];
+                brownie = commonCakes[Math.floor(Math.random() * commonBrownies.length)];
         }
 
         var adjRandom = Math.floor(Math.random() * 100) + 1;
-        var cakeAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
+        var brownieAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
 
-        var plural = " slice of"
-        if(cake == "pancake" || cake == "cake pop") {
-            plural = "";
-        }
+        var plural = "a"
+        if(brownieAdj == "overcooked" || brownieAdj == "undercooked") { plural = "an" };
+
+        var phrase = browniePhrases[Math.floor(Math.random() * browniePhrases.length)];
+
+        if(brownie == "Cosmic Brownie") { phrase = cosmicPhrase; }
+        if(brownie == "special 🌿🌱 brownie") { phease = specialPhrase; }
+
+        phrase = phrase.replace('[USER]', commandPerson);
+        phrase = phrase.replace('[BROWNIE ADJ]', newAdj);
+        phrase = phrase.replace('[BROWNIE]', newItem);
+        phrase = phrase.replace('[AN]', plural);
 
         if(sorryRand > 92) {
-            var sendText = `Sorry, ${cakePerson}, but I couldn't resist. I ate your${plural} ${cakeAdj} ${cake}. There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `Sorry, ${browniePerson}, but I couldn't resist. I ate your ${brownieAdj} ${brownie}. There have been ${brownieCountNum} cakes given out on ${message.guild.name}.`
         } else {
-            var sendText = `Here, ${cakePerson}! Destronate wants you to have a${plural} ${cakeAdj} ${cake}! There have been ${cakeCountNum} cakes given out on ${message.guild.name}.`
+            var sendText = `${phrase} Beeble has given out ${brownieCountNum} muffins on ${message.guild.name}.`
         }
 
         message.channel.send(sendText).then(function (botSentMessage) {
 
-            if(cakeCountNum.toString().includes("69")) {
+            if(brownieCountNum.toString().includes("69")) {
                 botSentMessage.react("😏");
             }
 
         });
 
-        await cakeCountVar.updateOne({
-            cakeCount: cakeCountNum
+        await brownieCountVar.updateOne({
+            brownieCount: brownieCountNum
         })
 
         await globalVar.updateOne({
-            cakeCount: globalCakeCount
+            brownieCount: globalBrownieCount
         })
 
         await userUniqueCounts.updateOne({
-            cakeCount: userCakeCount
+            brownieCount: userBrownieCount
         })
 
     }

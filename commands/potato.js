@@ -45,7 +45,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save()
@@ -75,7 +76,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save()
@@ -107,7 +109,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -126,18 +129,18 @@ module.exports = {
 
         var potatoPerson = (args.length > 0) ? args[0] : message.author;
 
-        var randomNum = Math.floor(Math.random() * 100) + 1;
+        var randomNum = Math.floor(Math.random() * 100) + 1; // 1 to 100
         switch (true) {
-            case (randomNum < 55):
+            case (randomNum < 51): // 50% (1 to 50 )
                 potato = commonPotatoes[Math.floor(Math.random() * commonPotatoes.length)];
                 break;
-            case (randomNum < 95):
+            case (randomNum < 91): // 40% ( 51 to 90 )
                 potato = uncommonPotatoes[Math.floor(Math.random() * uncommonPotatoes.length)];
                 break;
-            case (randomNum < 100):
+            case (randomNum < 100): // 9% ( 91 to 99 )
                 potato = rarePotatoes[Math.floor(Math.random() * rarePotatoes.length)];
                 break;
-            case (randomNum >= 100):
+            case (randomNum >= 100): // 1% ( 100 )
                 potato = legendaryPotatoes[Math.floor(Math.random() * legendaryPotatoes.length)];
                 break;
             default:

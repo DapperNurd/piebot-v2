@@ -55,7 +55,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save()
@@ -85,7 +86,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save()
@@ -117,7 +119,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -137,16 +140,16 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 50):
+            case (randomNum < 51): // 50% (1 to 50 )
                 newPizza = commonPizzas[Math.floor(Math.random() * commonPizzas.length)];
                 break;
-            case (randomNum < 95):
+            case (randomNum < 91): // 40% ( 51 to 90 )
                 newPizza = uncommonPizzas[Math.floor(Math.random() * uncommonPizzas.length)];
                 break;
-            case (randomNum < 100):
+            case (randomNum < 100): // 9% ( 91 to 99 )
                 newPizza = rarePizzas[Math.floor(Math.random() * rarePizzas.length)];
                 break;
-            case (randomNum >= 100):
+            case (randomNum >= 100): // 1% ( 100 )
                 newPizza = legendaryPizzas[Math.floor(Math.random() * legendaryPizzas.length)];
                 break;
             default:

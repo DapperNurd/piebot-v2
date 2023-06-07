@@ -26,17 +26,7 @@ const food = [  "[AN] [newAdj] apple core",
                 "a box of [newAdj] chocolates",
                 "[AN] [newAdj] avocado",
                 "a bag of [newAdj] doritos"    ];
-const foodAdj = [   "rotten",
-                    "fresh",
-                    "moldy",
-                    "petrified",
-                    "smelly",
-                    "mushy",
-                    "greasy",
-                    "wet",
-                    "aged",
-                    "spoiled",
-                    "expired"   ];
+const foodAdj = [ "rotten", "fresh", "moldy", "petrified", "smelly", "mushy", "greasy", "wet", "aged", "spoiled", "expired" ];
 
 const drinks = [    "[AN] [newAdj] gallon of milk",
                     "[AN] [newAdj] bottle of water",
@@ -58,16 +48,7 @@ const drinks = [    "[AN] [newAdj] gallon of milk",
                     "[AN] [newAdj] can of Dr. Pepper",
                     "[AN] [newAdj] can of Mountain Dew",
                     "[AN] [newAdj] bottle of Fireball Whiskey"     ];
-const drinksAdj = [     "spoiled",
-                        "half-drank",
-                        "ice cold",
-                        "room-temperature",
-                        "empty",
-                        "piping-hot",
-                        "stinky",
-                        "aged",
-                        "leaking",
-                        "expired"     ];
+const drinksAdj = [ "spoiled", "half-drank", "ice cold", "room-temperature", "empty", "piping-hot", "stinky", "aged", "leaking", "expired" ];
 
 const clothing = [  "[AN] [newAdj] MAGA hat",
                     "some [newAdj] underwear",
@@ -89,16 +70,7 @@ const clothing = [  "[AN] [newAdj] MAGA hat",
                     "[AN] [newAdj] dog bed",
                     "[AN] [newAdj] mattress",
                     "[AN] [newAdj] pillow" ];
-const clothingAdj = [   "ripped",
-                        "clean",
-                        "new",
-                        "used",
-                        "stinky",
-                        "holey",
-                        "dirty",
-                        "stained",
-                        "soaked",
-                        "wet"   ];
+const clothingAdj = [ "ripped", "clean", "new", "used", "stinky", "holey", "dirty", "stained", "soaked", "wet"   ];
 
 const electronics = [   "[AN] [newAdj] ipad",
                         "[AN] [newAdj] game controller",
@@ -118,17 +90,7 @@ const electronics = [   "[AN] [newAdj] ipad",
                         "[AN] [newAdj] car",
                         "[AN] [newAdj] GPS tracker",
                         "[AN] [newAdj] USB microphone" ];
-const electronicsAdj = [    "pristine",
-                            "broken",
-                            "unopened",
-                            "slightly-used",
-                            "dirty",
-                            "scuffed",
-                            "fake",
-                            "wet",
-                            "bricked",
-                            "modded",
-                            "roughed-up"    ];
+const electronicsAdj = [ "pristine", "broken", "unopened", "slightly-used", "dirty", "scuffed", "fake", "wet", "bricked", "modded", "roughed-up" ];
 
 const toys = [  "six [newAdj] toy cars",
                 "[AN] [newAdj] LED llama figure",
@@ -148,16 +110,7 @@ const toys = [  "six [newAdj] toy cars",
                 "1000 [newAdj] puzzle pieces",
                 "10 [newAdj] puzzle pieces",
                 "[AN] [newAdj] jump rope"  ];
-const toysAdj = [   "broken",
-                    "heavily-used",
-                    "sticky",
-                    "dirty",
-                    "brand-new",
-                    "well-worn",
-                    "wet",
-                    "scuffed",
-                    "pristine",
-                    "slimy"     ];
+const toysAdj = [ "broken", "heavily-used", "sticky", "dirty", "brand-new", "well-worn", "wet", "scuffed", "pristine", "slimy" ];
 
 const toiletries = [    "[AN] [newAdj] toilet paper roll",
                         "[AN] [newAdj] toothbrush",
@@ -177,18 +130,9 @@ const toiletries = [    "[AN] [newAdj] toilet paper roll",
                         "[AN] [newAdj] toilet brush",
                         "[AN] [newAdj] COVID test kit",
                         "[AN] [newAdj] ShamWow"    ];
-const toiletriesAdj = [ "brand-new",
-                        "unused",
-                        "dirty",
-                        "used",
-                        "clean",
-                        "wet",
-                        "crushed",
-                        "smelly",
-                        "slimy",
-                        "lightly-used" ];
+const toiletriesAdj = [ "brand-new", "unused", "dirty", "used", "clean", "wet", "crushed", "smelly", "slimy", "lightly-used" ];
 
-// These need to be lacking a space so the empty adjective does not cause a double space (the adjectives also end with a space)
+// These need to be lacking a space so the empty adjective does not cause a double space (the adjectives also end with a space, because of the [EMPTY])
 const wtf = [   "[AN] [newAdj]sawed-off shotgun",
                 "some [newAdj]uncut bank notes",
                 "[AN] [newAdj]wad of $100 bills",
@@ -380,7 +324,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save()
@@ -410,7 +355,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save()
@@ -439,7 +385,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()

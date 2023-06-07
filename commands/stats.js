@@ -56,6 +56,7 @@ module.exports = {
                     { name: 'Cake Count', value: '0', inline: true },
                     { name: 'Cookie Count', value: '0', inline: true },
                     { name: 'Sandwich Count', value: '0', inline: true },
+                    { name: 'Brownie Count', value: '0', inline: true },
                     { name: 'Fish Fillet Count', value: '0', inline: true },
                     { name: 'Trash Count', value: '0', inline: true }
                 )
@@ -83,6 +84,7 @@ module.exports = {
             { name: 'Cake Count', value: userUniqueCounts.cakeCount, inline: true },
             { name: 'Cookie Count', value: userUniqueCounts.cookieCount, inline: true },
             { name: 'Sandwich Count', value: userUniqueCounts.sandwichCount, inline: true },
+            { name: 'Brownie Count', value: userUniqueCounts.brownieCount, inline: true },
             { name: 'Fish Fillet Count', value: userUniqueCounts.fishCount, inline: true },
             { name: 'Trash Count', value: userUniqueCounts.trashCount, inline: true }
         )

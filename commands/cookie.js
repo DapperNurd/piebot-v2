@@ -9,7 +9,7 @@ const commonCookies = ["chocolate chip cookie", "sugar cookie", "oatmeal raisin 
 const uncommonCookies = ["molasses cookie", "shortbread cookie", "peanut butter cookie", "gingerbread cookie", "toffee chunk cookie", "M&M cookie", "caramel popcorn cookie", "maple pecan cookie", "granola cluster cookie"
 ];
 
-const rareCookies = ["biscotti cookie", "cookie dough", "fortune cookie", "peanut butter chocolate chip cookie", "macaron"
+const rareCookies = ["biscotti cookie", "cookie dough", "fortune cookie", "peanut butter chocolate chip cookie", "macaron", "thin mint", "samoa"
 ];
 
 const legendaryCookies = ["double stuff oreo"];
@@ -45,7 +45,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGuild.save() // adds the guild to the list
@@ -75,7 +76,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newUser.save() // adds the user to the database with 0's for all numbers
@@ -107,7 +109,8 @@ module.exports = {
                     cookieCount: 0,
                     pastaCount: 0,
                     sandwichCount: 0,
-                    trashCount: 0
+                    trashCount: 0,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -128,16 +131,16 @@ module.exports = {
 
         var randomNum = Math.floor(Math.random() * 100) + 1;
         switch (true) {
-            case (randomNum < 50):
+            case (randomNum < 51): // 50% (1 to 50 )
                 cookie = commonCookies[Math.floor(Math.random() * commonCookies.length)];
                 break;
-            case (randomNum < 95):
+            case (randomNum < 91): // 40% ( 51 to 90 )
                 cookie = uncommonCookies[Math.floor(Math.random() * uncommonCookies.length)];
                 break;
-            case (randomNum < 100):
+            case (randomNum < 100): // 9% ( 91 to 99 )
                 cookie = rareCookies[Math.floor(Math.random() * rareCookies.length)];
                 break;
-            case (randomNum >= 100):
+            case (randomNum >= 100): // 1% ( 100 )
                 cookie = legendaryCookies[Math.floor(Math.random() * legendaryCookies.length)];
                 break;
             default:

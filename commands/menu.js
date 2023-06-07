@@ -26,6 +26,7 @@ module.exports = {
             sentMessage.react("🍰")
             sentMessage.react("🍪")
             sentMessage.react("🥪")
+            sentMessage.react("1115839458487586877");
             sentMessage.react("🐟");
             sentMessage.delete({timeout:45000});
         });
@@ -47,7 +48,9 @@ module.exports = {
                     cakeCount: 0,
                     cookieCount: 0,
                     sandwichCount: 0,
-                    fishCount: 0
+                    fishCount: 0,
+                    trashCount,
+                    brownieCount: 0
                 });
 
                 newGlobal.save()
@@ -66,9 +69,9 @@ module.exports = {
         .setDescription(`Number of Pies: ${totalPieCount}`)
         .setAuthor(`Global Pie Count: ${globalVar.pieCount}`)
         .addFields(
-            { name: 'Common Pies (49%)', value: pieMenu.commonPies },
-            { name: 'Uncommon Pies (45%)', value: pieMenu.uncommonPies },
-            { name: 'Rare Pies (5%)', value: pieMenu.rarePies },
+            { name: 'Common Pies (50%)', value: pieMenu.commonPies },
+            { name: 'Uncommon Pies (40%)', value: pieMenu.uncommonPies },
+            { name: 'Rare Pies (9%)', value: pieMenu.rarePies },
             { name: 'Legendary Pies (1%)', value: pieMenu.legendaryPies },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -83,9 +86,9 @@ module.exports = {
         .setDescription(`Number of Muffins: ${totalMuffinCount}`)
         .setAuthor(`Global Muffin Count: ${globalVar.muffinCount}`)
         .addFields(
-            { name: 'Common Muffins (49%)', value: muffinMenu.commonMuffins },
-            { name: 'Uncommon Muffins (45%)', value: muffinMenu.uncommonMuffins },
-            { name: 'Rare Muffins (5%)', value: muffinMenu.rareMuffins },
+            { name: 'Common Muffins (50%)', value: muffinMenu.commonMuffins },
+            { name: 'Uncommon Muffins (40%)', value: muffinMenu.uncommonMuffins },
+            { name: 'Rare Muffins (9%)', value: muffinMenu.rareMuffins },
             { name: 'Legendary Muffins (1%)', value: muffinMenu.legendaryMuffins },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -100,9 +103,9 @@ module.exports = {
         .setDescription(`Number of Potatoes: ${totalPotatoCount}`)
         .setAuthor(`Global Potato Count: ${globalVar.potatoCount}`)
         .addFields(
-            { name: 'Common Potatoes (49%)', value: potatoMenu.commonPotatoes },
-            { name: 'Uncommon Potatoes (45%)', value: potatoMenu.uncommonPotatoes },
-            { name: 'Rare Potatoes (5%)', value: potatoMenu.rarePotatoes },
+            { name: 'Common Potatoes (50%)', value: potatoMenu.commonPotatoes },
+            { name: 'Uncommon Potatoes (40%)', value: potatoMenu.uncommonPotatoes },
+            { name: 'Rare Potatoes (9%)', value: potatoMenu.rarePotatoes },
             { name: 'Legendary Potatoes (1%)', value: potatoMenu.legendaryPotatoes },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -117,9 +120,9 @@ module.exports = {
         .setDescription(`Number of Ice Creams: ${totalIceCreamCount}`)
         .setAuthor(`Global Ice Cream Count: ${globalVar.iceCreamCount}`)
         .addFields(
-            { name: 'Common Ice Creams (49%)', value: iceCreamMenu.commonCreams },
-            { name: 'Uncommon Ice Creams (45%)', value: iceCreamMenu.uncommonCreams },
-            { name: 'Rare Ice Creams (5%)', value: iceCreamMenu.rareCreams },
+            { name: 'Common Ice Creams (50%)', value: iceCreamMenu.commonCreams },
+            { name: 'Uncommon Ice Creams (40%)', value: iceCreamMenu.uncommonCreams },
+            { name: 'Rare Ice Creams (9%)', value: iceCreamMenu.rareCreams },
             { name: 'Legendary Ice Creams (1%)', value: iceCreamMenu.legendaryCreams },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -134,9 +137,9 @@ module.exports = {
         .setDescription(`Number of Pizzas: ${totalPizzaCount}`)
         .setAuthor(`Global Pizza Count: ${globalVar.pizzaCount}`)
         .addFields(
-            { name: 'Common Pizzas (49%)', value: pizzaMenu.commonPizzas },
-            { name: 'Uncommon Pizzas (45%)', value: pizzaMenu.uncommonPizzas },
-            { name: 'Rare Pizzas (5%)', value: pizzaMenu.rarePizzas },
+            { name: 'Common Pizzas (50%)', value: pizzaMenu.commonPizzas },
+            { name: 'Uncommon Pizzas (40%)', value: pizzaMenu.uncommonPizzas },
+            { name: 'Rare Pizzas (9%)', value: pizzaMenu.rarePizzas },
             { name: 'Legendary Pizzas (1%)', value: pizzaMenu.legendaryPizzas },
             { name: 'Special Crusts (15%)', value: pizzaMenu.crusts },
         )   
@@ -152,9 +155,9 @@ module.exports = {
         .setDescription(`Number of Pastas: ${totalPastaCount}`)
         .setAuthor(`Global Pasta Count: ${globalVar.pastaCount}`)
         .addFields(
-            { name: 'Common Pastas (49%)', value: pastaMenu.commonPastas },
-            { name: 'Uncommon Pastas (45%)', value: pastaMenu.uncommonPastas },
-            { name: 'Rare Pastas (5%)', value: pastaMenu.rarePastas },
+            { name: 'Common Pastas (50%)', value: pastaMenu.commonPastas },
+            { name: 'Uncommon Pastas (40%)', value: pastaMenu.uncommonPastas },
+            { name: 'Rare Pastas (9%)', value: pastaMenu.rarePastas },
             { name: 'Legendary Pastas (1%)', value: pastaMenu.legendaryPastas },
 
         )   
@@ -170,9 +173,9 @@ module.exports = {
         .setDescription(`Number of Cakes: ${totalCakeCount}`)
         .setAuthor(`Global Cake Count: ${globalVar.cakeCount}`)
         .addFields(
-            { name: 'Common Cakes (49%)', value: cakeMenu.commonCakes },
-            { name: 'Uncommon Cakes (45%)', value: cakeMenu.uncommonCakes },
-            { name: 'Rare Cakes (5%)', value: cakeMenu.rareCakes },
+            { name: 'Common Cakes (50%)', value: cakeMenu.commonCakes },
+            { name: 'Uncommon Cakes (40%)', value: cakeMenu.uncommonCakes },
+            { name: 'Rare Cakes (9%)', value: cakeMenu.rareCakes },
             { name: 'Legendary Cakes (1%)', value: cakeMenu.legendaryCakes },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -187,9 +190,9 @@ module.exports = {
         .setDescription(`Number of Cookies: ${totalCookieCount}`)
         .setAuthor(`Global Cookie Count: ${globalVar.cookieCount}`)
         .addFields(
-            { name: 'Common Cookies (49%)', value: cookieMenu.commonCookies },
-            { name: 'Uncommon Cookies (45%)', value: cookieMenu.uncommonCookies },
-            { name: 'Rare Cookies (5%)', value: cookieMenu.rareCookies },
+            { name: 'Common Cookies (50%)', value: cookieMenu.commonCookies },
+            { name: 'Uncommon Cookies (40%)', value: cookieMenu.uncommonCookies },
+            { name: 'Rare Cookies (9%)', value: cookieMenu.rareCookies },
             { name: 'Legendary Cookies (1%)', value: cookieMenu.legendaryCookies },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -204,10 +207,26 @@ module.exports = {
         .setDescription(`Number of Sandwiches: ${totalSandwichCount}`)
         .setAuthor(`Global Sandwich Count: ${globalVar.sandwichCount}`)
         .addFields(
-            { name: 'Common Sandwiches (49%)', value: sandwichMenu.commonSandwiches },
-            { name: 'Uncommon Sandwiches (45%)', value: sandwichMenu.uncommonSandwiches },
-            { name: 'Rare Sandwiches (5%)', value: sandwichMenu.rareSandwiches },
+            { name: 'Common Sandwiches (50%)', value: sandwichMenu.commonSandwiches },
+            { name: 'Uncommon Sandwiches (40%)', value: sandwichMenu.uncommonSandwiches },
+            { name: 'Rare Sandwiches (9%)', value: sandwichMenu.rareSandwiches },
             { name: 'Legendary Sandwiches (1%)', value: sandwichMenu.legendarySandwiches },
+        )   
+        .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
+        .setTimestamp()
+
+        // BROWNIE MENU
+        const totalBrownieCount = brownieMenu.commonSandwiches.length + brownieMenu.uncommonSandwiches.length + brownieMenu.rareSandwiches.length + brownieMenu.legendarySandwiches.length;
+        const brownieEmbed = new Discord.MessageEmbed()
+        .setColor('#211510')
+        .setTitle(`Brownie Menu`)
+        .setDescription(`Number of Brownies: ${totalBrownieCount}`)
+        .setAuthor(`Global Sandwich Count: ${globalVar.brownieCount}`)
+        .addFields(
+            { name: 'Common Brownies (50%)', value: brownieMenu.commonBrownies },
+            { name: 'Uncommon Brownies (40%)', value: brownieMenu.uncommonBrownies },
+            { name: 'Rare Brownies (9%)', value: brownieMenu.rareBrownies },
+            { name: 'Legendary Brownies (1%)', value: brownieMenu.legendaryBrownies },
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
         .setTimestamp()
@@ -221,9 +240,9 @@ module.exports = {
         .setDescription(`Number of Fish: ${totalFishCount}`)
         .setAuthor(`Global Fish Count: ${globalVar.fishCount}`)
         .addFields(
-            { name: 'Common Fish (49%)', value: fishMenu.commonFish },
-            { name: 'Uncommon Fish (45%)', value: fishMenu.uncommonFish },
-            { name: 'Rare Fish (5%)', value: fishMenu.rareFish },
+            { name: 'Common Fish (50%)', value: fishMenu.commonFish },
+            { name: 'Uncommon Fish (40%)', value: fishMenu.uncommonFish },
+            { name: 'Rare Fish (9%)', value: fishMenu.rareFish },
             { name: 'Legendary Fish (1%)', value: fishMenu.legendaryFish }
         )   
         .setFooter(`PiebotV2 by ${client.users.cache.get("189510396569190401").username}`)
@@ -267,6 +286,10 @@ module.exports = {
                 message.author.send(sandwichEmbed);
                 message.react("📬");
             }
+            else if(menu == "brownie" || menu == "brownies" || menu == "browney" || menu == "brownee" || menu == "brownees") {
+                message.author.send(brownieEmbed);
+                message.react("📬");
+            }
             else if(menu == "fish" || menu == "fishes" || menu == "fishs") {
                 message.author.send(fishEmbed);
                 message.react("📬");
@@ -281,6 +304,7 @@ module.exports = {
                 message.author.send(cakeEmbed);
                 message.author.send(cookieEmbed);
                 message.author.send(sandwichEmbed);
+                message.author.send(brownieEmbed);
                 message.author.send(fishEmbed);
 
                 message.react("📬");
