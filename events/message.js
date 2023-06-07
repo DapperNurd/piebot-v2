@@ -99,9 +99,13 @@ module.exports = async (client, message) => {
             //client.commands.get('pizza').run(message, args, client);
             runCommand('pizza', false);
         }
-        else if(cmd === 'fish') {
+        else if(cmd == "fish" || cmd == "fishes" || cmd == "fishs") {
             //client.commands.get('fish').run(message, args, client);
             runCommand('fish', false);
+        }
+        else if(cmd == "brownie" || cmd == "brownies" || cmd == "browney" || cmd == "brownee" || cmd == "brownees") {
+            //client.commands.get('fish').run(message, args, client);
+            runCommand('brownie', false);
         }
         else if(cmd === 'trash') {
             //client.commands.get('ask').run(message, args, client);
