@@ -6,7 +6,7 @@ const GlobalCount = require('../models/globalCount');
 const commonBrownies = ["blondie", "M&M brownie", "chocolate frosted brownie", "fudge chocolate brownie", "triple chocolate chunk brownie", "walnut brownie", "peanut butter brownie", "mint chocolate brownie", "coconut brownie", "nutella brownie"
 ];
 
-const uncommonBrownies = ["raspberry cheesecake brownie", "cookies and cream brownies", "crumb coffee brownies", "cookie dough brownies", "espresso brownie", "salted caramel brownie", "cream cheese brownie"
+const uncommonBrownies = ["raspberry cheesecake brownie", "cookies and cream brownie", "crumb coffee brownie", "cookie dough brownie", "espresso brownie", "salted caramel brownie", "cream cheese brownie"
 ];
 
 const rareBrownies = ["tiramisu brownie", "s'mores brownie", "marshmallow crunch brownie", "peppermit brownie", "pecan praline brownie", "caramel pretzel brownie"
