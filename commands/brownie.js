@@ -157,7 +157,7 @@ module.exports = {
         }
 
         var adjRandom = Math.floor(Math.random() * 100) + 1;
-        var brownieAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
+        var newAdj = (adjRandom > 10) ? adjectives[Math.floor(Math.random() * adjectives.length)] : negAdjectives[Math.floor(Math.random() * negAdjectives.length)];
 
         var sorryRand = Math.floor(Math.random() * 100) + 1; //returns a random number from 1 to 100
 
@@ -169,9 +169,11 @@ module.exports = {
         if(brownie == "Cosmic Brownie") { phrase = cosmicPhrase; }
         if(brownie == "special 🌿🌱 brownie") { phease = specialPhrase; }
 
+        var commandPerson = (args.length > 0) ? args[0] : message.author;
+
         phrase = phrase.replace('[USER]', commandPerson);
         phrase = phrase.replace('[BROWNIE ADJ]', newAdj);
-        phrase = phrase.replace('[BROWNIE]', newItem);
+        phrase = phrase.replace('[BROWNIE]', brownie);
         phrase = phrase.replace('[AN]', plural);
 
         if(sorryRand > 92) {
