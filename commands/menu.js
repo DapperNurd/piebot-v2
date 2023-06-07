@@ -217,7 +217,7 @@ module.exports = {
         .setTimestamp()
 
         // BROWNIE MENU
-        const totalBrownieCount = brownieMenu.commonSandwiches.length + brownieMenu.uncommonSandwiches.length + brownieMenu.rareSandwiches.length + brownieMenu.legendarySandwiches.length;
+        const totalBrownieCount = brownieMenu.commonBrownies.length + brownieMenu.uncommonBrownies.length + brownieMenu.rareBrownies.length + brownieMenu.legendaryBrownies.length;
         const brownieEmbed = new Discord.MessageEmbed()
         .setColor('#211510')
         .setTitle(`Brownie Menu`)
