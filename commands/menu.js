@@ -11,6 +11,7 @@ const pastaMenu = require('./pasta');
 const cakeMenu = require('./cake');
 const cookieMenu = require('./cookie');
 const sandwichMenu = require('./sandwich');
+const brownieMenu = require('./brownie');
 
 module.exports = {
     name: 'menu',
