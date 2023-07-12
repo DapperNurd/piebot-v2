@@ -11,7 +11,7 @@ module.exports = {
             family: 4
         };
 
-        mongoose.connect(nINZcw8MDgo2DGT3, dbOptions);
+        mongoose.connect(process.env.MONGOOSE_ID, dbOptions);
         mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 
